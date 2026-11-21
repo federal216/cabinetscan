@@ -24,7 +24,12 @@ High-net-worth individuals, tech founders, and biohackers spend **$300 – $1,50
 
 1. **Zero Input:** Users take a single photo of their supplement cabinet, desk, or pill bottles.
 2. **Multimodal Vision Engine:** Powered by **Google Gemini 1.5 Flash Vision** to perform label OCR and compound identification.
-3. **Molecular Clash Radar:** Identifies chemical competition, organ strain, and adaptation risks.
+3. **Deterministic Pharmacological Knowledge Base:** Cross-verifies detected bottles against clinical interaction datasets (`data/drug_supplement_interactions.json` & `data/compounds_master.json`) covering:
+   - Divalent mineral competition (Ca, Mg, Zn, Cu, Fe)
+   - Hepatic/Renal load & adaptogen cycling (Ashwagandha, Creatine)
+   - Serotonergic risks (5-HTP, St. John's Wort + SSRIs)
+   - Metabolic interactions (Berberine + Metformin)
+   - CYP3A4 & P-glycoprotein inhibition (Piperine, Grapefruit Extract)
 4. **Circadian Chrono-Protocol:** Synthesizes an optimized schedule (**Morning** / **Midday Meal** / **Bedtime**) to maximize bioavailability.
 
 ---

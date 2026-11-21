@@ -2,13 +2,26 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const fs = require('fs');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Load Clinical Knowledge Base
+const interactionsDb = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'drug_supplement_interactions.json'), 'utf8'));
+const compoundsDb = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'compounds_master.json'), 'utf8'));
+
 app.use(cors());
 app.use(express.json({ limit: '25mb' }));
 app.use(express.static(path.join(__dirname)));
+
+// Endpoint to fetch offline pharmacological knowledge base
+app.get('/api/database', (req, res) => {
+  res.json({
+    interactions: interactionsDb,
+    compounds: compoundsDb
+  });
+});
 
 const SYSTEM_PROMPT = `
 You are CabinetScan AI, an elite board-level clinical pharmacologist and biohacking stack auditor.

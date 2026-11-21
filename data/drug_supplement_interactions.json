@@ -1,0 +1,122 @@
+[
+  {
+    "id": "clash-ca-mg",
+    "compound_a": "Calcium Citrate / Carbonate",
+    "compound_b": "Magnesium Glycinate / Malate / Citrate",
+    "severity": "CRITICAL",
+    "badge": "ABSORPTION SHUTDOWN",
+    "mechanism": "Divalent Metal Transporter 1 (DMT1) saturation",
+    "scientific_detail": "Calcium and Magnesium both utilize the DMT1 carrier protein in the brush border membrane of the small intestine. At standard supplemental doses, calcium exhibits an ~80% higher affinity constant, effectively displacing magnesium and causing up to 82% of ingested magnesium to be excreted unabsorbed while provoking osmotic gastrointestinal distress.",
+    "organ_impact": "Gastrointestinal cramping, chronic subclinical hypomagnesemia",
+    "wasted_monthly_usd": 45,
+    "resolution_protocol": "Separate intake by at least 4 hours. Take Calcium at midday with food; take Magnesium 45 minutes before sleep."
+  },
+  {
+    "id": "clash-zn-cu",
+    "compound_a": "Zinc Picolinate / Gluconate (>30mg)",
+    "compound_b": "Copper",
+    "severity": "CRITICAL",
+    "badge": "METALLOTHIONEIN ANEMIA",
+    "mechanism": "Intestinal metallothionein induction",
+    "scientific_detail": "Chronic ingestion of zinc (>30mg/day) induces high concentrations of mucosal metallothionein, an intracellular metal-binding protein. Metallothionein binds copper with greater avidity than zinc and traps copper within enterocytes, which are subsequently sloughed off in stool. This induces severe secondary copper deficiency, hematologic microcytic anemia, and neutropenia.",
+    "organ_impact": "Bone marrow suppression, neutropenia, microcytic anemia",
+    "wasted_monthly_usd": 30,
+    "resolution_protocol": "Maintain a strict 10:1 or 15:1 Zinc-to-Copper ratio. If taking high-dose Zinc, co-administer 2mg Copper Sebacate or Bisglycinate separated by 6 hours."
+  },
+  {
+    "id": "clash-fe-ca",
+    "compound_a": "Iron (Ferrous Sulfate / Bisglycinate)",
+    "compound_b": "Calcium / Dairy Products",
+    "severity": "CRITICAL",
+    "badge": "FERROPORTIN BLOCKADE",
+    "mechanism": "Non-competitive allosteric inhibition of mucosal iron uptake",
+    "scientific_detail": "Calcium inhibits both heme and non-heme iron absorption in a dose-dependent manner by binding to apical transferrin receptors and preventing ferroportin export into portal circulation.",
+    "organ_impact": "Ferritin depletion, treatment-resistant iron deficiency anemia",
+    "wasted_monthly_usd": 35,
+    "resolution_protocol": "Take iron completely fasted on waking with 500mg Vitamin C (ascorbic acid lowers gastric pH and maintains iron in the soluble Fe2+ ferrous state). Take Calcium at least 3 hours later."
+  },
+  {
+    "id": "clash-ashwa-cycle",
+    "compound_a": "Ashwagandha (Withania Somnifera / KSM-66 >600mg)",
+    "compound_b": "Continuous Uncycled Administration (>8 weeks)",
+    "severity": "CRITICAL",
+    "badge": "HEPATIC & THYROID DESENSITIZATION",
+    "mechanism": "Hepatic withanolide glucuronidation overload and 5'-deiodinase upregulation",
+    "scientific_detail": "Chronic withanolide accumulation has been clinically documented to induce drug-induced liver injury (DILI) with acute hepatocellular/cholestatic pattern, alongside excessive conversion of T4 to T3 inducing subclinical hyperthyroidism and emotional anhedonia.",
+    "organ_impact": "Elevated liver transaminases (ALT/AST), emotional blunting / anhedonia",
+    "wasted_monthly_usd": 40,
+    "resolution_protocol": "Implement strict cycling: 6 weeks ON, 2 weeks OFF. Transition to L-Theanine (200mg) during washout intervals."
+  },
+  {
+    "id": "clash-5htp-ssri",
+    "compound_a": "5-HTP (5-Hydroxytryptophan) / St. John's Wort",
+    "compound_b": "SSRIs / SNRIs (Sertraline, Escitalopram, Duloxetine)",
+    "severity": "CRITICAL",
+    "badge": "SEROTONIN TOXICITY WARNING",
+    "mechanism": "Synergistic excessive synaptic cleft 5-HT accumulation",
+    "scientific_detail": "5-HTP bypasses tryptophan hydroxylase rate-limiting synthesis and directly converts into serotonin, while SSRIs block presynaptic SERT reuptake. Concomitant use can provoke acute life-threatening Serotonin Syndrome.",
+    "organ_impact": "Hyperthermia, neuromuscular hyperreflexia, autonomic instability, seizures",
+    "wasted_monthly_usd": 60,
+    "resolution_protocol": "ABSOLUTELY CONTRAINDICATED. Discontinue all 5-HTP or St. John's Wort if taking serotonergic psychiatric medication."
+  },
+  {
+    "id": "clash-berberine-metformin",
+    "compound_a": "Berberine HCl (500mg - 1500mg)",
+    "compound_b": "Metformin / SGLT2 Inhibitors",
+    "severity": "CRITICAL",
+    "badge": "ACUTE LACTIC ACIDOSIS & HYPOGLYCEMIA",
+    "mechanism": "Dual Complex I mitochondrial respiratory chain inhibition",
+    "scientific_detail": "Both Metformin and Berberine activate AMPK via mild inhibition of mitochondrial Complex I. Combining high doses causes additive hepatic gluconeogenesis suppression, risking acute hypoglycemic episodes and dangerous anaerobic lactate accumulation.",
+    "organ_impact": "Lactic acidosis, hypoglycemia, acute nausea and diarrhea",
+    "wasted_monthly_usd": 55,
+    "resolution_protocol": "Do not stack full-dose Berberine with Metformin. If combined for longevity, titrate under glycemic monitoring and split doses."
+  },
+  {
+    "id": "clash-d3-k2-fat",
+    "compound_a": "Vitamin D3 (Cholecalciferol >5000 IU)",
+    "compound_b": "Fasted Intake (Zero Dietary Lipids)",
+    "severity": "MODERATE",
+    "badge": "BIOAVAILABILITY COLLAPSE",
+    "mechanism": "Absence of micellar emulsification",
+    "scientific_detail": "Vitamin D3 and K2 are highly lipophilic seco-steroids requiring pancreatic lipase and bile salt incorporation into mixed micelles for lymphatic enterocyte transport. Fasted consumption reduces bioavailability by over 60%.",
+    "organ_impact": "Arterial calcification risk if D3 taken without K2, zero therapeutic 25(OH)D increase",
+    "wasted_monthly_usd": 50,
+    "resolution_protocol": "Must consume with a meal containing at least 12-15g of dietary fat (e.g. whole eggs, avocado, extra virgin olive oil, or Omega-3 softgels)."
+  },
+  {
+    "id": "clash-curcumin-piperine-rx",
+    "compound_a": "Curcumin + Piperine (Black Pepper Extract)",
+    "compound_b": "Prescription Drugs metabolized by CYP3A4 / P-glycoprotein",
+    "severity": "CRITICAL",
+    "badge": "CYP3A4 / P-GP HEPATIC INHIBITION",
+    "mechanism": "Intestinal and hepatic phase I clearance blockade",
+    "scientific_detail": "Piperine increases curcumin bioavailability by 2000% precisely because it is a potent inhibitor of hepatic CYP3A4, CYP2C9, and P-glycoprotein efflux pumps. This causes toxic plasma accumulation of statins, beta-blockers, and anti-arrhythmics.",
+    "organ_impact": "Unintentional pharmaceutical drug toxicity / overdose",
+    "wasted_monthly_usd": 65,
+    "resolution_protocol": "Take Curcumin in phytosome form (Meriva / Longvida) without piperine if taking pharmaceutical maintenance medications."
+  },
+  {
+    "id": "clash-grapefruit-naringin",
+    "compound_a": "Grapefruit Seed Extract / Naringin",
+    "compound_b": "Statins (Atorvastatin, Simvastatin) / Blood Pressure Meds",
+    "severity": "CRITICAL",
+    "badge": "CYP3A4 SUICIDE INHIBITION",
+    "mechanism": "Irreversible mechanism-based intestinal CYP3A4 destruction",
+    "scientific_detail": "Furanocoumarins in grapefruit irreversibly inactivate enterocyte CYP3A4 enzymes, increasing systemic circulating statin concentrations up to 12-fold and triggering severe rhabdomyolysis.",
+    "organ_impact": "Acute rhabdomyolysis, myopathy, acute kidney injury",
+    "wasted_monthly_usd": 70,
+    "resolution_protocol": "Eliminate grapefruit seed extract entirely when taking statins or calcium channel blockers."
+  },
+  {
+    "id": "clash-glp1-gastric-emptying",
+    "compound_a": "GLP-1 Agonists (Semaglutide / Tirzepatide)",
+    "compound_b": "Oral Extended-Release Tablets & Peptides",
+    "severity": "MODERATE",
+    "badge": "DELAYED GASTRIC EMPTYING DISSOLUTION",
+    "mechanism": "Gastric hypomotility and prolonged acid exposure",
+    "scientific_detail": "GLP-1 receptor activation profoundly decelerates gastric emptying rate. Extended-release capsules and oral peptides (such as oral BPC-157 or NMN) remain trapped in the acidic stomach environment (pH 1.5-2.0) for hours, leading to acid hydrolysis and erratic pharmacokinetics.",
+    "organ_impact": "Gastric irritation, unpredictable therapeutic onset",
+    "wasted_monthly_usd": 85,
+    "resolution_protocol": "Prefer sublingual or subcutaneous administration for longevity peptides. Take oral supplements with plenty of water at least 1 hour after waking."
+  }
+]

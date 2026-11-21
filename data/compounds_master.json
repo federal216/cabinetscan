@@ -1,0 +1,134 @@
+[
+  {
+    "name": "NMN (Nicotinamide Mononucleotide)",
+    "category": "Longevity & NAD+ Precursor",
+    "optimal_window": "morning",
+    "timing_instruction": "Fasted upon waking (07:00 - 08:30) for SIRT1 and NAMPT circadian peak",
+    "with_food": false,
+    "half_life_hours": 0.5,
+    "optimal_form": "Sublingual powder or enteric-coated liposomal",
+    "target_pathway": "Cellular NAD+ biosynthesis, DNA repair via PARP1",
+    "key_warning": "Take with Methylated Folate/B12 (TMG) to prevent methyl pool depletion"
+  },
+  {
+    "name": "Magnesium Glycinate",
+    "category": "Mineral / Neurological Relaxant",
+    "optimal_window": "bedtime",
+    "timing_instruction": "30-45 minutes before sleep (21:30 - 22:30)",
+    "with_food": false,
+    "half_life_hours": 24.0,
+    "optimal_form": "Bisglycinate chelate (avoids laxative effect of oxide)",
+    "target_pathway": "GABA-A receptor agonism, NMDA receptor blockade, muscle relaxation",
+    "key_warning": "Never co-administer with Calcium or high-dose Zinc"
+  },
+  {
+    "name": "Vitamin D3 (Cholecalciferol)",
+    "category": "Fat-Soluble Secosteroid",
+    "optimal_window": "midday",
+    "timing_instruction": "Consume with the highest-fat meal of the day (12:30 - 13:30)",
+    "with_food": true,
+    "half_life_hours": 360.0,
+    "optimal_form": "Liquid softgels suspended in olive or MCT oil",
+    "target_pathway": "Nuclear VDR transcription, immune modulation, genomic bone mineral regulation",
+    "key_warning": "Mandatory co-administration with Vitamin K2 (MK-7) to direct calcium into bones instead of arteries"
+  },
+  {
+    "name": "Vitamin K2 (Menaquinone-7 / MK-7)",
+    "category": "Fat-Soluble Quinone",
+    "optimal_window": "midday",
+    "timing_instruction": "With midday meal alongside Vitamin D3 and dietary fats",
+    "with_food": true,
+    "half_life_hours": 72.0,
+    "optimal_form": "Trans-MK7 (all-trans isomeric purity)",
+    "target_pathway": "Carboxylation of Osteocalcin and Matrix Gla Protein (MGP)",
+    "key_warning": "Contraindicated with Warfarin / Coumadin vitamin K antagonists"
+  },
+  {
+    "name": "Omega-3 (EPA / DHA)",
+    "category": "Essential Fatty Acid",
+    "optimal_window": "midday",
+    "timing_instruction": "With meals to prevent lipid oxidation and fishy reflux",
+    "with_food": true,
+    "half_life_hours": 48.0,
+    "optimal_form": "Re-esterified Triglyceride (rTG) form (70% higher bioavailability than ethyl esters)",
+    "target_pathway": "Cell membrane fluidity, resolvins and protectins anti-inflammatory cascade",
+    "key_warning": "High doses (>3g) exert anti-platelet blood thinning effects"
+  },
+  {
+    "name": "Ashwagandha (KSM-66 / Sensoril)",
+    "category": "Adaptogen / Cortisol Modulator",
+    "optimal_window": "evening",
+    "timing_instruction": "Early evening (18:00 - 19:30). Must cycle 6 weeks on, 2 weeks off",
+    "with_food": true,
+    "half_life_hours": 8.0,
+    "optimal_form": "Standardized root extract (5% withanolides)",
+    "target_pathway": "HPA-axis regulation, serum cortisol reduction",
+    "key_warning": "Do not take continuously without washout intervals; risk of liver enzyme spike and emotional blunting"
+  },
+  {
+    "name": "L-Theanine",
+    "category": "Amino Acid / Nootropic",
+    "optimal_window": "morning_or_bedtime",
+    "timing_instruction": "Morning with caffeine (1:2 ratio) or bedtime for slow-wave sleep promotion",
+    "with_food": false,
+    "half_life_hours": 1.2,
+    "optimal_form": "Suntheanine (pure L-isomer)",
+    "target_pathway": "Glutamate receptor antagonism, cortical alpha-wave generation",
+    "key_warning": "Extremely safe with high therapeutic index"
+  },
+  {
+    "name": "Berberine HCl",
+    "category": "Metabolic AMPK Activator",
+    "optimal_window": "midday",
+    "timing_instruction": "15-20 minutes before high-carbohydrate meals (500mg)",
+    "with_food": true,
+    "half_life_hours": 4.0,
+    "optimal_form": "Dihydroberberine or Phytosome (5x higher intestinal absorption)",
+    "target_pathway": "Mitochondrial Complex I mild inhibition, AMPK phosphorylation, GLUT4 translocation",
+    "key_warning": "Do not combine with Metformin; inhibits CYP3A4 and CYP2D6"
+  },
+  {
+    "name": "Creatine Monohydrate",
+    "category": "Cellular Bioenergetics / Nootropic",
+    "optimal_window": "morning",
+    "timing_instruction": "Consistent daily dose (5g) with carbohydrate/protein shake for insulin-mediated muscle uptake",
+    "with_food": true,
+    "half_life_hours": 3.0,
+    "optimal_form": "Creapure (ultra-pure micronized monohydrate)",
+    "target_pathway": "Phosphocreatine shuttle, rapid cellular ATP resynthesis in brain and skeletal muscle",
+    "key_warning": "Raises serum creatinine harmlessly (does not reflect true kidney injury; verify via Cystatin-C)"
+  },
+  {
+    "name": "BPC-157 (Body Protection Compound)",
+    "category": "Regenerative Peptide",
+    "optimal_window": "morning",
+    "timing_instruction": "Fasted 250mcg - 500mcg (Oral arginate salt for gut; SubQ for systemic tendon repair)",
+    "with_food": false,
+    "half_life_hours": 4.0,
+    "optimal_form": "Stable Arginate Salt (gastric juice resistant)",
+    "target_pathway": "VEGF upregulation, FAK-paxillin angiogenesis pathway, eNOS stimulation",
+    "key_warning": "High theoretical angiogenesis rate; avoid in active malignancy"
+  },
+  {
+    "name": "Zinc (Picolinate / Bisglycinate)",
+    "category": "Essential Trace Mineral",
+    "optimal_window": "midday",
+    "timing_instruction": "With light food (15-30mg) to prevent gastric mucosal nausea",
+    "with_food": true,
+    "half_life_hours": 280.0,
+    "optimal_form": "Zinc Bisglycinate or Picolinate",
+    "target_pathway": "Thymulin activation, testosterone synthesis, superoxide dismutase (SOD)",
+    "key_warning": "Doses >30mg/day must be balanced with 2mg Copper to prevent neutropenia"
+  },
+  {
+    "name": "Semaglutide / Tirzepatide (GLP-1/GIP)",
+    "category": "Incretin Receptor Agonist",
+    "optimal_window": "morning",
+    "timing_instruction": "Subcutaneous injection once weekly on fixed schedule",
+    "with_food": false,
+    "half_life_hours": 168.0,
+    "optimal_form": "Subcutaneous injectable pen",
+    "target_pathway": "Central appetite suppression, delayed gastric emptying, beta-cell insulin secretion",
+    "key_warning": "Delay all oral capsule absorption; hydrate aggressively to prevent acute renal injury"
+  }
+]
