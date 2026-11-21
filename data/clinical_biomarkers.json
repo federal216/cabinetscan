@@ -1,0 +1,37 @@
+[
+  {
+    "marker": "ALT / AST (Alanine / Aspartate Aminotransferase)",
+    "organ": "Liver / Hepatic Clearance",
+    "optimal_range": "ALT: 12 - 25 U/L, AST: 15 - 28 U/L",
+    "clinical_significance": "Key indicator of liver cell strain from uncycled adaptogens, excessive fat-soluble vitamins (Vitamin A/E), or redundant polyphenol megadoses.",
+    "action_on_elevation": "Temporarily discontinue green tea extract (EGCG), Ashwagandha, and high-dose Niacin for 21 days."
+  },
+  {
+    "marker": "eGFR & Cystatin C",
+    "organ": "Kidney / Glomerular Filtration",
+    "optimal_range": "eGFR: >90 mL/min/1.73m2, Cystatin C: 0.62 - 0.88 mg/L",
+    "clinical_significance": "True renal clearance rate. Creatinine can falsely elevate from daily Creatine Monohydrate supplementation; Cystatin C confirms true glomerular health.",
+    "action_on_elevation": "Hydrate with isotonic electrolytes. Separate high-dose amino acids and botanical extracts."
+  },
+  {
+    "marker": "Ceruloplasmin & Serum Copper",
+    "organ": "Hematologic / Mineral Balance",
+    "optimal_range": "Ceruloplasmin: 20 - 35 mg/dL, Serum Copper: 70 - 140 ug/dL",
+    "clinical_significance": "Essential copper-carrying enzyme. Depleted by standalone Zinc >40mg/day. Critical for superoxide dismutase (SOD) synthesis and iron export.",
+    "action_on_elevation": "Add 2mg Copper Bisglycinate immediately if depleted; cap zinc at 25mg."
+  },
+  {
+    "marker": "Free T3, Free T4 & TSH",
+    "organ": "Endocrine / Metabolic Rate",
+    "optimal_range": "TSH: 1.0 - 2.0 uIU/mL, Free T3: 3.2 - 4.2 pg/mL, Free T4: 1.1 - 1.6 ng/dL",
+    "clinical_significance": "Tracks thyroid output. Ashwagandha, Kelp (Iodine), and extreme fasting alter peripheral T4 to T3 conversion.",
+    "action_on_elevation": "Cycle thyroid-stimulating adaptogens. Never ingest calcium or iron within 4 hours of thyroid medications."
+  },
+  {
+    "marker": "ApoB & hs-CRP (High-Sensitivity C-Reactive Protein)",
+    "organ": "Cardiovascular & Endothelial Integrity",
+    "optimal_range": "ApoB: <65 mg/dL, hs-CRP: <0.5 mg/L",
+    "clinical_significance": "Gold standard for atherogenic particle burden and systemic vascular inflammation.",
+    "action_on_elevation": "Stack Citrus Bergamot, high-EPA Omega-3 (>2000mg), and evaluate Statin/Ezetimibe synergy."
+  }
+]
