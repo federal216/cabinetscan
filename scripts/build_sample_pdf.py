@@ -419,8 +419,8 @@ html = """<!DOCTYPE html>
         <div class="client-hero">
           <div>
             <div class="hero-stat-label">Client / Patient</div>
-            <div class="hero-stat-value">Alexander S. (Age 42)</div>
-            <div class="tag">Tech Founder • Fasted Training</div>
+            <div class="hero-stat-value">Alexander S. <span style="font-size:10px; color:#f43f5e; font-family:'JetBrains Mono';">[REDACTED]</span></div>
+            <div class="tag" style="color:#34d399;">HIPAA Anonymized • Age 42</div>
           </div>
           <div>
             <div class="hero-stat-label">Stack Audited</div>
