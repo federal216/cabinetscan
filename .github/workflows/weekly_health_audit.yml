@@ -1,0 +1,38 @@
+name: Weekly Autonomous Health Telemetry Audit
+
+on:
+  schedule:
+    # Runs every 7 days (Every Monday at 06:00 UTC)
+    - cron: '0 6 * * 1'
+  workflow_dispatch: # Allows manual trigger from GitHub UI anytime
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Execute Autonomous Clinical Telemetry Audit
+        run: |
+          python scripts/harvest_deep_health_telemetry.py || true
+
+      - name: Commit & Push Updated Clinical Data
+        run: |
+          git config --global user.name "CabinetScan AI Automation"
+          git config --global user.email "bot@cabinetscan.ai"
+          git add data/ || true
+          if git diff --staged --quiet; then
+            echo "No new telemetry changes to commit."
+          else
+            git commit -m "chore(telemetry): weekly autonomous clinical database sync [skip ci]"
+            git push
+          fi
