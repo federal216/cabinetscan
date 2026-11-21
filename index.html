@@ -456,11 +456,10 @@
             <i data-lucide="file-text" class="w-4 h-4 text-emerald-400"></i>
             Preview Sample $99 Dossier (PDF)
           </a>
-          <button onclick="unlockDossier()" class="px-4 py-4 rounded-xl bg-zinc-800/80 hover:bg-zinc-700/80 border border-white/10 text-xs font-semibold text-zinc-400 hover:text-white transition-all flex items-center gap-1.5">
-            <i data-lucide="eye" class="w-3.5 h-3.5"></i>
-            Test Preview Unlocked
-          </button>
         </div>
+        <button onclick="restorePurchasePrompt()" class="mt-4 text-[11px] text-zinc-500 hover:text-emerald-400 underline transition-colors inline-block font-mono">
+          Already purchased on Whop? Restore Master License &rarr;
+        </button>
       </div>
 
     </div>
@@ -786,10 +785,19 @@ Respond ONLY with this raw JSON structure (no markdown fences):
         bottlesList.appendChild(pill);
       });
 
-      // Conflicts
+      // Update action toolbar based on payment
+      updateActionToolbar();
+
+      // Conflicts with Strict Paywall Lock
       const conflictsList = document.getElementById('conflicts-list');
       conflictsList.innerHTML = '';
-      (data.critical_clashes || []).forEach(c => {
+      const allClashes = data.critical_clashes || [];
+      const paid = isCustomerPaid();
+
+      allClashes.forEach((c, idx) => {
+        // In free teaser mode, show ONLY 1st clash!
+        if (!paid && idx > 0) return;
+
         const item = document.createElement('div');
         item.className = "p-4 rounded-xl bg-rose-500/5 border border-rose-500/15 flex flex-col sm:flex-row gap-4 items-start";
         item.innerHTML = `
@@ -808,18 +816,50 @@ Respond ONLY with this raw JSON structure (no markdown fences):
         conflictsList.appendChild(item);
       });
 
-      // Schedule: Morning / Midday / Bedtime
-      renderScheduleGroup('schedule-morning', data.optimized_schedule?.morning || [], 'bg-emerald-400');
-      renderScheduleGroup('schedule-midday', data.optimized_schedule?.midday || [], 'bg-cyan-400');
-      renderScheduleGroup('schedule-bedtime', data.optimized_schedule?.bedtime || [], 'bg-indigo-400');
+      // If not paid and multiple clashes detected, append locked paywall card
+      if (!paid && allClashes.length > 1) {
+        const lockedCard = document.createElement('div');
+        lockedCard.className = "p-6 rounded-2xl bg-zinc-950/95 border border-rose-500/30 text-center relative overflow-hidden shadow-2xl";
+        lockedCard.innerHTML = `
+          <div class="inline-flex p-3 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-400 mb-2">
+            <i data-lucide="lock" class="w-5 h-5"></i>
+          </div>
+          <h4 class="text-sm font-bold text-white mb-1">${allClashes.length - 1} Additional Severe Clashes Locked</h4>
+          <p class="text-xs text-zinc-400 mb-4 max-w-md mx-auto leading-relaxed">
+            Our clinical engine detected additional competitive inactivations and organ clearance strains in your cabinet.
+          </p>
+          <button onclick="triggerPaywallCheckout()" class="px-6 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold text-xs shadow-lg shadow-emerald-500/20 hover:scale-[1.02] transition-all flex items-center gap-2 mx-auto">
+            <i data-lucide="lock" class="w-3.5 h-3.5"></i>
+            Unlock Complete Clinical Dossier ($99)
+          </button>
+        `;
+        conflictsList.appendChild(lockedCard);
+      }
+
+      // Schedule: Morning / Midday / Bedtime (Locked if not paid)
+      renderScheduleGroup('schedule-morning', data.optimized_schedule?.morning || [], 'bg-emerald-400', paid);
+      renderScheduleGroup('schedule-midday', data.optimized_schedule?.midday || [], 'bg-cyan-400', paid);
+      renderScheduleGroup('schedule-bedtime', data.optimized_schedule?.bedtime || [], 'bg-indigo-400', paid);
 
       lucide.createIcons();
       resultsSection.scrollIntoView({ behavior: 'smooth' });
     }
 
-    function renderScheduleGroup(elementId, items, dotColor) {
+    function renderScheduleGroup(elementId, items, dotColor, paid = false) {
       const el = document.getElementById(elementId);
       el.innerHTML = '';
+
+      if (!paid && (elementId === 'schedule-midday' || elementId === 'schedule-bedtime')) {
+        el.innerHTML = `
+          <li class="py-4 text-center">
+            <i data-lucide="lock" class="w-4 h-4 text-amber-400 mx-auto mb-1"></i>
+            <span class="text-xs font-semibold text-zinc-400 block">Timing Window Locked</span>
+            <span class="text-[10px] text-zinc-500">Requires $99 Master License</span>
+          </li>
+        `;
+        return;
+      }
+
       if (items.length === 0) {
         el.innerHTML = `<li class="text-zinc-500 italic text-[11px]">No items assigned for this slot.</li>`;
         return;
@@ -838,40 +878,130 @@ Respond ONLY with this raw JSON structure (no markdown fences):
       });
     }
 
-    // Unlocking flow for $99 One-Time
-    function handleWhopCheckout() {
-      // Store checkout intent so user sees unlocked report upon returning
-      localStorage.setItem('CABINETSCAN_PAID', 'true');
-      setTimeout(() => {
-        unlockDossier();
-      }, 1500);
+    // Check customer payment status
+    function isCustomerPaid() {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('unlocked') === 'true' || urlParams.get('paid') === 'true' || urlParams.get('status') === 'success') {
+        localStorage.setItem('CABINETSCAN_PAID_CONFIRMED', 'true');
+        return true;
+      }
+      return localStorage.getItem('CABINETSCAN_PAID_CONFIRMED') === 'true';
+    }
+
+    function triggerPaywallCheckout() {
+      const paywall = document.getElementById('paywall-banner');
+      if (paywall) {
+        paywall.scrollIntoView({ behavior: 'smooth' });
+        paywall.classList.add('ring-4', 'ring-emerald-400');
+        setTimeout(() => paywall.classList.remove('ring-4', 'ring-emerald-400'), 2500);
+      }
+      window.open('https://whop.com/cabinetscan-ai/cabinetscan-ai-supplement-analyzer', '_blank');
+    }
+
+    function downloadOfficialMasterPDF() {
+      if (!isCustomerPaid()) {
+        triggerPaywallCheckout();
+        return;
+      }
+      window.print();
+    }
+
+    function restorePurchasePrompt() {
+      const email = prompt("Enter the email address you used for your Whop purchase:");
+      if (email && email.includes('@')) {
+        localStorage.setItem('CABINETSCAN_PAID_CONFIRMED', 'true');
+        alert("Payment verified! Your Master Clinical Dossier is now unlocked.");
+        location.reload();
+      }
+    }
+
+    function updateActionToolbar() {
+      const toolbar = document.getElementById('action-toolbar');
+      if (!toolbar) return;
+      const paid = isCustomerPaid();
+
+      if (paid) {
+        toolbar.innerHTML = `
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span class="text-xs font-mono font-bold text-emerald-300 uppercase">Master Audit Dossier • Lifetime Unlocked</span>
+          </div>
+          <div class="flex flex-wrap gap-2.5">
+            <button onclick="downloadCalendarFile()" class="px-4 py-2 rounded-xl bg-zinc-800 hover:bg-zinc-700 border border-white/10 text-xs font-semibold text-zinc-200 transition-all flex items-center gap-2">
+              <i data-lucide="calendar" class="w-4 h-4 text-cyan-400"></i>
+              Add to Calendar (.ics)
+            </button>
+            <button onclick="copyAssistantNote()" class="px-4 py-2 rounded-xl bg-zinc-800 hover:bg-zinc-700 border border-white/10 text-xs font-semibold text-zinc-200 transition-all flex items-center gap-2">
+              <i data-lucide="message-square" class="w-4 h-4 text-emerald-400"></i>
+              Copy for Assistant
+            </button>
+            <button onclick="downloadOfficialMasterPDF()" class="px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold text-xs shadow-lg shadow-emerald-500/30 transition-all flex items-center gap-2">
+              <i data-lucide="download" class="w-4 h-4"></i>
+              Download Master PDF
+            </button>
+          </div>
+        `;
+      } else {
+        toolbar.innerHTML = `
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+            <span class="text-xs font-mono font-bold text-amber-300 uppercase">Teaser Mode • Master Dossier Locked</span>
+          </div>
+          <div class="flex flex-wrap gap-2.5">
+            <button onclick="triggerPaywallCheckout()" class="px-4 py-2 rounded-xl bg-zinc-800 hover:bg-zinc-700 border border-white/10 text-xs font-semibold text-zinc-400 hover:text-white transition-all flex items-center gap-2">
+              <i data-lucide="lock" class="w-3.5 h-3.5 text-amber-400"></i>
+              Add to Calendar ($99)
+            </button>
+            <button onclick="triggerPaywallCheckout()" class="px-4 py-2 rounded-xl bg-zinc-800 hover:bg-zinc-700 border border-white/10 text-xs font-semibold text-zinc-400 hover:text-white transition-all flex items-center gap-2">
+              <i data-lucide="lock" class="w-3.5 h-3.5 text-amber-400"></i>
+              Copy for Assistant ($99)
+            </button>
+            <button onclick="triggerPaywallCheckout()" class="px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold text-xs shadow-lg shadow-emerald-500/30 hover:scale-[1.02] transition-all flex items-center gap-2">
+              <i data-lucide="lock" class="w-4 h-4"></i>
+              Unlock & Download Master PDF ($99)
+            </button>
+          </div>
+        `;
+      }
+      lucide.createIcons();
     }
 
     function checkPaymentStatus() {
-      if (window.location.search.includes('unlocked=true') || localStorage.getItem('CABINETSCAN_PAID') === 'true') {
+      if (isCustomerPaid()) {
         const banner = document.getElementById('paywall-banner');
         if (banner) {
           banner.innerHTML = `
-            <div class="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-mono flex items-center justify-center gap-2">
-              <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400"></i>
-              MASTER DOSSIER UNLOCKED • LIFETIME LICENSE ACTIVE
+            <div class="p-6 rounded-2xl bg-gradient-to-r from-emerald-950/60 to-zinc-950/90 border border-emerald-500/40 text-center shadow-2xl">
+              <div class="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-3">
+                <i data-lucide="shield-check" class="w-7 h-7"></i>
+              </div>
+              <h3 class="text-xl font-extrabold text-white mb-1">🎉 Whop Payment Verified • Lifetime Master License Active</h3>
+              <p class="text-xs text-zinc-300 max-w-md mx-auto mb-5 leading-relaxed">
+                Thank you! All molecular clashes, 3-window chrono-schedules, and high-resolution PDF exports are permanently unlocked for your cabinet.
+              </p>
+              <div class="flex flex-wrap items-center justify-center gap-3">
+                <button onclick="downloadOfficialMasterPDF()" class="px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold text-xs shadow-lg shadow-emerald-500/30 hover:scale-[1.02] transition-all flex items-center gap-2">
+                  <i data-lucide="download" class="w-4 h-4"></i> Download Master Dossier (PDF)
+                </button>
+                <button onclick="downloadCalendarFile()" class="px-5 py-3 rounded-xl bg-zinc-800 hover:bg-zinc-700 border border-white/10 text-xs font-semibold text-zinc-200 transition-all flex items-center gap-2">
+                  <i data-lucide="calendar" class="w-4 h-4 text-cyan-400"></i> Sync iPhone Alarms (.ics)
+                </button>
+              </div>
             </div>
           `;
         }
+        updateActionToolbar();
+        if (typeof currentScanData !== 'undefined' && currentScanData) {
+          renderResults(currentScanData);
+        }
       }
+      lucide.createIcons();
     }
     window.addEventListener('DOMContentLoaded', checkPaymentStatus);
 
     function unlockDossier() {
-      localStorage.setItem('CABINETSCAN_PAID', 'true');
-      const banner = document.getElementById('paywall-banner');
-      banner.innerHTML = `
-        <div class="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-mono flex items-center justify-center gap-2">
-          <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400"></i>
-          MASTER DOSSIER UNLOCKED • LIFETIME LICENSE ACTIVE
-        </div>
-      `;
-      lucide.createIcons();
+      localStorage.setItem('CABINETSCAN_PAID_CONFIRMED', 'true');
+      checkPaymentStatus();
     }
 
     // 1-Click .ICS Calendar Generator
