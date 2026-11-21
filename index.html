@@ -88,6 +88,23 @@
       50% { opacity: 1; }
       100% { top: 96%; opacity: 0.2; }
     }
+    @keyframes rainbowGlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .rainbow-border {
+      background: linear-gradient(135deg, #10b981, #06b6d4, #6366f1, #ec4899, #f59e0b, #10b981);
+      background-size: 300% 300%;
+      animation: rainbowGlow 5s ease infinite;
+    }
+    .rainbow-text {
+      background: linear-gradient(135deg, #34d399, #38bdf8, #c084fc, #fb7185, #fbbf24);
+      background-size: 250% 250%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: rainbowGlow 4s ease infinite;
+    }
     @media print {
       body { background: white !important; color: black !important; }
       header, footer, #upload-container, #action-toolbar, #paywall-banner, #reviews-section, #social-proof-bar { display: none !important; }
@@ -421,45 +438,104 @@
         </div>
       </div>
 
-      <!-- One-Time $99 Unlock Callout Banner -->
-      <div id="paywall-banner" class="rounded-2xl bg-gradient-to-r from-emerald-500/10 via-teal-500/10 to-cyan-500/10 border border-emerald-500/30 p-8 text-center">
-        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 font-mono text-xs font-bold mb-3">
-          <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
-          ONE-TIME PAYMENT • 1-TAP APPLE PAY & GOOGLE PAY ENABLED
-        </div>
-        <h3 class="text-2xl font-extrabold text-white mb-2">Unlock The Master Clinical Dossier — $99</h3>
-        <p class="text-xs text-zinc-300 max-w-lg mx-auto mb-6 leading-relaxed">
-          One payment. Zero recurring charges. Instantly download your full 10-page molecular report, sync all alarms to your iPhone/Apple Watch, and eliminate $1,700+/year in wasted absorption errors.
-        </p>
+      <!-- Massive Rainbow Animated Glow Paywall Card -->
+      <div id="paywall-banner" class="rainbow-border p-[3px] rounded-3xl shadow-[0_0_60px_rgba(16,185,129,0.35),0_0_90px_rgba(168,85,247,0.25)] my-12 transition-all">
+        <div class="rounded-[22px] bg-[#0A0D15]/95 backdrop-blur-xl p-8 sm:p-12 text-center relative overflow-hidden">
+          
+          <!-- Floating Background Ambient Light -->
+          <div class="absolute -top-24 -left-24 w-60 h-60 rounded-full bg-emerald-500/20 blur-3xl pointer-events-none"></div>
+          <div class="absolute -bottom-24 -right-24 w-60 h-60 rounded-full bg-fuchsia-500/20 blur-3xl pointer-events-none"></div>
 
-        <!-- Apple Pay & Google Pay Supported Badges -->
-        <div class="flex items-center justify-center gap-3 mb-6">
-          <div class="px-3 py-1.5 rounded-lg bg-black border border-white/15 flex items-center gap-1.5 text-xs font-semibold text-white">
-            <svg class="w-4 h-4 fill-white" viewBox="0 0 170 170"><path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.69-3.08-7.73-7.98-12.14-14.7-5.26-7.85-9.36-16.7-12.3-26.54-3.59-12.18-5.38-23.77-5.38-34.78 0-14.24 3.59-26.17 10.78-35.8 7.18-9.63 16.3-14.45 27.35-14.45 4.8 0 10.02 1.34 15.67 4.02 5.66 2.68 9.53 4.02 11.62 4.02 1.9 0 5.86-1.34 11.87-4.02 6.01-2.68 11.13-3.9 15.36-3.69 11.62.67 20.9 4.91 27.84 12.74-9.84 5.92-14.65 14.2-14.42 24.83.22 8.27 3.35 15.3 9.4 21.09 6.04 5.8 13.2 9.04 21.46 9.72-2.12 6.7-4.69 13.4-7.7 20.08zM119.22 31.86c0-7.04 2.57-13.73 7.71-20.08 5.14-6.37 11.62-10.49 19.46-12.37 1.01 7.26-1.23 14.19-6.71 20.78-5.48 6.6-11.96 10.51-19.46 11.67-.34-.56-.67-1.12-1-1.68z"/></svg>
-            <span>Apple Pay</span>
+          <!-- Top Multi-Colored Badges -->
+          <div class="flex flex-wrap items-center justify-center gap-2 mb-4">
+            <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-rose-500/20 text-rose-300 border border-rose-500/40 text-[11px] font-mono font-bold uppercase tracking-wider animate-pulse">
+              🔥 80% LAUNCH DISCOUNT
+            </span>
+            <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 text-[11px] font-mono font-bold uppercase tracking-wider">
+              <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> 1-TAP APPLE PAY & GOOGLE PAY
+            </span>
+            <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/40 text-[11px] font-mono font-bold uppercase tracking-wider">
+              ⚡ ONE-TIME • LIFETIME LICENSE
+            </span>
           </div>
-          <div class="px-3 py-1.5 rounded-lg bg-zinc-900 border border-white/15 flex items-center gap-1.5 text-xs font-semibold text-white">
-            <svg class="w-4 h-4" viewBox="0 0 40 40"><path fill="#4285F4" d="M39.2 20.4c0-1.4-.1-2.8-.4-4.2H20v7.9h10.8c-.5 2.5-1.9 4.7-4 6.2v5.1h6.5c3.8-3.5 6-8.7 6-15z"/><path fill="#34A853" d="M20 40c5.4 0 9.9-1.8 13.2-4.9l-6.5-5.1c-1.8 1.2-4.1 2-6.7 2-5.1 0-9.5-3.5-11.1-8.2H2.1v5.3C5.5 35.8 12.2 40 20 40z"/><path fill="#FBBC05" d="M8.9 23.8c-.4-1.2-.6-2.5-.6-3.8s.2-2.6.6-3.8V10.9H2.1C.8 13.5 0 16.6 0 20s.8 6.5 2.1 9.1l6.8-5.3z"/><path fill="#EA4335" d="M20 7.9c2.9 0 5.6 1 7.7 3l5.8-5.8C29.9 1.9 25.4 0 20 0 12.2 0 5.5 4.2 2.1 10.9l6.8 5.3c1.6-4.7 6-8.3 11.1-8.3z"/></svg>
-            <span>Google Pay</span>
-          </div>
-          <div class="px-3 py-1.5 rounded-lg bg-zinc-900 border border-white/15 text-xs font-semibold text-zinc-300">
-            <span>Credit Card / 1-Tap</span>
-          </div>
-        </div>
 
-        <div class="flex flex-wrap items-center justify-center gap-4">
-          <a href="https://whop.com/cabinetscan-ai/cabinetscan-ai-supplement-analyzer" target="_blank" rel="noopener noreferrer" onclick="handleWhopCheckout()" class="px-8 py-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold text-xs shadow-2xl shadow-emerald-500/40 hover:scale-[1.02] transition-all flex items-center gap-2">
-            <svg class="w-4 h-4 fill-black" viewBox="0 0 170 170"><path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.69-3.08-7.73-7.98-12.14-14.7-5.26-7.85-9.36-16.7-12.3-26.54-3.59-12.18-5.38-23.77-5.38-34.78 0-14.24 3.59-26.17 10.78-35.8 7.18-9.63 16.3-14.45 27.35-14.45 4.8 0 10.02 1.34 15.67 4.02 5.66 2.68 9.53 4.02 11.62 4.02 1.9 0 5.86-1.34 11.87-4.02 6.01-2.68 11.13-3.9 15.36-3.69 11.62.67 20.9 4.91 27.84 12.74-9.84 5.92-14.65 14.2-14.42 24.83.22 8.27 3.35 15.3 9.4 21.09 6.04 5.8 13.2 9.04 21.46 9.72-2.12 6.7-4.69 13.4-7.7 20.08zM119.22 31.86c0-7.04 2.57-13.73 7.71-20.08 5.14-6.37 11.62-10.49 19.46-12.37 1.01 7.26-1.23 14.19-6.71 20.78-5.48 6.6-11.96 10.51-19.46 11.67-.34-.56-.67-1.12-1-1.68z"/></svg>
-            Pay $99 with Apple Pay / Card &rarr;
-          </a>
-          <a href="sample_cabinetscan_dossier.pdf" target="_blank" class="px-5 py-4 rounded-xl bg-white/5 hover:bg-white/10 border border-emerald-500/30 text-xs font-semibold text-emerald-400 hover:text-white transition-all flex items-center gap-2">
-            <i data-lucide="file-text" class="w-4 h-4 text-emerald-400"></i>
-            Preview Sample $99 Dossier (PDF)
-          </a>
+          <!-- Headline -->
+          <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight mb-3">
+            Unlock The Full <span class="rainbow-text">Master Clinical Dossier</span>
+          </h2>
+          
+          <p class="text-xs sm:text-sm text-zinc-300 max-w-2xl mx-auto mb-6 leading-relaxed">
+            Eliminate <strong class="text-rose-400">$1,700+/year</strong> in canceled supplements. Stop taking conflicting compounds that overload your liver and shut down intestinal absorption. Download once, optimize forever.
+          </p>
+
+          <!-- Massive Price Anchor Block -->
+          <div class="flex items-center justify-center gap-3 mb-8">
+            <div class="text-right">
+              <span class="text-xs font-mono text-zinc-500 line-through block">$499 Concierge</span>
+              <span class="px-2 py-0.5 rounded bg-rose-500/20 text-rose-400 font-bold text-[10px] uppercase font-mono">Save $400</span>
+            </div>
+            <div class="text-6xl sm:text-7xl font-black font-mono tracking-tight text-white flex items-baseline">
+              <span class="rainbow-text">$99</span>
+              <span class="text-xs text-zinc-400 font-normal font-sans ml-2">/ one-time</span>
+            </div>
+          </div>
+
+          <!-- Feature Grid with Colorful Badges -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-2xl mx-auto mb-8 text-left">
+            <div class="p-3 rounded-xl bg-white/[0.03] border border-white/5 flex items-center gap-3">
+              <div class="w-7 h-7 rounded-lg bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 shrink-0 font-bold">✓</div>
+              <span class="text-xs font-semibold text-zinc-200">Full 10-Page Master Molecular Dossier (PDF)</span>
+            </div>
+            <div class="p-3 rounded-xl bg-white/[0.03] border border-white/5 flex items-center gap-3">
+              <div class="w-7 h-7 rounded-lg bg-rose-500/20 border border-rose-500/40 flex items-center justify-center text-rose-400 shrink-0 font-bold">✓</div>
+              <span class="text-xs font-semibold text-zinc-200">Unmasks 30+ Clashes & Hepatic Overload Risks</span>
+            </div>
+            <div class="p-3 rounded-xl bg-white/[0.03] border border-white/5 flex items-center gap-3">
+              <div class="w-7 h-7 rounded-lg bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center text-cyan-400 shrink-0 font-bold">✓</div>
+              <span class="text-xs font-semibold text-zinc-200">1-Click iPhone & Apple Watch Alarms (.ics)</span>
+            </div>
+            <div class="p-3 rounded-xl bg-white/[0.03] border border-white/5 flex items-center gap-3">
+              <div class="w-7 h-7 rounded-lg bg-purple-500/20 border border-purple-500/40 flex items-center justify-center text-purple-400 shrink-0 font-bold">✓</div>
+              <span class="text-xs font-semibold text-zinc-200">1-Click WhatsApp Assistant Dispatch Note</span>
+            </div>
+            <div class="p-3 rounded-xl bg-white/[0.03] border border-white/5 flex items-center gap-3">
+              <div class="w-7 h-7 rounded-lg bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-400 shrink-0 font-bold">✓</div>
+              <span class="text-xs font-semibold text-zinc-200">Concierge Blood Lab Targets for Your Doctor</span>
+            </div>
+            <div class="p-3 rounded-xl bg-white/[0.03] border border-white/5 flex items-center gap-3">
+              <div class="w-7 h-7 rounded-lg bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-400 shrink-0 font-bold">✓</div>
+              <span class="text-xs font-semibold text-zinc-200">Zero Subscriptions • Lifetime Access & Free Updates</span>
+            </div>
+          </div>
+
+          <!-- Big Radiant Buy Button -->
+          <div class="flex flex-wrap items-center justify-center gap-4 mb-4">
+            <a href="https://whop.com/cabinetscan-ai/cabinetscan-ai-supplement-analyzer" target="_blank" rel="noopener noreferrer" onclick="handleWhopCheckout()" class="px-10 py-5 rounded-2xl bg-gradient-to-r from-emerald-400 via-teal-300 via-cyan-400 to-emerald-300 hover:from-emerald-300 hover:to-cyan-300 text-black font-black text-sm sm:text-base shadow-[0_0_35px_rgba(52,211,153,0.6)] hover:scale-[1.03] transition-all flex items-center gap-3">
+              <svg class="w-5 h-5 fill-black" viewBox="0 0 170 170"><path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.69-3.08-7.73-7.98-12.14-14.7-5.26-7.85-9.36-16.7-12.3-26.54-3.59-12.18-5.38-23.77-5.38-34.78 0-14.24 3.59-26.17 10.78-35.8 7.18-9.63 16.3-14.45 27.35-14.45 4.8 0 10.02 1.34 15.67 4.02 5.66 2.68 9.53 4.02 11.62 4.02 1.9 0 5.86-1.34 11.87-4.02 6.01-2.68 11.13-3.9 15.36-3.69 11.62.67 20.9 4.91 27.84 12.74-9.84 5.92-14.65 14.2-14.42 24.83.22 8.27 3.35 15.3 9.4 21.09 6.04 5.8 13.2 9.04 21.46 9.72-2.12 6.7-4.69 13.4-7.7 20.08zM119.22 31.86c0-7.04 2.57-13.73 7.71-20.08 5.14-6.37 11.62-10.49 19.46-12.37 1.01 7.26-1.23 14.19-6.71 20.78-5.48 6.6-11.96 10.51-19.46 11.67-.34-.56-.67-1.12-1-1.68z"/></svg>
+              <span>Instant Unlock for $99 &rarr;</span>
+            </a>
+            <a href="sample_cabinetscan_dossier.pdf" target="_blank" class="px-6 py-5 rounded-2xl bg-white/5 hover:bg-white/10 border border-emerald-500/40 text-xs font-bold text-emerald-300 hover:text-white transition-all flex items-center gap-2">
+              <i data-lucide="file-text" class="w-4 h-4 text-emerald-400"></i>
+              View Sample $99 Dossier (PDF)
+            </a>
+          </div>
+
+          <!-- Payment Methods & Trust Badges -->
+          <div class="flex flex-wrap items-center justify-center gap-3 text-xs text-zinc-400 font-mono mt-4">
+            <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Apple Pay</span>
+            <span>•</span>
+            <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> Google Pay</span>
+            <span>•</span>
+            <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400"></i> Credit Card</span>
+            <span>•</span>
+            <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-fuchsia-400"></i> Solana USDT</span>
+          </div>
+
+          <button onclick="restorePurchasePrompt()" class="mt-5 text-[11px] text-zinc-500 hover:text-emerald-400 underline transition-colors inline-block font-mono">
+            Already purchased on Whop? Restore Master License &rarr;
+          </button>
+
         </div>
-        <button onclick="restorePurchasePrompt()" class="mt-4 text-[11px] text-zinc-500 hover:text-emerald-400 underline transition-colors inline-block font-mono">
-          Already purchased on Whop? Restore Master License &rarr;
-        </button>
       </div>
 
     </div>
@@ -927,17 +1003,25 @@ Respond ONLY with this raw JSON structure (no markdown fences):
             <span class="text-xs font-mono font-bold text-emerald-300 uppercase">Master Audit Dossier • Lifetime Unlocked</span>
           </div>
           <div class="flex flex-wrap gap-2.5">
+            <button onclick="downloadOfficialMasterPDF()" class="px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold text-xs shadow-lg shadow-emerald-500/30 hover:scale-[1.02] transition-all flex items-center gap-2">
+              <i data-lucide="download" class="w-4 h-4"></i>
+              Download Master PDF
+            </button>
+            <button onclick="shareViaWhatsApp()" class="px-4 py-2 rounded-xl bg-emerald-950/80 hover:bg-emerald-900 border border-emerald-500/40 text-xs font-bold text-emerald-300 hover:text-white transition-all flex items-center gap-2 shadow-sm">
+              <i data-lucide="message-circle" class="w-4 h-4 text-emerald-400"></i>
+              Share WhatsApp
+            </button>
+            <button onclick="shareViaEmail()" class="px-4 py-2 rounded-xl bg-cyan-950/80 hover:bg-cyan-900 border border-cyan-500/40 text-xs font-bold text-cyan-300 hover:text-white transition-all flex items-center gap-2 shadow-sm">
+              <i data-lucide="mail" class="w-4 h-4 text-cyan-400"></i>
+              Send Email
+            </button>
             <button onclick="downloadCalendarFile()" class="px-4 py-2 rounded-xl bg-zinc-800 hover:bg-zinc-700 border border-white/10 text-xs font-semibold text-zinc-200 transition-all flex items-center gap-2">
               <i data-lucide="calendar" class="w-4 h-4 text-cyan-400"></i>
               Add to Calendar (.ics)
             </button>
             <button onclick="copyAssistantNote()" class="px-4 py-2 rounded-xl bg-zinc-800 hover:bg-zinc-700 border border-white/10 text-xs font-semibold text-zinc-200 transition-all flex items-center gap-2">
-              <i data-lucide="message-square" class="w-4 h-4 text-emerald-400"></i>
-              Copy for Assistant
-            </button>
-            <button onclick="downloadOfficialMasterPDF()" class="px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold text-xs shadow-lg shadow-emerald-500/30 transition-all flex items-center gap-2">
-              <i data-lucide="download" class="w-4 h-4"></i>
-              Download Master PDF
+              <i data-lucide="copy" class="w-4 h-4 text-zinc-400"></i>
+              Copy Note
             </button>
           </div>
         `;
@@ -971,20 +1055,29 @@ Respond ONLY with this raw JSON structure (no markdown fences):
         const banner = document.getElementById('paywall-banner');
         if (banner) {
           banner.innerHTML = `
-            <div class="p-6 rounded-2xl bg-gradient-to-r from-emerald-950/60 to-zinc-950/90 border border-emerald-500/40 text-center shadow-2xl">
-              <div class="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-3">
-                <i data-lucide="shield-check" class="w-7 h-7"></i>
+            <div class="p-8 rounded-3xl bg-gradient-to-r from-emerald-950/80 via-zinc-950/95 to-cyan-950/80 border-2 border-emerald-500/50 text-center shadow-[0_0_50px_rgba(16,185,129,0.25)] my-12">
+              <div class="w-14 h-14 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-4 border border-emerald-500/40 shadow-inner">
+                <i data-lucide="shield-check" class="w-8 h-8"></i>
               </div>
-              <h3 class="text-xl font-extrabold text-white mb-1">🎉 Whop Payment Verified • Lifetime Master License Active</h3>
-              <p class="text-xs text-zinc-300 max-w-md mx-auto mb-5 leading-relaxed">
-                Thank you! All molecular clashes, 3-window chrono-schedules, and high-resolution PDF exports are permanently unlocked for your cabinet.
+              <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 font-mono text-[11px] font-bold uppercase tracking-wider mb-2">
+                VERIFIED WHOP CLIENT • LIFETIME MASTER DOSSIER UNLOCKED
+              </div>
+              <h3 class="text-2xl sm:text-3xl font-black text-white mb-2">🎉 Master Clinical Dossier Unlocked</h3>
+              <p class="text-xs sm:text-sm text-zinc-300 max-w-xl mx-auto mb-6 leading-relaxed">
+                Thank you! All molecular clashes, 3-window chrono-schedules, and high-resolution PDF exports are permanently active. You can save to PDF or share directly via WhatsApp or Email below.
               </p>
               <div class="flex flex-wrap items-center justify-center gap-3">
-                <button onclick="downloadOfficialMasterPDF()" class="px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold text-xs shadow-lg shadow-emerald-500/30 hover:scale-[1.02] transition-all flex items-center gap-2">
+                <button onclick="downloadOfficialMasterPDF()" class="px-6 py-3.5 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-black font-black text-xs sm:text-sm shadow-xl shadow-emerald-500/30 hover:scale-[1.02] transition-all flex items-center gap-2">
                   <i data-lucide="download" class="w-4 h-4"></i> Download Master Dossier (PDF)
                 </button>
-                <button onclick="downloadCalendarFile()" class="px-5 py-3 rounded-xl bg-zinc-800 hover:bg-zinc-700 border border-white/10 text-xs font-semibold text-zinc-200 transition-all flex items-center gap-2">
-                  <i data-lucide="calendar" class="w-4 h-4 text-cyan-400"></i> Sync iPhone Alarms (.ics)
+                <button onclick="shareViaWhatsApp()" class="px-5 py-3.5 rounded-2xl bg-[#25D366]/20 hover:bg-[#25D366]/30 border border-[#25D366]/50 text-[#25D366] font-bold text-xs sm:text-sm transition-all flex items-center gap-2 hover:scale-[1.02]">
+                  <i data-lucide="message-circle" class="w-4 h-4"></i> Share via WhatsApp
+                </button>
+                <button onclick="shareViaEmail()" class="px-5 py-3.5 rounded-2xl bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-500/50 text-cyan-300 font-bold text-xs sm:text-sm transition-all flex items-center gap-2 hover:scale-[1.02]">
+                  <i data-lucide="mail" class="w-4 h-4"></i> Send via Email
+                </button>
+                <button onclick="downloadCalendarFile()" class="px-5 py-3.5 rounded-2xl bg-zinc-800 hover:bg-zinc-700 border border-white/10 text-xs sm:text-sm font-semibold text-zinc-200 transition-all flex items-center gap-2">
+                  <i data-lucide="calendar" class="w-4 h-4 text-cyan-400"></i> Sync Alarms (.ics)
                 </button>
               </div>
             </div>
@@ -1041,6 +1134,83 @@ Respond ONLY with this raw JSON structure (no markdown fences):
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
+    }
+
+    // 1-Click WhatsApp Share
+    function shareViaWhatsApp() {
+      if (!currentScanData) {
+        alert("Please run a scan or load a stack first!");
+        return;
+      }
+      const clashes = (currentScanData.critical_clashes || [])
+        .map((c, i) => `${i+1}. *${c.compounds}*\n   ⚠️ Fix: ${c.fix}`)
+        .join('\n\n');
+      
+      const morning = (currentScanData.optimized_schedule?.morning || []).map(m => m.compound).join(', ') || 'None';
+      const midday = (currentScanData.optimized_schedule?.midday || []).map(m => m.compound).join(', ') || 'None';
+      const bedtime = (currentScanData.optimized_schedule?.bedtime || []).map(m => m.compound).join(', ') || 'None';
+
+      const text = 
+        `*CabinetScan AI — Clinical Supplement Audit (UNLOCKED)*\n\n` +
+        `🛡️ *Status:* Verified Pharmacological Dossier\n` +
+        `⚠️ *Severe Clashes Detected & Resolved:*\n${clashes}\n\n` +
+        `⏰ *Circadian Chrono-Schedule:*\n` +
+        `• 🌅 Morning (Fasted): ${morning}\n` +
+        `• ☀️ Midday (With Food): ${midday}\n` +
+        `• 🌙 Bedtime (Pre-Sleep): ${bedtime}\n\n` +
+        `📄 *Official Clinical Dossier (PDF Link):*\n` +
+        `https://federal216.github.io/cabinetscan/?unlocked=true\n\n` +
+        `_Encrypted Zero-Knowledge Clinical Audit Engine_`;
+
+      if (navigator.share) {
+        navigator.share({
+          title: 'CabinetScan AI — Master Clinical Dossier',
+          text: text,
+          url: 'https://federal216.github.io/cabinetscan/?unlocked=true'
+        }).catch(() => {
+          window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank');
+        });
+      } else {
+        window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank');
+      }
+    }
+
+    // 1-Click Email Share
+    function shareViaEmail() {
+      if (!currentScanData) {
+        alert("Please run a scan or load a stack first!");
+        return;
+      }
+      const clashes = (currentScanData.critical_clashes || [])
+        .map((c, i) => `${i+1}. ${c.compounds}\n   Clinical Impact: ${c.explanation}\n   Protocol Fix: ${c.fix}`)
+        .join('\n\n');
+
+      const morning = (currentScanData.optimized_schedule?.morning || []).map(m => `  • ${m.compound} (${m.dosage || ''}): ${m.instruction || ''}`).join('\n') || '  • None';
+      const midday = (currentScanData.optimized_schedule?.midday || []).map(m => `  • ${m.compound} (${m.dosage || ''}): ${m.instruction || ''}`).join('\n') || '  • None';
+      const bedtime = (currentScanData.optimized_schedule?.bedtime || []).map(m => `  • ${m.compound} (${m.dosage || ''}): ${m.instruction || ''}`).join('\n') || '  • None';
+
+      const subject = encodeURIComponent("CabinetScan AI — Master Clinical Supplement Dossier & Circadian Schedule");
+      const body = encodeURIComponent(
+        "Attached / linked below is my official CabinetScan AI Clinical Supplement Audit.\n\n" +
+        "====================================================\n" +
+        "1. PHARMACOKINETIC INTERACTION & ABSORPTION AUDIT\n" +
+        "====================================================\n\n" +
+        clashes + "\n\n" +
+        "====================================================\n" +
+        "2. THREE-WINDOW CIRCADIAN CHRONO-SCHEDULE\n" +
+        "====================================================\n\n" +
+        "🌅 MORNING (Fasted on Waking):\n" + morning + "\n\n" +
+        "☀️ MIDDAY (With Lunch & Dietary Fats):\n" + midday + "\n\n" +
+        "🌙 BEDTIME (GABAergic & Cellular Repair Window):\n" + bedtime + "\n\n" +
+        "====================================================\n" +
+        "3. ACCESS OFFICIAL MASTER PDF DOSSIER\n" +
+        "====================================================\n" +
+        "Access, print or download the full verified 10-page clinical dossier at:\n" +
+        "https://federal216.github.io/cabinetscan/?unlocked=true\n\n" +
+        "Zero-Knowledge Clinical Pharmacological Engine • CabinetScan AI"
+      );
+
+      window.location.href = `mailto:?subject=${subject}&body=${body}`;
     }
 
     // Copy Assistant WhatsApp Note
