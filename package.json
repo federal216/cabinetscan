@@ -1,0 +1,24 @@
+{
+  "name": "cabinetscan",
+  "version": "1.0.0",
+  "description": "CabinetScan AI — Autonomous Pill Cabinet & Biohack Stack Auditor using Vision AI",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "biohacking",
+    "vision-ai",
+    "supplements",
+    "gemini-vision",
+    "healthtech"
+  ],
+  "author": "Ibrahim (federal216)",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  }
+}
