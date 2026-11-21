@@ -1292,6 +1292,12 @@ Respond ONLY with this raw JSON structure (no markdown fences):
         if (typeof currentScanData !== 'undefined' && currentScanData) {
           renderResults(currentScanData);
         }
+      } else {
+        updateActionToolbar();
+        const chooseBtnText = document.getElementById('choose-photo-text');
+        if (chooseBtnText) {
+          chooseBtnText.innerText = "Choose Cabinet Photo";
+        }
       }
       lucide.createIcons();
     }
