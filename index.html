@@ -1150,6 +1150,10 @@ Respond ONLY with this raw JSON structure (no markdown fences):
     // Check customer payment status
     function isCustomerPaid() {
       const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('locked') === 'true' || urlParams.get('reset') === 'true') {
+        localStorage.removeItem('CABINETSCAN_PAID_CONFIRMED');
+        return false;
+      }
       if (urlParams.get('unlocked') === 'true' || urlParams.get('paid') === 'true' || urlParams.get('status') === 'success') {
         localStorage.setItem('CABINETSCAN_PAID_CONFIRMED', 'true');
         return true;
