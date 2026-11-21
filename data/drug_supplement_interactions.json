@@ -118,5 +118,29 @@
     "organ_impact": "Gastric irritation, unpredictable therapeutic onset",
     "wasted_monthly_usd": 85,
     "resolution_protocol": "Prefer sublingual or subcutaneous administration for longevity peptides. Take oral supplements with plenty of water at least 1 hour after waking."
+  },
+  {
+    "id": "clash-nac-copper",
+    "compound_a": "NAC (N-Acetyl Cysteine >1200mg)",
+    "compound_b": "Essential Trace Minerals (Zinc / Copper)",
+    "severity": "MODERATE",
+    "badge": "HEAVY CHELATION FLUSH",
+    "mechanism": "Thiol-group divalent mineral chelation",
+    "scientific_detail": "The free sulfhydryl (-SH) group of NAC is an effective chelator of transitional metals. Chronic high doses excrete essential zinc and copper in urine, provoking immune depletion.",
+    "organ_impact": "Subclinical trace mineral deficiency",
+    "wasted_monthly_usd": 25,
+    "resolution_protocol": "Separate NAC from trace mineral complexes by at least 2 hours. Cycle NAC 5 days on, 2 days off."
+  },
+  {
+    "id": "clash-melatonin-supra",
+    "compound_a": "Melatonin (>3mg - 10mg)",
+    "compound_b": "Continuous Nightly Usage",
+    "severity": "MODERATE",
+    "badge": "PINEAL DOWNREGULATION & MORNING GROGGINESS",
+    "mechanism": "Supraphysiological MT1/MT2 receptor saturation",
+    "scientific_detail": "Physiological pineal melatonin production is 0.1mg - 0.3mg. Doses of 3-10mg saturate receptors, prolong circadian phase delay, cause next-day REM suppression and impair glucose tolerance the following morning.",
+    "organ_impact": "Morning brain fog, next-day insulin resistance",
+    "wasted_monthly_usd": 20,
+    "resolution_protocol": "Switch to micro-dose 300mcg (0.3mg) or replace with Magnesium L-Threonate + Apigenin + L-Theanine."
   }
 ]
