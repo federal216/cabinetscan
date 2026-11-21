@@ -1,0 +1,74 @@
+[
+  {
+    "disease_condition": "Hypothyroidism / Hashimoto's Thyroiditis",
+    "icd10": "E03.9",
+    "contraindicated_supplements": ["Calcium Carbonate/Citrate", "Iron (Ferrous Sulfate)", "Soy Isoflavones", "High-Dose Kelp/Iodine (>500mcg)"],
+    "prescription_drugs_involved": ["Levothyroxine (Synthroid / Euthyrox)", "Liothyronine (T3)"],
+    "severity": "CRITICAL",
+    "clinical_mechanism": "Calcium and iron form insoluble chelation complexes with levothyroxine in the jejunum, reducing thyroid hormone absorption by up to 75% and triggering severe fatigue, hypothermia, and TSH spikes.",
+    "mandatory_rule": "Levothyroxine must be taken completely alone on waking with pure water. No calcium, iron, multivitamins, or espresso for minimum 4 hours."
+  },
+  {
+    "disease_condition": "Hypertension (High Blood Pressure) / Arterial Stiffness",
+    "icd10": "I10",
+    "contraindicated_supplements": ["Licorice Root (Glycyrrhizin)", "Yohimbine HCl", "Ephedra / Bitter Orange (Synephrine)", "High-Dose Ginseng"],
+    "prescription_drugs_involved": ["ACE Inhibitors (Ramipril, Lisinopril)", "ARBs (Losartan)", "Beta Blockers (Metoprolol)"],
+    "severity": "CRITICAL",
+    "clinical_mechanism": "Glycyrrhizin inhibits 11-beta-hydroxysteroid dehydrogenase type 2 (11-beta-HSD2), preventing renal cortisol degradation and activating mineralocorticoid receptors. This causes profound sodium retention, potassium wasting, and hypertensive crisis.",
+    "mandatory_rule": "Strictly eliminate all real licorice extracts and central nervous system stimulants from daily stack."
+  },
+  {
+    "disease_condition": "Atrial Fibrillation / Deep Vein Thrombosis (Anticoagulated Patients)",
+    "icd10": "I48.91",
+    "contraindicated_supplements": ["Vitamin K1 / K2 (if on Warfarin)", "High-Dose Ginkgo Biloba (>240mg)", "High-Dose Omega-3 (>4000mg)", "White Willow Bark"],
+    "prescription_drugs_involved": ["Warfarin (Coumadin)", "Apixaban (Eliquis)", "Rivaroxaban (Xarelto)", "Clopidogrel (Plavix)"],
+    "severity": "CRITICAL",
+    "clinical_mechanism": "Ginkgo ginkgolides possess potent platelet-activating factor (PAF) antagonistic properties. When combined with prescription anticoagulants or antiplatelet agents, they create synergistic hemostatic impairment, exponentially increasing the risk of spontaneous subdural hematoma or gastrointestinal hemorrhage.",
+    "mandatory_rule": "Limit Omega-3 to under 2000mg/day. Discontinue Ginkgo Biloba completely while on clinical anticoagulants."
+  },
+  {
+    "disease_condition": "Hyperuricemia / Clinical Gout",
+    "icd10": "M10.9",
+    "contraindicated_supplements": ["High-Dose Niacin (Vitamin B3 >500mg)", "Excessive Vitamin C (>2000mg rapid bolus)", "Inosine", "Brewer's Yeast"],
+    "prescription_drugs_involved": ["Allopurinol", "Febuxostat", "Colchicine"],
+    "severity": "MODERATE",
+    "clinical_mechanism": "Niacin competes with uric acid for renal tubular secretion via the URAT1 organic anion transporter, decreasing urinary uric acid clearance and provoking acute, excruciating podagra (gout flare) in joint synovium.",
+    "mandatory_rule": "Substitute flush-niacin with NMN or Nicotinamide Riboside (NR) if NAD+ boosting is required."
+  },
+  {
+    "disease_condition": "Chronic Kidney Disease (eGFR <60 mL/min) / Renal Insufficiency",
+    "icd10": "N18.9",
+    "contraindicated_supplements": ["High-Dose Potassium (>99mg)", "Magnesium Oxide (>500mg)", "Excessive Vitamin C (>1000mg/day)", "Creatine Monohydrate (>10g loading)"],
+    "prescription_drugs_involved": ["ACE Inhibitors", "Spironolactone", "ARBs"],
+    "severity": "CRITICAL",
+    "clinical_mechanism": "Impaired glomerular filtration fails to excrete potassium and magnesium efficiently. Supplemental potassium on top of ACE-inhibitor therapy precipitates life-threatening cardiac arrhythmias from hyperkalemia. Megadose Vitamin C metabolizes directly into insoluble calcium oxalate crystals in renal tubules.",
+    "mandatory_rule": "Never take standalone potassium or megadose magnesium without nephrologist-reviewed serum electrolyte panels."
+  },
+  {
+    "disease_condition": "GERD / Gastritis on Chronic PPI Therapy",
+    "icd10": "K21.9",
+    "contraindicated_supplements": ["Calcium Carbonate (Insoluble without acid)", "Unchelated Magnesium Oxide", "Standard Cyanocobalamin B12"],
+    "prescription_drugs_involved": ["Omeprazole", "Esomeprazole (Nexium)", "Pantoprazole"],
+    "severity": "MODERATE",
+    "clinical_mechanism": "Proton Pump Inhibitors elevate gastric pH above 4.5, abolishing the acid-dependent cleavage of Vitamin B12 from dietary haptocorrin and suppressing intestinal ionization of insoluble mineral carbonates.",
+    "mandatory_rule": "Must transition to Calcium Citrate (acid-independent absorption) and Sublingual Methylcobalamin B12."
+  },
+  {
+    "disease_condition": "ADHD / Narcolepsy on Dopaminergic Stimulants",
+    "icd10": "F90.9",
+    "contraindicated_supplements": ["High-Dose L-Tyrosine (>2000mg)", "Yohimbine", "High-Dose Caffeine (>300mg stack)", "Mucuna Pruriens (L-Dopa)"],
+    "prescription_drugs_involved": ["Methylphenidate (Ritalin/Concerta)", "Dextroamphetamine/Amphetamine (Adderall)", "Vyvanse"],
+    "severity": "CRITICAL",
+    "clinical_mechanism": "Prescription stimulants inhibit DAT/NET reuptake while L-Tyrosine and L-Dopa force vesicular dopamine synthesis. Concomitant use provokes extreme central adrenergic surge, severe resting tachycardia (>120 bpm), panic states, and dangerous systolic hypertension.",
+    "mandatory_rule": "Never stack dopaminergic amino acid precursors directly with prescription central stimulants."
+  },
+  {
+    "disease_condition": "Non-Alcoholic Fatty Liver Disease (NAFLD) / Elevated Liver Transaminases",
+    "icd10": "K76.0",
+    "contraindicated_supplements": ["Synthetic Vitamin A (Retinyl Palmitate >10,000 IU)", "Uncycled KSM-66 Ashwagandha", "Green Tea Extract (EGCG >800mg fasted)", "Usnic Acid"],
+    "prescription_drugs_involved": ["Statins", "Metformin"],
+    "severity": "CRITICAL",
+    "clinical_mechanism": "Fasted concentrated EGCG and mega-dose synthetic Vitamin A saturate hepatic cytochrome enzymes and stellate cells, precipitating mitochondrial oxidative stress and acute drug-induced liver injury (DILI).",
+    "mandatory_rule": "Take green tea extract only with whole-food meals and cap EGCG at 300mg. Replace Vitamin A with beta-carotene."
+  }
+]

@@ -6,9 +6,8 @@
     "timing_instruction": "Fasted upon waking (07:00 - 08:30) for SIRT1 and NAMPT circadian peak",
     "with_food": false,
     "half_life_hours": 0.5,
-    "optimal_form": "Sublingual powder or enteric-coated liposomal",
-    "target_pathway": "Cellular NAD+ biosynthesis, DNA repair via PARP1",
-    "key_warning": "Take with Methylated Folate/B12 (TMG) to prevent methyl pool depletion"
+    "target_pathway": "Cellular NAD+ biosynthesis, PARP1 DNA repair",
+    "key_warning": "Take with TMG (Trimethylglycine) to prevent methyl pool depletion"
   },
   {
     "name": "Magnesium Glycinate",
@@ -17,9 +16,18 @@
     "timing_instruction": "30-45 minutes before sleep (21:30 - 22:30)",
     "with_food": false,
     "half_life_hours": 24.0,
-    "optimal_form": "Bisglycinate chelate (avoids laxative effect of oxide)",
-    "target_pathway": "GABA-A receptor agonism, NMDA receptor blockade, muscle relaxation",
+    "target_pathway": "GABA-A receptor agonism, NMDA receptor blockade",
     "key_warning": "Never co-administer with Calcium or high-dose Zinc"
+  },
+  {
+    "name": "Magnesium L-Threonate (Magtein)",
+    "category": "Brain-Penetrating Mineral / Nootropic",
+    "optimal_window": "bedtime",
+    "timing_instruction": "1 hour before sleep (crosses blood-brain barrier)",
+    "with_food": false,
+    "half_life_hours": 12.0,
+    "target_pathway": "Synaptic plasticity, hippocampal density, deep slow-wave sleep",
+    "key_warning": "Does not replace systemic magnesium needs for muscle cramps"
   },
   {
     "name": "Vitamin D3 (Cholecalciferol)",
@@ -28,9 +36,8 @@
     "timing_instruction": "Consume with the highest-fat meal of the day (12:30 - 13:30)",
     "with_food": true,
     "half_life_hours": 360.0,
-    "optimal_form": "Liquid softgels suspended in olive or MCT oil",
-    "target_pathway": "Nuclear VDR transcription, immune modulation, genomic bone mineral regulation",
-    "key_warning": "Mandatory co-administration with Vitamin K2 (MK-7) to direct calcium into bones instead of arteries"
+    "target_pathway": "Nuclear VDR transcription, immune cell gene regulation",
+    "key_warning": "Mandatory co-administration with Vitamin K2 (MK-7) to prevent vascular calcification"
   },
   {
     "name": "Vitamin K2 (Menaquinone-7 / MK-7)",
@@ -39,40 +46,36 @@
     "timing_instruction": "With midday meal alongside Vitamin D3 and dietary fats",
     "with_food": true,
     "half_life_hours": 72.0,
-    "optimal_form": "Trans-MK7 (all-trans isomeric purity)",
     "target_pathway": "Carboxylation of Osteocalcin and Matrix Gla Protein (MGP)",
-    "key_warning": "Contraindicated with Warfarin / Coumadin vitamin K antagonists"
+    "key_warning": "Strictly contraindicated with Warfarin / Coumadin"
   },
   {
     "name": "Omega-3 (EPA / DHA)",
     "category": "Essential Fatty Acid",
     "optimal_window": "midday",
-    "timing_instruction": "With meals to prevent lipid oxidation and fishy reflux",
+    "timing_instruction": "With meals to prevent lipid oxidation and reflux",
     "with_food": true,
     "half_life_hours": 48.0,
-    "optimal_form": "Re-esterified Triglyceride (rTG) form (70% higher bioavailability than ethyl esters)",
-    "target_pathway": "Cell membrane fluidity, resolvins and protectins anti-inflammatory cascade",
-    "key_warning": "High doses (>3g) exert anti-platelet blood thinning effects"
+    "target_pathway": "Cell membrane fluidity, resolvins/protectins anti-inflammatory cascade",
+    "key_warning": "High doses (>3g) exert additive anti-platelet blood thinning effects"
   },
   {
     "name": "Ashwagandha (KSM-66 / Sensoril)",
     "category": "Adaptogen / Cortisol Modulator",
     "optimal_window": "evening",
-    "timing_instruction": "Early evening (18:00 - 19:30). Must cycle 6 weeks on, 2 weeks off",
+    "timing_instruction": "Early evening (18:00 - 19:30). Cycle 6 weeks on, 2 weeks off",
     "with_food": true,
     "half_life_hours": 8.0,
-    "optimal_form": "Standardized root extract (5% withanolides)",
-    "target_pathway": "HPA-axis regulation, serum cortisol reduction",
-    "key_warning": "Do not take continuously without washout intervals; risk of liver enzyme spike and emotional blunting"
+    "target_pathway": "HPA-axis modulation, serum cortisol suppression",
+    "key_warning": "Risk of thyroid stimulation (TSH drop), liver enzyme elevation, and emotional anhedonia if uncycled"
   },
   {
     "name": "L-Theanine",
     "category": "Amino Acid / Nootropic",
     "optimal_window": "morning_or_bedtime",
-    "timing_instruction": "Morning with caffeine (1:2 ratio) or bedtime for slow-wave sleep promotion",
+    "timing_instruction": "Morning with espresso (1:2 ratio) or bedtime for slow-wave sleep",
     "with_food": false,
     "half_life_hours": 1.2,
-    "optimal_form": "Suntheanine (pure L-isomer)",
     "target_pathway": "Glutamate receptor antagonism, cortical alpha-wave generation",
     "key_warning": "Extremely safe with high therapeutic index"
   },
@@ -83,52 +86,117 @@
     "timing_instruction": "15-20 minutes before high-carbohydrate meals (500mg)",
     "with_food": true,
     "half_life_hours": 4.0,
-    "optimal_form": "Dihydroberberine or Phytosome (5x higher intestinal absorption)",
-    "target_pathway": "Mitochondrial Complex I mild inhibition, AMPK phosphorylation, GLUT4 translocation",
+    "target_pathway": "Mitochondrial Complex I mild inhibition, AMPK phosphorylation",
     "key_warning": "Do not combine with Metformin; inhibits CYP3A4 and CYP2D6"
   },
   {
     "name": "Creatine Monohydrate",
     "category": "Cellular Bioenergetics / Nootropic",
     "optimal_window": "morning",
-    "timing_instruction": "Consistent daily dose (5g) with carbohydrate/protein shake for insulin-mediated muscle uptake",
+    "timing_instruction": "Daily 5g with carbohydrate/protein for insulin-mediated muscle/brain uptake",
     "with_food": true,
     "half_life_hours": 3.0,
-    "optimal_form": "Creapure (ultra-pure micronized monohydrate)",
-    "target_pathway": "Phosphocreatine shuttle, rapid cellular ATP resynthesis in brain and skeletal muscle",
+    "target_pathway": "Phosphocreatine shuttle, rapid cellular ATP resynthesis",
     "key_warning": "Raises serum creatinine harmlessly (does not reflect true kidney injury; verify via Cystatin-C)"
   },
   {
     "name": "BPC-157 (Body Protection Compound)",
     "category": "Regenerative Peptide",
     "optimal_window": "morning",
-    "timing_instruction": "Fasted 250mcg - 500mcg (Oral arginate salt for gut; SubQ for systemic tendon repair)",
+    "timing_instruction": "Fasted 250mcg - 500mcg (Oral arginate for gut lining; SubQ for systemic tendon repair)",
     "with_food": false,
     "half_life_hours": 4.0,
-    "optimal_form": "Stable Arginate Salt (gastric juice resistant)",
-    "target_pathway": "VEGF upregulation, FAK-paxillin angiogenesis pathway, eNOS stimulation",
+    "target_pathway": "VEGF upregulation, FAK-paxillin angiogenesis, eNOS stimulation",
     "key_warning": "High theoretical angiogenesis rate; avoid in active malignancy"
   },
   {
-    "name": "Zinc (Picolinate / Bisglycinate)",
-    "category": "Essential Trace Mineral",
+    "name": "CoQ10 (Ubiquinol)",
+    "category": "Mitochondrial Electron Carrier",
     "optimal_window": "midday",
-    "timing_instruction": "With light food (15-30mg) to prevent gastric mucosal nausea",
+    "timing_instruction": "100-200mg with midday meal containing dietary lipids",
     "with_food": true,
-    "half_life_hours": 280.0,
-    "optimal_form": "Zinc Bisglycinate or Picolinate",
-    "target_pathway": "Thymulin activation, testosterone synthesis, superoxide dismutase (SOD)",
-    "key_warning": "Doses >30mg/day must be balanced with 2mg Copper to prevent neutropenia"
+    "half_life_hours": 33.0,
+    "target_pathway": "Mitochondrial electron transport chain (Complex I/II to III), lipid antioxidant",
+    "key_warning": "Essential if taking Statins (statins block the mevalonate pathway synthesizing natural CoQ10)"
   },
   {
-    "name": "Semaglutide / Tirzepatide (GLP-1/GIP)",
-    "category": "Incretin Receptor Agonist",
+    "name": "NAC (N-Acetyl Cysteine)",
+    "category": "Glutathione Precursor / Mucolytic",
     "optimal_window": "morning",
-    "timing_instruction": "Subcutaneous injection once weekly on fixed schedule",
+    "timing_instruction": "Fasted with water (600mg - 1200mg). Do not take within 2 hours of alcohol",
+    "with_food": false,
+    "half_life_hours": 5.6,
+    "target_pathway": "Cysteine rate-limiting step in intracellular GSH synthesis",
+    "key_warning": "Chelates essential zinc and copper; must separate from trace minerals by 2 hours"
+  },
+  {
+    "name": "Tongkat Ali (Eurycoma Longifolia)",
+    "category": "Endocrine Optimizer",
+    "optimal_window": "morning",
+    "timing_instruction": "Morning with food (200-400mg standardized eurycomanone). Cycle 5 days on, 2 days off",
+    "with_food": true,
+    "half_life_hours": 6.0,
+    "target_pathway": "Displaces bound testosterone from SHBG, stimulates luteinizing hormone (LH)",
+    "key_warning": "Can cause insomnia if taken late in day; check liver enzymes quarterly"
+  },
+  {
+    "name": "Alpha-GPC (L-Alpha glycerylphosphorylcholine)",
+    "category": "Cholinergic Nootropic",
+    "optimal_window": "morning",
+    "timing_instruction": "300-600mg before cognitive work",
+    "with_food": false,
+    "half_life_hours": 1.5,
+    "target_pathway": "Crosses BBB, synthesizes Acetylcholine and membrane phosphatidylcholine",
+    "key_warning": "Chronic daily high doses convert to TMAO via gut bacteria; pair with garlic extract / allicin"
+  },
+  {
+    "name": "Apigenin",
+    "category": "Flavonoid / CD38 Inhibitor & Sleep Aid",
+    "optimal_window": "bedtime",
+    "timing_instruction": "50mg 1 hour before sleep",
+    "with_food": false,
+    "half_life_hours": 12.0,
+    "target_pathway": "Inhibits CD38 enzyme to preserve cellular NAD+; acts as positive allosteric GABA-A modulator",
+    "key_warning": "Mild estrogen receptor modulator at supra-physiological doses"
+  },
+  {
+    "name": "Semaglutide / Tirzepatide (GLP-1 Agonist)",
+    "category": "Incretin Receptor Agonist / Weight Optimization",
+    "optimal_window": "morning",
+    "timing_instruction": "Subcutaneous injection once weekly on fixed day",
     "with_food": false,
     "half_life_hours": 168.0,
-    "optimal_form": "Subcutaneous injectable pen",
-    "target_pathway": "Central appetite suppression, delayed gastric emptying, beta-cell insulin secretion",
-    "key_warning": "Delay all oral capsule absorption; hydrate aggressively to prevent acute renal injury"
+    "target_pathway": "GLP-1R / GIPR central appetite suppression, decelerated gastric emptying",
+    "key_warning": "Delays absorption of all co-administered oral medications by 2-4 hours; hydrate aggressively"
+  },
+  {
+    "name": "Levothyroxine (Synthroid / Euthyrox)",
+    "category": "Prescription Thyroid Hormone",
+    "optimal_window": "morning",
+    "timing_instruction": "STRICTLY fasted upon waking with water. Zero food, coffee, or pills for 60 minutes",
+    "with_food": false,
+    "half_life_hours": 168.0,
+    "target_pathway": "Converts to active T3 via peripheral deiodinase, regulates basal metabolic rate",
+    "key_warning": "Completely inactivated by co-administered Calcium, Iron, Soy, or espresso"
+  },
+  {
+    "name": "Omeprazole / Pantoprazole (PPI)",
+    "category": "Prescription Gastric Acid Suppressor",
+    "optimal_window": "morning",
+    "timing_instruction": "30-60 minutes before the first meal of the day",
+    "with_food": false,
+    "half_life_hours": 1.0,
+    "target_pathway": "Irreversible inhibition of H+/K+ ATPase enzyme in gastric parietal cells",
+    "key_warning": "Chronic use causes severe hypomagnesemia and B12 deficiency due to hypochlorhydria"
+  },
+  {
+    "name": "Atorvastatin (Lipitor)",
+    "category": "Prescription HMG-CoA Reductase Inhibitor",
+    "optimal_window": "bedtime",
+    "timing_instruction": "Nightly before sleep (peak hepatic cholesterol synthesis occurs nocturnally)",
+    "with_food": false,
+    "half_life_hours": 14.0,
+    "target_pathway": "HMG-CoA reductase blockade, dramatic LDL receptor upregulation",
+    "key_warning": "Depletes endogenous CoQ10 (take Ubiquinol); strictly avoid grapefruit furanocoumarins"
   }
 ]

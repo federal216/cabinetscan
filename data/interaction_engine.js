@@ -4,22 +4,25 @@
  */
 
 class InteractionEngine {
-  constructor(clashDatabase, compoundsDatabase) {
+  constructor(clashDatabase, compoundsDatabase, diseaseDatabase) {
     this.clashes = clashDatabase || [];
     this.compounds = compoundsDatabase || [];
+    this.diseases = diseaseDatabase || [];
   }
 
   /**
    * Evaluates an array of detected bottle/compound names
    * @param {Array<string>} detectedNames 
+   * @param {Array<string>} knownConditions (Optional)
    * @returns {Object} Comprehensive clash report and chrono-schedule
    */
-  auditStack(detectedNames) {
+  auditStack(detectedNames, knownConditions = []) {
     const normalizedDetected = detectedNames.map(n => n.toLowerCase());
     const matchedClashes = [];
+    const diseaseWarnings = [];
     let totalWastedUsd = 0;
 
-    // 1. Identify Conflicts
+    // 1. Identify Drug-Supplement Clashes
     this.clashes.forEach(clash => {
       const matchA = normalizedDetected.some(d => this.isMatch(d, clash.compound_a));
       const matchB = normalizedDetected.some(d => this.isMatch(d, clash.compound_b));
@@ -38,7 +41,30 @@ class InteractionEngine {
       }
     });
 
-    // 2. Synthesize Circadian Chrono-Protocol
+    // 2. Identify Disease & Prescription Drug Contraindications
+    this.diseases.forEach(d => {
+      // Check if prescription drug for this disease is on the shelf
+      const hasPrescription = d.prescription_drugs_involved.some(rx => 
+        normalizedDetected.some(det => this.isMatch(det, rx))
+      );
+      
+      // Check if contraindicated supplement is on shelf
+      const offendingSupplements = d.contraindicated_supplements.filter(supp =>
+        normalizedDetected.some(det => this.isMatch(det, supp))
+      );
+
+      if ((hasPrescription || knownConditions.includes(d.disease_condition)) && offendingSupplements.length > 0) {
+        diseaseWarnings.push({
+          condition: d.disease_condition,
+          severity: d.severity,
+          offending_supplements: offendingSupplements.join(', '),
+          mechanism: d.clinical_mechanism,
+          mandatory_rule: d.mandatory_rule
+        });
+      }
+    });
+
+    // 3. Synthesize Circadian Chrono-Protocol
     const schedule = { morning: [], midday: [], bedtime: [] };
 
     normalizedDetected.forEach(name => {
