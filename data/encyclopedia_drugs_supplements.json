@@ -1,0 +1,287 @@
+[
+  {
+    "name": "Amlodipine (Norvasc)",
+    "category": "Dihydropyridine Calcium Channel Blocker",
+    "primary_indication": "Hypertension / Angina",
+    "cyp_metabolism": [
+      "CYP3A4 substrate"
+    ],
+    "critical_contraindications": [
+      "Grapefruit / Naringin (Severe hypotensive collapse)",
+      "St. John's Wort (Loss of therapeutic effect)"
+    ],
+    "timing_rule": "Morning or bedtime consistently. Avoid high-dose potassium without monitoring.",
+    "half_life_hours": 40.0
+  },
+  {
+    "name": "Metoprolol (Lopressor / Toprol-XL)",
+    "category": "Selective Beta-1 Adrenergic Receptor Blocker",
+    "primary_indication": "Hypertension / Tachycardia / Post-MI",
+    "cyp_metabolism": [
+      "CYP2D6 substrate"
+    ],
+    "critical_contraindications": [
+      "Yohimbine",
+      "High-dose Ephedrine / Synephrine (Paradoxical severe hypertension)",
+      "Berberine (Additive bradycardia)"
+    ],
+    "timing_rule": "Take with or immediately following meals. Do not abruptly discontinue.",
+    "half_life_hours": 7.0
+  },
+  {
+    "name": "Ramipril / Lisinopril",
+    "category": "ACE (Angiotensin-Converting Enzyme) Inhibitor",
+    "primary_indication": "Hypertension / Heart Failure / Diabetic Nephropathy",
+    "cyp_metabolism": [
+      "Hepatic esterase cleavage to Ramiprilat"
+    ],
+    "critical_contraindications": [
+      "Potassium supplements (>99mg)",
+      "Salt substitutes (Potassium chloride)",
+      "High-dose NSAIDs (Acute renal failure)"
+    ],
+    "timing_rule": "Bedtime or morning. Avoid co-administering with acute high-dose potassium.",
+    "half_life_hours": 15.0
+  },
+  {
+    "name": "Atorvastatin (Lipitor) / Rosuvastatin (Crestor)",
+    "category": "HMG-CoA Reductase Inhibitor",
+    "primary_indication": "Atherosclerotic Cardiovascular Disease / ApoB Reduction",
+    "cyp_metabolism": [
+      "CYP3A4 (Atorvastatin)",
+      "CYP2C9 (Rosuvastatin)"
+    ],
+    "critical_contraindications": [
+      "Grapefruit Extract",
+      "Red Yeast Rice (Duplicate statin toxicity)",
+      "Niacin (>1000mg risks rhabdomyolysis)"
+    ],
+    "timing_rule": "Bedtime. Mandatory co-administration with CoQ10 (Ubiquinol 100-200mg) to prevent statin-induced myopathy.",
+    "half_life_hours": 14.0
+  },
+  {
+    "name": "Warfarin (Coumadin) / Apixaban (Eliquis)",
+    "category": "Anticoagulant (Vitamin K Antagonist / Factor Xa Inhibitor)",
+    "primary_indication": "Atrial Fibrillation / Stroke Prevention / DVT",
+    "cyp_metabolism": [
+      "CYP2C9 / CYP3A4"
+    ],
+    "critical_contraindications": [
+      "Vitamin K1 & K2 (Reverses Warfarin)",
+      "High-dose Ginkgo Biloba",
+      "High-dose Omega-3 (>3000mg)",
+      "White Willow Bark"
+    ],
+    "timing_rule": "Fixed evening timing. Never consume variable amounts of Vitamin K without INR tracking.",
+    "half_life_hours": 40.0
+  },
+  {
+    "name": "Metformin HCl (Glucophage)",
+    "category": "Biguanide / AMPK Activator",
+    "primary_indication": "Type 2 Diabetes / Longevity / Insulin Resistance",
+    "cyp_metabolism": [
+      "OCT1 / OCT2 renal excretion (No CYP)"
+    ],
+    "critical_contraindications": [
+      "Berberine (Additive Complex-I inhibition risks lactic acidosis)",
+      "Excessive alcohol consumption"
+    ],
+    "timing_rule": "With evening meal. Must supplement Methylated B12 (Metformin blocks intestinal B12 absorption).",
+    "half_life_hours": 6.2
+  },
+  {
+    "name": "Semaglutide / Tirzepatide (Ozempic / Wegovy / Mounjaro)",
+    "category": "GLP-1 / GIP Dual Incretin Receptor Agonist",
+    "primary_indication": "Metabolic Optimization / Obesity / HbA1c Reduction",
+    "cyp_metabolism": [
+      "Proteolytic cleavage"
+    ],
+    "critical_contraindications": [
+      "Oral extended-release capsules (Delayed gastric transit risks erratic dissolution)",
+      "Dehydration / NSAIDs"
+    ],
+    "timing_rule": "SubQ once weekly. Separate oral morning pills with 400ml water to ensure transit through delayed pylorus.",
+    "half_life_hours": 168.0
+  },
+  {
+    "name": "Levothyroxine (Euthyrox / Synthroid)",
+    "category": "Synthetic L-Thyroxine (T4)",
+    "primary_indication": "Primary Hypothyroidism / Hashimoto's Disease",
+    "cyp_metabolism": [
+      "Peripheral 5'-deiodination to active T3"
+    ],
+    "critical_contraindications": [
+      "Calcium Carbonate/Citrate",
+      "Iron supplements",
+      "Soy isoflavones",
+      "Espresso / Coffee (within 60 mins)"
+    ],
+    "timing_rule": "Strictly fasted upon waking with water. Zero food, coffee, or other supplements for 60 minutes.",
+    "half_life_hours": 168.0
+  },
+  {
+    "name": "Omeprazole / Pantoprazole / Esomeprazole",
+    "category": "Proton Pump Inhibitor (PPI)",
+    "primary_indication": "GERD / Peptic Ulcer Disease / Barrett's Esophagus",
+    "cyp_metabolism": [
+      "CYP2C19 / CYP3A4"
+    ],
+    "critical_contraindications": [
+      "Insoluble Calcium Carbonate (Requires acid)",
+      "Magnesium Oxide (PPI causes severe hypomagnesemia)"
+    ],
+    "timing_rule": "30-60 minutes before breakfast. Must switch to chelated Magnesium Bisglycinate and Calcium Citrate.",
+    "half_life_hours": 1.0
+  },
+  {
+    "name": "Sertraline (Zoloft) / Escitalopram (Lexapro)",
+    "category": "SSRI (Selective Serotonin Reuptake Inhibitor)",
+    "primary_indication": "Major Depressive Disorder / Generalized Anxiety",
+    "cyp_metabolism": [
+      "CYP2C19 / CYP2D6 / CYP3A4"
+    ],
+    "critical_contraindications": [
+      "5-HTP (5-Hydroxytryptophan)",
+      "St. John's Wort",
+      "L-Tryptophan megadose (Life-threatening Serotonin Syndrome)"
+    ],
+    "timing_rule": "Morning with breakfast (prevents nocturnal insomnia).",
+    "half_life_hours": 26.0
+  },
+  {
+    "name": "Bupropion (Wellbutrin XL)",
+    "category": "NDRI (Norepinephrine-Dopamine Reuptake Inhibitor)",
+    "primary_indication": "Depression / ADHD / Nicotine Dependence",
+    "cyp_metabolism": [
+      "CYP2B6 inhibitor and substrate"
+    ],
+    "critical_contraindications": [
+      "High-dose Yohimbine",
+      "Excessive Caffeine (>400mg)",
+      "DMAA / Stimulant pre-workouts (Lowers seizure threshold)"
+    ],
+    "timing_rule": "Early morning upon waking. Avoid taking past 12:00 PM to protect sleep architecture.",
+    "half_life_hours": 21.0
+  },
+  {
+    "name": "Methylphenidate (Ritalin / Concerta) / Adderall",
+    "category": "Central Nervous System Dopamine/Norepinephrine Stimulant",
+    "primary_indication": "ADHD / Narcolepsy / Cognitive Focus",
+    "cyp_metabolism": [
+      "CES1 hydrolysis / CYP2D6"
+    ],
+    "critical_contraindications": [
+      "High-dose L-Tyrosine (>1500mg)",
+      "Synephrine",
+      "Yohimbine (Extreme adrenergic tachycardia and hypertension)"
+    ],
+    "timing_rule": "Morning with protein-rich breakfast. Take Vitamin C at night to acidify urine and clear residual amphetamines.",
+    "half_life_hours": 4.0
+  },
+  {
+    "name": "BPC-157 (Body Protection Compound)",
+    "category": "Stable Gastric Pentadecapeptide",
+    "primary_indication": "Tendon, Ligament, Muscle and Gut Mucosal Repair",
+    "cyp_metabolism": [
+      "Enzymatic peptide degradation"
+    ],
+    "critical_contraindications": [
+      "Active systemic malignancy (Theoretically upregulates VEGF angiogenesis)"
+    ],
+    "timing_rule": "Fasted 250-500mcg. Oral arginate for intestine; Subcutaneous for joint/tendon.",
+    "half_life_hours": 4.0
+  },
+  {
+    "name": "TB-500 (Thymosin Beta-4 Fragment)",
+    "category": "Actin-Sequestering Regenerative Peptide",
+    "primary_indication": "Systemic Tissue Regeneration / Flexibility / Cardiac Tissue Repair",
+    "cyp_metabolism": [
+      "Proteolytic cleavage"
+    ],
+    "critical_contraindications": [
+      "Active oncologic processes"
+    ],
+    "timing_rule": "SubQ 2.5mg - 5mg twice weekly during repair phase.",
+    "half_life_hours": 24.0
+  },
+  {
+    "name": "Epithalon (Epithalamin Tetra-peptide)",
+    "category": "Pineal Telomerase Bioregulator",
+    "primary_indication": "Biological Telomere Extension / Circadian Resynchronization",
+    "cyp_metabolism": [
+      "Direct peptidase cleavage"
+    ],
+    "critical_contraindications": [
+      "Continuous uncycled usage (Must cycle 10-20 days twice annually)"
+    ],
+    "timing_rule": "Morning or early afternoon SubQ 5mg-10mg for 10-day cycles.",
+    "half_life_hours": 1.0
+  },
+  {
+    "name": "CJC-1295 + Ipamorelin",
+    "category": "GHRH Analog + Selective Ghrelin Receptor Agonist",
+    "primary_indication": "Growth Hormone Secretion / Deep Sleep / Lean Mass",
+    "cyp_metabolism": [
+      "Renal clearance and peptide breakdown"
+    ],
+    "critical_contraindications": [
+      "Post-prandial intake (Elevated blood glucose completely blunts GH pulse)"
+    ],
+    "timing_rule": "Strictly 2-3 hours after last meal, immediately prior to bedtime.",
+    "half_life_hours": 2.0
+  },
+  {
+    "name": "NMN / NR (Nicotinamide Mononucleotide / Riboside)",
+    "category": "Cellular NAD+ Direct Precursor",
+    "primary_indication": "SIRT1/SIRT3 Activation / DNA Repair / Mitochondrial ATP",
+    "cyp_metabolism": [
+      "NNMT hepatic methylation"
+    ],
+    "critical_contraindications": [
+      "Taking without Methyl donors (TMG/Betaine) in MTHFR slow metabolizers"
+    ],
+    "timing_rule": "Fasted upon waking (07:00 - 08:30) synchronized with peak NAMPT gene expression.",
+    "half_life_hours": 0.5
+  },
+  {
+    "name": "Berberine Phytosome (Dihydroberberine)",
+    "category": "AMPK Phosphorylation & Metabolic Optimizer",
+    "primary_indication": "Post-prandial Glucose Blunting / Lipid Profile / Longevity",
+    "cyp_metabolism": [
+      "CYP3A4 / CYP2D6 inhibitor"
+    ],
+    "critical_contraindications": [
+      "Metformin",
+      "Statins (due to CYP3A4 clearance inhibition)"
+    ],
+    "timing_rule": "15-20 minutes prior to the largest carbohydrate-containing meal.",
+    "half_life_hours": 4.0
+  },
+  {
+    "name": "Magnesium L-Threonate (Magtein)",
+    "category": "Brain Blood-Brain-Barrier Crossing Magnesium",
+    "primary_indication": "Synaptic Density / Neuroplasticity / Deep Stage 4 Sleep",
+    "cyp_metabolism": [
+      "Renal filtration"
+    ],
+    "critical_contraindications": [
+      "Simultaneous Calcium intake (Competes for DMT1 carrier)"
+    ],
+    "timing_rule": "1-2 capsules in afternoon, 1 capsule 45 minutes before sleep.",
+    "half_life_hours": 12.0
+  },
+  {
+    "name": "Vitamin D3 (Cholecalciferol) + K2 (MK-7)",
+    "category": "Essential Fat-Soluble Secosteroid & Quinone",
+    "primary_indication": "Immune Cell Modulation / Bone Density / Cardiovascular Health",
+    "cyp_metabolism": [
+      "Hepatic 25-hydroxylase, Renal 1-alpha-hydroxylase"
+    ],
+    "critical_contraindications": [
+      "Fasted intake (Zero absorption)",
+      "Warfarin (MK-7 is contraindicated)"
+    ],
+    "timing_rule": "Midday with a meal containing at least 15g healthy fats (avocado, eggs, olive oil).",
+    "half_life_hours": 360.0
+  }
+]

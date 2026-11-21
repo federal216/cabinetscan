@@ -366,19 +366,35 @@
       <!-- One-Time $99 Unlock Callout Banner -->
       <div id="paywall-banner" class="rounded-2xl bg-gradient-to-r from-emerald-500/10 via-teal-500/10 to-cyan-500/10 border border-emerald-500/30 p-8 text-center">
         <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 font-mono text-xs font-bold mb-3">
-          <i data-lucide="lock" class="w-3.5 h-3.5"></i>
-          ONE-TIME PAYMENT • SECURED BY WHOP & APPLE PAY
+          <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+          ONE-TIME PAYMENT • 1-TAP APPLE PAY & GOOGLE PAY ENABLED
         </div>
         <h3 class="text-2xl font-extrabold text-white mb-2">Unlock The Master Clinical Dossier — $99</h3>
         <p class="text-xs text-zinc-300 max-w-lg mx-auto mb-6 leading-relaxed">
           One payment. Zero recurring charges. Instantly download your full 10-page molecular report, sync all alarms to your iPhone/Apple Watch, and eliminate $1,700+/year in wasted absorption errors.
         </p>
+
+        <!-- Apple Pay & Google Pay Supported Badges -->
+        <div class="flex items-center justify-center gap-3 mb-6">
+          <div class="px-3 py-1.5 rounded-lg bg-black border border-white/15 flex items-center gap-1.5 text-xs font-semibold text-white">
+            <svg class="w-4 h-4 fill-white" viewBox="0 0 170 170"><path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.69-3.08-7.73-7.98-12.14-14.7-5.26-7.85-9.36-16.7-12.3-26.54-3.59-12.18-5.38-23.77-5.38-34.78 0-14.24 3.59-26.17 10.78-35.8 7.18-9.63 16.3-14.45 27.35-14.45 4.8 0 10.02 1.34 15.67 4.02 5.66 2.68 9.53 4.02 11.62 4.02 1.9 0 5.86-1.34 11.87-4.02 6.01-2.68 11.13-3.9 15.36-3.69 11.62.67 20.9 4.91 27.84 12.74-9.84 5.92-14.65 14.2-14.42 24.83.22 8.27 3.35 15.3 9.4 21.09 6.04 5.8 13.2 9.04 21.46 9.72-2.12 6.7-4.69 13.4-7.7 20.08zM119.22 31.86c0-7.04 2.57-13.73 7.71-20.08 5.14-6.37 11.62-10.49 19.46-12.37 1.01 7.26-1.23 14.19-6.71 20.78-5.48 6.6-11.96 10.51-19.46 11.67-.34-.56-.67-1.12-1-1.68z"/></svg>
+            <span>Apple Pay</span>
+          </div>
+          <div class="px-3 py-1.5 rounded-lg bg-zinc-900 border border-white/15 flex items-center gap-1.5 text-xs font-semibold text-white">
+            <svg class="w-4 h-4" viewBox="0 0 40 40"><path fill="#4285F4" d="M39.2 20.4c0-1.4-.1-2.8-.4-4.2H20v7.9h10.8c-.5 2.5-1.9 4.7-4 6.2v5.1h6.5c3.8-3.5 6-8.7 6-15z"/><path fill="#34A853" d="M20 40c5.4 0 9.9-1.8 13.2-4.9l-6.5-5.1c-1.8 1.2-4.1 2-6.7 2-5.1 0-9.5-3.5-11.1-8.2H2.1v5.3C5.5 35.8 12.2 40 20 40z"/><path fill="#FBBC05" d="M8.9 23.8c-.4-1.2-.6-2.5-.6-3.8s.2-2.6.6-3.8V10.9H2.1C.8 13.5 0 16.6 0 20s.8 6.5 2.1 9.1l6.8-5.3z"/><path fill="#EA4335" d="M20 7.9c2.9 0 5.6 1 7.7 3l5.8-5.8C29.9 1.9 25.4 0 20 0 12.2 0 5.5 4.2 2.1 10.9l6.8 5.3c1.6-4.7 6-8.3 11.1-8.3z"/></svg>
+            <span>Google Pay</span>
+          </div>
+          <div class="px-3 py-1.5 rounded-lg bg-zinc-900 border border-white/15 text-xs font-semibold text-zinc-300">
+            <span>Credit Card / 1-Tap</span>
+          </div>
+        </div>
+
         <div class="flex flex-wrap items-center justify-center gap-4">
-          <a href="https://whop.com/cabinetscan-ai/cabinetscan-ai-supplement-analyzer" target="_blank" onclick="handleWhopCheckout()" class="px-8 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold text-xs shadow-xl shadow-emerald-500/30 transition-all flex items-center gap-2">
-            <i data-lucide="shield-check" class="w-4 h-4"></i>
-            Unlock Master Dossier Now ($99) &rarr;
+          <a href="https://whop.com/cabinetscan-ai/cabinetscan-ai-supplement-analyzer" target="_blank" rel="noopener noreferrer" onclick="handleWhopCheckout()" class="px-8 py-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold text-xs shadow-2xl shadow-emerald-500/40 hover:scale-[1.02] transition-all flex items-center gap-2">
+            <svg class="w-4 h-4 fill-black" viewBox="0 0 170 170"><path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.69-3.08-7.73-7.98-12.14-14.7-5.26-7.85-9.36-16.7-12.3-26.54-3.59-12.18-5.38-23.77-5.38-34.78 0-14.24 3.59-26.17 10.78-35.8 7.18-9.63 16.3-14.45 27.35-14.45 4.8 0 10.02 1.34 15.67 4.02 5.66 2.68 9.53 4.02 11.62 4.02 1.9 0 5.86-1.34 11.87-4.02 6.01-2.68 11.13-3.9 15.36-3.69 11.62.67 20.9 4.91 27.84 12.74-9.84 5.92-14.65 14.2-14.42 24.83.22 8.27 3.35 15.3 9.4 21.09 6.04 5.8 13.2 9.04 21.46 9.72-2.12 6.7-4.69 13.4-7.7 20.08zM119.22 31.86c0-7.04 2.57-13.73 7.71-20.08 5.14-6.37 11.62-10.49 19.46-12.37 1.01 7.26-1.23 14.19-6.71 20.78-5.48 6.6-11.96 10.51-19.46 11.67-.34-.56-.67-1.12-1-1.68z"/></svg>
+            Pay $99 with Apple Pay / Card &rarr;
           </a>
-          <button onclick="unlockDossier()" class="px-4 py-3.5 rounded-xl bg-zinc-800/80 hover:bg-zinc-700/80 border border-white/10 text-xs font-semibold text-zinc-400 hover:text-white transition-all flex items-center gap-1.5">
+          <button onclick="unlockDossier()" class="px-4 py-4 rounded-xl bg-zinc-800/80 hover:bg-zinc-700/80 border border-white/10 text-xs font-semibold text-zinc-400 hover:text-white transition-all flex items-center gap-1.5">
             <i data-lucide="eye" class="w-3.5 h-3.5"></i>
             Test Preview Unlocked
           </button>
