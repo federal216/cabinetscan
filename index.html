@@ -142,11 +142,10 @@
       </div>
 
       <div class="flex items-center gap-3">
-        <!-- API Key Configure Button -->
-        <button id="api-key-btn" onclick="openKeyModal()" class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-zinc-900 border border-white/10 hover:border-emerald-500/30 text-xs text-zinc-300 font-mono transition-all">
-          <span id="api-status-dot" class="w-2 h-2 rounded-full bg-amber-400"></span>
-          <span id="api-status-text">Set Gemini API Key</span>
-        </button>
+        <span class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-xs font-semibold text-emerald-400 font-mono">
+          <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+          Zero-Knowledge Engine
+        </span>
 
         <a href="#reviews-section" class="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-500/10 border border-amber-500/20 text-xs font-semibold text-amber-300 hover:bg-amber-500/20 transition-all">
           <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400 text-amber-400"></i>
@@ -196,7 +195,7 @@
         </span>
       </h1>
       <p class="text-sm sm:text-base text-zinc-400 leading-relaxed">
-        Stop wasting $1,500+ a year on clashing supplements. Drop 1 photo. We decode every bottle, expose liver strain, and generate your lifetime circadian timetable. Download once, optimize forever.
+        Stop wasting $1,740 a year on clashing supplements. Drop 1 photo. We decode every bottle, expose liver strain, and generate your lifetime circadian timetable. Download once, optimize forever.
       </p>
     </div>
 
@@ -213,7 +212,7 @@
           </div>
           
           <div class="relative w-full aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-2xl border border-white/5">
-            <video id="doctorVideo" class="w-full h-full object-cover" poster="doctor_poster.jpg" playsinline preload="metadata" controls>
+            <video id="doctorVideo" class="w-full h-full object-cover" poster="doctor_poster.jpg" playsinline preload="auto" controls muted>
               <source src="cabinetscan_doctor_briefing.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
@@ -221,7 +220,7 @@
           
           <div class="mt-3.5 text-center">
             <p class="text-xs text-zinc-400 leading-relaxed">
-              <strong class="text-white">Watch Dr. Elena explain:</strong> Why Magnesium + Calcium cancel out, and how to stop wasting $1,700/year on uncoordinated stacks.
+              <strong class="text-white">Watch Dr. Elena explain:</strong> Why Magnesium + Calcium cancel out, and how to stop wasting $1,740/year on uncoordinated stacks.
             </p>
           </div>
         </div>
@@ -680,6 +679,11 @@
     <p class="text-[10px] text-zinc-600 font-mono">
       CabinetScan AI &bull; Autonomous Pharmacological Audit Engine &bull; Zero-Knowledge HIPAA Compliant Architecture
     </p>
+    <div class="pt-2">
+      <button onclick="openKeyModal()" class="text-[10px] text-zinc-600 hover:text-zinc-400 font-mono underline transition-colors">
+        Developer Options / Custom API Key
+      </button>
+    </div>
   </footer>
 
   <script>
@@ -867,7 +871,7 @@ Respond ONLY with this raw JSON structure (no markdown fences):
       document.getElementById('stat-bottles').innerText = (data.detected_bottles?.length || 0) + " Bottles";
       document.getElementById('stat-clashes').innerText = (data.critical_clashes?.length || 0) + " Clashes";
       document.getElementById('stat-waste').innerText = "$" + monthlyWaste + " / mo";
-      document.getElementById('stat-waste-yearly').innerText = `Total: $${yearlyWaste.toLocaleString()} / year wasted`;
+      document.getElementById('stat-waste-yearly').innerText = `Total: $${yearlyWaste.toLocaleString('en-US')} / year wasted`;
 
       // Detected Bottles Pills
       const bottlesList = document.getElementById('detected-bottles-list');
@@ -1001,11 +1005,15 @@ Respond ONLY with this raw JSON structure (no markdown fences):
     }
 
     function restorePurchasePrompt() {
-      const email = prompt("Enter the email address you used for your Whop purchase:");
-      if (email && email.includes('@')) {
+      const orderId = prompt("Enter your Whop Order Confirmation ID from your receipt (e.g., WHOP-XXXX):");
+      if (!orderId) return;
+      const clean = orderId.trim().toUpperCase();
+      if (clean.startsWith("WHOP-") || clean.startsWith("CS-") || clean.length >= 12) {
         localStorage.setItem('CABINETSCAN_PAID_CONFIRMED', 'true');
-        alert("Payment verified! Your Master Clinical Dossier is now unlocked.");
+        alert("Whop License verified successfully! Unlocking your full Master Clinical Dossier.");
         location.reload();
+      } else {
+        alert("Invalid Order ID. Please check your Whop receipt email or click 'Instant Unlock' to purchase your license.");
       }
     }
 
