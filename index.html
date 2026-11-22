@@ -12,6 +12,7 @@
   <meta name="apple-mobile-web-app-title" content="CabinetScan AI">
   <meta name="theme-color" content="#07090E">
   <meta name="format-detection" content="telephone=no">
+  <link rel="icon" type="image/png" href="logo.png">
   <link rel="apple-touch-icon" href="https://federal216.github.io/cabinetscan/cabinetscan_logo_luxury.png">
   
   <!-- Primary SEO Meta Tags -->
@@ -674,21 +675,34 @@
     </div>
   </div>
 
-  <footer class="border-t border-white/5 py-10 px-4 text-center text-xs text-zinc-500 max-w-4xl mx-auto space-y-3">
+  <footer class="border-t border-white/5 py-12 px-4 text-center text-xs text-zinc-500 max-w-4xl mx-auto space-y-5">
+    <!-- Required Legal Compliance Navigation Links (Paddle / Whop / Consumer Protection) -->
+    <div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs font-semibold text-zinc-300 border-b border-white/5 pb-6">
+      <button type="button" onclick="openLegalModal('terms')" class="hover:text-emerald-400 transition cursor-pointer underline decoration-zinc-600 underline-offset-4">Terms of Service</button>
+      <span class="text-zinc-700">·</span>
+      <button type="button" onclick="openLegalModal('privacy')" class="hover:text-emerald-400 transition cursor-pointer underline decoration-zinc-600 underline-offset-4">Privacy &amp; HIPAA Notice</button>
+      <span class="text-zinc-700">·</span>
+      <button type="button" onclick="openLegalModal('refund')" class="hover:text-emerald-400 transition cursor-pointer underline decoration-zinc-600 underline-offset-4">Refund Policy (14-Day Guarantee)</button>
+      <span class="text-zinc-700">·</span>
+      <button type="button" onclick="openLegalModal('contact')" class="hover:text-emerald-400 transition cursor-pointer underline decoration-emerald-500/40 text-emerald-400 underline-offset-4">Support &amp; Contact</button>
+    </div>
+
     <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-[11px] font-mono text-zinc-400">
       <i data-lucide="shield-alert" class="w-3.5 h-3.5 text-amber-400"></i>
-      CLINICAL & REGULATORY NOTICE
+      CLINICAL &amp; REGULATORY NOTICE
     </div>
     <p class="text-[11px] text-zinc-400 leading-relaxed font-mono">
       Synthesized autonomously from global pharmacological literature and clinical datasets scanned by Artificial Intelligence. This protocol is intended for informational and educational auditing purposes only and does not constitute or replace an actual in-person medical examination, formal clinical diagnosis, or personalized prescription advice. Always consult your certified physician before modifying any supplement or medication regimen.
     </p>
-    <p class="text-[10px] text-zinc-600 font-mono">
-      CabinetScan AI &bull; Autonomous Pharmacological Audit Engine &bull; Zero-Knowledge HIPAA Compliant Architecture
-    </p>
-    <div class="pt-2">
-      <button onclick="openKeyModal()" class="text-[10px] text-zinc-600 hover:text-zinc-400 font-mono underline transition-colors">
-        Developer Options / Custom API Key
-      </button>
+    <div class="flex flex-col sm:flex-row items-center justify-between text-[11px] text-zinc-600 font-mono pt-4 border-t border-white/5 gap-2">
+      <div>&copy; 2026 CabinetScan AI &bull; Autonomous Pharmacological Audit Engine</div>
+      <div class="flex items-center gap-3">
+        <a href="mailto:support@cabinetscan.ai" class="text-zinc-400 hover:text-emerald-400 transition">support@cabinetscan.ai</a>
+        <span>&bull;</span>
+        <button type="button" onclick="openKeyModal()" class="text-zinc-600 hover:text-zinc-400 underline transition-colors">
+          Dev / API Key
+        </button>
+      </div>
     </div>
   </footer>
 
@@ -1496,6 +1510,104 @@ Respond ONLY with this raw JSON structure (no markdown fences):
         }
       };
     }
+
+    // Legal & Compliance Modal Handlers
+    function openLegalModal(type) {
+      const terms = document.getElementById('legalTermsContent');
+      const privacy = document.getElementById('legalPrivacyContent');
+      const refund = document.getElementById('legalRefundContent');
+      const contact = document.getElementById('legalContactContent');
+      const modal = document.getElementById('legalModal');
+      
+      if (!modal) return;
+      
+      terms.classList.add('hidden');
+      privacy.classList.add('hidden');
+      refund.classList.add('hidden');
+      contact.classList.add('hidden');
+
+      if (type === 'terms') terms.classList.remove('hidden');
+      if (type === 'privacy') privacy.classList.remove('hidden');
+      if (type === 'refund') refund.classList.remove('hidden');
+      if (type === 'contact') contact.classList.remove('hidden');
+
+      modal.classList.remove('hidden');
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function closeLegalModal() {
+      const modal = document.getElementById('legalModal');
+      if (modal) modal.classList.add('hidden');
+    }
   </script>
+
+  <!-- LEGAL POLICIES MODAL (Terms / Privacy / Refund / Contact) -->
+  <div id="legalModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md hidden">
+    <div class="bg-[#0b0e14] border border-emerald-500/40 rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative text-left max-h-[85vh] overflow-y-auto">
+      <button onclick="closeLegalModal()" class="absolute top-5 right-5 text-zinc-400 hover:text-white p-2 rounded-xl bg-zinc-900 border border-zinc-800 transition">
+        ✕
+      </button>
+
+      <!-- Terms Content -->
+      <div id="legalTermsContent" class="space-y-4 text-zinc-300 text-xs leading-relaxed hidden">
+        <h3 class="text-lg font-black text-white border-b border-zinc-800 pb-3 flex items-center gap-2">
+          <i data-lucide="file-text" class="w-5 h-5 text-emerald-400"></i>
+          Terms of Service
+        </h3>
+        <p class="text-zinc-500 font-mono">Last updated: November 22, 2026</p>
+        <p><strong>1. Service Overview:</strong> CabinetScan AI provides autonomous computer vision label auditing, pharmacological clash detection, and circadian nutrient scheduling for dietary supplements, vitamins, peptides, and nootropics based on peer-reviewed biomedical literature and public clinical databases.</p>
+        <p><strong>2. Digital Delivery &amp; Access:</strong> Upon completing payment clearance or verifying an active license, your customized Master Clinical Dossier (interactive dashboard and downloadable multi-page PDF audit) is unlocked immediately via browser session and email confirmation.</p>
+        <p><strong>3. Educational &amp; Informational Audit Only:</strong> CabinetScan AI is not a medical device and does not provide formal healthcare diagnosis or individual medical treatment prescriptions. Users are strongly advised to review all AI-generated audit reports with their certified healthcare provider or endocrinologist before starting or discontinuing any dietary supplement or medication.</p>
+        <p><strong>4. User Representations:</strong> Users agree to upload only legitimate supplement bottle labels or medicine cabinet images for personal or family wellness auditing.</p>
+        <p><strong>5. Governing Law:</strong> These terms are governed in accordance with international digital commerce regulations and Merchant of Record compliance standards.</p>
+      </div>
+
+      <!-- Privacy Content -->
+      <div id="legalPrivacyContent" class="space-y-4 text-zinc-300 text-xs leading-relaxed hidden">
+        <h3 class="text-lg font-black text-white border-b border-zinc-800 pb-3 flex items-center gap-2">
+          <i data-lucide="shield-check" class="w-5 h-5 text-emerald-400"></i>
+          Privacy &amp; HIPAA Compliance Notice
+        </h3>
+        <p class="text-zinc-500 font-mono">Last updated: November 22, 2026</p>
+        <p><strong>1. Zero-Knowledge Ephemeral Processing:</strong> Uploaded images of medicine cabinets or supplement labels are analyzed purely in-memory via multimodal vision endpoints to perform compound OCR. Images are never archived, sold, or shared with third-party advertisers or insurance brokers.</p>
+        <p><strong>2. Automatic PII Redaction:</strong> Our vision pipeline automatically masks and discards personally identifiable health information (names, prescription Rx numbers, doctor credentials, and addresses) before generating audit telemetry.</p>
+        <p><strong>3. Payment &amp; Billing Security:</strong> We do not store or process payment card numbers or banking credentials on our servers. All transactions are securely processed by PCI-DSS Level 1 certified payment partners (Paddle / Whop) using 256-bit SSL encryption.</p>
+        <p><strong>4. Data Subject Rights:</strong> You may request full deletion of any associated session tokens or audit logs at any time by contacting our privacy team at <a href="mailto:support@cabinetscan.ai" class="text-emerald-400 underline">support@cabinetscan.ai</a>.</p>
+      </div>
+
+      <!-- Refund Content -->
+      <div id="legalRefundContent" class="space-y-4 text-zinc-300 text-xs leading-relaxed hidden">
+        <h3 class="text-lg font-black text-white border-b border-zinc-800 pb-3 flex items-center gap-2">
+          <i data-lucide="rotate-ccw" class="w-5 h-5 text-emerald-400"></i>
+          Refund &amp; Cancellation Policy
+        </h3>
+        <p class="text-zinc-500 font-mono">Last updated: November 22, 2026</p>
+        <p><strong>1. 100% Satisfaction Guarantee:</strong> We stand fully behind the clinical utility of our autonomous stack auditing technology. If CabinetScan AI fails to identify your readable supplement labels, encounters an unresolvable technical error, or if you are not completely satisfied with your Master Dossier, you are entitled to a full refund.</p>
+        <p><strong>2. 14-Day Refund Window:</strong> You may request a full refund within 14 calendar days of your initial purchase date with zero hassle.</p>
+        <p><strong>3. How to Request:</strong> Simply send an email with your transaction reference or Order ID to <a href="mailto:support@cabinetscan.ai" class="text-emerald-400 underline font-mono">support@cabinetscan.ai</a> or <a href="mailto:karakoc.i@gmail.com" class="text-emerald-400 underline font-mono">karakoc.i@gmail.com</a>. All valid requests are processed within 24–48 business hours and credited back to your original payment method.</p>
+      </div>
+
+      <!-- Contact Content -->
+      <div id="legalContactContent" class="space-y-4 text-zinc-300 text-xs leading-relaxed hidden">
+        <h3 class="text-lg font-black text-white border-b border-zinc-800 pb-3 flex items-center gap-2">
+          <i data-lucide="mail" class="w-5 h-5 text-emerald-400"></i>
+          Support &amp; Contact
+        </h3>
+        <p class="text-zinc-500 font-mono">We are here to assist with any questions regarding clinical audits, billing, or custom stacks.</p>
+        <div class="p-4 rounded-xl bg-zinc-900/80 border border-white/5 space-y-2">
+          <p><strong>Official Inquiries &amp; Support:</strong> <a href="mailto:support@cabinetscan.ai" class="text-emerald-400 underline font-mono">support@cabinetscan.ai</a></p>
+          <p><strong>Direct Billing Desk:</strong> <a href="mailto:karakoc.i@gmail.com" class="text-emerald-400 underline font-mono">karakoc.i@gmail.com</a></p>
+          <p class="text-zinc-500 text-[11px]">Typical response time: Under 4 business hours (Monday – Friday, 09:00 – 18:00 UTC).</p>
+        </div>
+      </div>
+
+      <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+        <span class="text-[11px] text-zinc-500 font-mono">CabinetScan AI &bull; Regulatory Compliance</span>
+        <button onclick="closeLegalModal()" class="px-5 py-2 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white font-bold text-xs uppercase transition">
+          Close Window
+        </button>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

@@ -1,4 +1,16 @@
 node_modules
 .env
-.DS_Store
+.env.*
 *.log
+.DS_Store
+
+# Temporary render frames and video artifacts
+temp_frames/
+temp_render/
+*.tmp
+
+# Local generator scripts with credentials or scratch files
+scripts/check_*.py
+scripts/*did*.py
+scripts/poll_and_recompile.py
+
