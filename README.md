@@ -43,6 +43,25 @@ CabinetScan AI scans your shelf via multi-modal vision AI, cross-references FDA 
 
 ---
 
+## 🌍 Global Drug Brand Names & Standard Therapeutic Dose Variations (Ülkelere Göre Ticari İsimler ve Doz Oranları)
+
+Pharmaceutical brand names, standard packaging doses, and maximum daily limits differ significantly across global regulatory bodies (**FDA USA, EMA Europe, TİTCK Turkey, PMDA Japan, MHRA UK**). CabinetScan AI automatically detects local commercial brands and cross-references them against international INN molecules and safe dosage thresholds (`data/international_drug_brand_crosswalk.json`):
+
+| Active Molecule (INN) | 🇺🇸 USA (FDA) Brand & Standard Dose | 🇪🇺 EU / 🇬🇧 UK (EMA/MHRA) Brand & Dose | 🇹🇷 Turkey (TİTCK) Brand & Dose | 🇯🇵 Japan (PMDA) Brand & Dose | Regulatory Dose Discrepancy & Max Safe Daily Limit |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Paracetamol / Acetaminophen** | **Tylenol** (325mg, 500mg Extra, 650mg Arthritis) | **Panadol / Doliprane** (500mg, 1000mg Effervescent) | **Parol / Minoset** (500mg tablet, 1000mg IV) | **Calonal (カロナール)** (200mg, 300mg, 500mg) | **Max Daily Limit:** FDA advises max **3,000 mg/day** (due to OTC liver risk); EMA/TİTCK permits up to **4,000 mg/day**. Overdose causes acute hepatotoxicity. |
+| **Sertraline** (SSRI) | **Zoloft** (25mg, 50mg, 100mg) | **Lustral / Zoloft** (50mg, 100mg) | **Lustral / Selectra** (50mg, 100mg) | **J-Zoloft** (25mg, 50mg) | **Therapeutic Range:** 50 - 200 mg/day. Fatal Serotonin Syndrome risk with St. John's Wort or 5-HTP. |
+| **Escitalopram** (SSRI) | **Lexapro** (5mg, 10mg, 20mg) | **Cipralex** (5mg, 10mg, 20mg) | **Cipralex / Secita** (10mg, 20mg) | **Lexapro (レクサプロ)** (10mg, 20mg) | **Max Dose:** 20 mg/day. Elderly patients (>65 yrs) strictly limited to **10 mg/day** due to QTc prolongation risk. |
+| **Atorvastatin** (Statin) | **Lipitor** (10mg, 20mg, 40mg, 80mg) | **Sortis / Lipitor** (10mg, 20mg, 40mg, 80mg) | **Lipitor / Ator / Tarden** (10mg, 20mg, 40mg, 80mg) | **Lipitor (リピトール)** (5mg, 10mg) | **Starting Dose:** Japan PMDA uses **5 - 10 mg/day**; Western FDA starts at **10 - 20 mg/day**. Complete block with grapefruit juice (CYP3A4 inhibition). |
+| **Levothyroxine** (T4) | **Synthroid** (25, 50, 75, 88, 100, 112, 125, 137, 150, 175, 200 mcg) | **Euthyrox** (25, 50, 75, 88, 100, 112, 125, 137, 150, 175, 200 mcg) | **Euthyrox / Levotiron** (25, 50, 75, 100, 125, 150 mcg) | **Thyradin-S** (チラージンS: 12.5, 25, 50, 100 mcg) | **Microgram Titration:** Requires strict empty stomach ingestion with pure water. Food/coffee drops bioavailability by 40-80%. |
+| **Metformin** (Biguanide) | **Glucophage / Fortamet** (500mg, 750mg XR, 850mg, 1000mg) | **Glucophage / Siofor** (500mg, 850mg, 1000mg) | **Glifor / Matof / Diaformin** (500mg, 850mg, 1000mg) | **Metgluco (メトグルコ)** (250mg, 500mg) | **Max Daily Dose:** 2,000 - 2,550 mg/day. Japan standard doses start lower (250-500mg). Chronically impairs ileal Vitamin B12 absorption. |
+| **Semaglutide** (GLP-1) | **Ozempic** (0.25, 0.5, 1.0, 2.0mg/wk) &bull; **Wegovy** (2.4mg) &bull; **Rybelsus** (3, 7, 14mg oral) | **Ozempic / Wegovy / Rybelsus** | **Ozempic / Rybelsus** | **Ozempic / Rybelsus** | **Escalation Schedule:** 4-week titration intervals. Delays gastric emptying rate; oral medications must be timed 1+ hours before or 4+ hours after. |
+| **Ibuprofen** (NSAID) | **Advil / Motrin** (OTC 200mg; Rx 400, 600, 800mg) | **Nurofen / Spidifen** (OTC 200, 400mg) | **Artril / Brufen / Dolgit** (400mg, 600mg, 800mg) | **Eve (イブ) / Naron** (75mg, 150mg combinations) | **Max Daily OTC Limit:** 1,200 mg/day (OTC) vs 2,400 - 3,200 mg/day (Physician monitored Rx). Competes with and neutralizes Aspirin antiplatelet effect. |
+
+*Full machine-readable global regulatory JSON database available in [data/international_drug_brand_crosswalk.json](data/international_drug_brand_crosswalk.json).*
+
+---
+
 ## 📑 What's Inside Your Clinical Safety Dossier ($99.00)
 
 1. **Section 1: Molecular Conflict & Contraindication Heatmap**  
