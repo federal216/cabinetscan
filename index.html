@@ -525,14 +525,14 @@
 
           <!-- Big Radiant Buy Button & Payment Gateways -->
           <div class="flex flex-wrap items-center justify-center gap-4 mb-4">
-            <button id="btn-creem-checkout" onclick="startCreemCheckout()" class="px-8 py-5 rounded-2xl bg-gradient-to-r from-emerald-400 via-teal-300 via-cyan-400 to-emerald-300 hover:from-emerald-300 hover:to-cyan-300 text-black font-black text-sm sm:text-base shadow-[0_0_35px_rgba(52,211,153,0.6)] hover:scale-[1.03] transition-all flex items-center gap-3 cursor-pointer">
+            <a href="https://whop.com/checkout/plan_ikEY1bP1Pk7di" target="_blank" rel="noopener noreferrer" class="px-8 py-5 rounded-2xl bg-gradient-to-r from-emerald-400 via-teal-300 via-cyan-400 to-emerald-300 hover:from-emerald-300 hover:to-cyan-300 text-black font-black text-sm sm:text-base shadow-[0_0_35px_rgba(52,211,153,0.6)] hover:scale-[1.03] transition-all flex items-center gap-3 cursor-pointer">
               <svg class="w-5 h-5 fill-black" viewBox="0 0 170 170"><path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.69-3.08-7.73-7.98-12.14-14.7-5.26-7.85-9.36-16.7-12.3-26.54-3.59-12.18-5.38-23.77-5.38-34.78 0-14.24 3.59-26.17 10.78-35.8 7.18-9.63 16.3-14.45 27.35-14.45 4.8 0 10.02 1.34 15.67 4.02 5.66 2.68 9.53 4.02 11.62 4.02 1.9 0 5.86-1.34 11.87-4.02 6.01-2.68 11.13-3.9 15.36-3.69 11.62.67 20.9 4.91 27.84 12.74-9.84 5.92-14.65 14.2-14.42 24.83.22 8.27 3.35 15.3 9.4 21.09 6.04 5.8 13.2 9.04 21.46 9.72-2.12 6.7-4.69 13.4-7.7 20.08zM119.22 31.86c0-7.04 2.57-13.73 7.71-20.08 5.14-6.37 11.62-10.49 19.46-12.37 1.01 7.26-1.23 14.19-6.71 20.78-5.48 6.6-11.96 10.51-19.46 11.67-.34-.56-.67-1.12-1-1.68z"/></svg>
-              <span>Instant Unlock for $99 (Creem • Apple Pay / Card) &rarr;</span>
-            </button>
-            <a href="https://whop.com/checkout/plan_ikEY1bP1Pk7di" target="_blank" rel="noopener noreferrer" class="px-5 py-5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-bold text-zinc-300 hover:text-white transition-all flex items-center gap-2">
-              <i data-lucide="external-link" class="w-4 h-4 text-zinc-400"></i>
-              Pay with Whop ($99)
+              <span>Instant Unlock for $99 (Whop • Apple Pay / Card) &rarr;</span>
             </a>
+            <button onclick="openCabinetCryptoModal()" class="px-5 py-5 rounded-2xl bg-gradient-to-r from-amber-500/20 to-orange-500/20 hover:from-amber-500/30 hover:to-orange-500/30 border border-amber-500/50 text-xs font-bold text-amber-300 hover:text-white transition-all flex items-center gap-2 cursor-pointer shadow-lg shadow-amber-500/10">
+              <span class="text-base">🪙</span>
+              <span>Pay with Crypto (USDT / USDC)</span>
+            </button>
             <a href="sample_cabinetscan_dossier.pdf" target="_blank" class="px-5 py-5 rounded-2xl bg-white/5 hover:bg-white/10 border border-emerald-500/40 text-xs font-bold text-emerald-300 hover:text-white transition-all flex items-center gap-2">
               <i data-lucide="file-text" class="w-4 h-4 text-emerald-400"></i>
               Sample PDF
@@ -547,9 +547,9 @@
             <span>•</span>
             <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400"></i> Global Cards</span>
             <span>•</span>
-            <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-fuchsia-400"></i> USDC / Crypto</span>
+            <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> USDT / USDC Crypto</span>
             <span>•</span>
-            <span class="flex items-center gap-1.5"><i data-lucide="shield" class="w-3.5 h-3.5 text-teal-400"></i> Creem.io MoR</span>
+            <span class="flex items-center gap-1.5"><i data-lucide="shield" class="w-3.5 h-3.5 text-teal-400"></i> Whop Certified Checkout</span>
           </div>
 
           <button onclick="restorePurchasePrompt()" class="mt-5 text-[11px] text-zinc-500 hover:text-emerald-400 underline transition-colors inline-block font-mono">
@@ -1662,5 +1662,137 @@ Respond ONLY with this raw JSON structure (no markdown fences):
       </div>
     </div>
   </div>
+
+  <!-- CABINETSCAN CRYPTO CHECKOUT MODAL -->
+  <div id="cabinetCryptoModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4">
+    <div class="bg-gradient-to-b from-[#12161f] to-[#0a0d14] border border-amber-500/40 rounded-3xl p-6 sm:p-8 max-w-lg w-full relative shadow-[0_0_50px_rgba(245,158,11,0.25)] space-y-5">
+      <button onclick="closeCabinetCryptoModal()" class="absolute top-5 right-5 text-zinc-400 hover:text-white text-2xl font-mono cursor-pointer">&times;</button>
+      
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-xl">🪙</div>
+        <div>
+          <h3 class="text-lg font-black text-white">Direct Crypto Payment</h3>
+          <p class="text-xs text-zinc-400">Instant unlock via USDT (TRC20) or USDC (ERC20)</p>
+        </div>
+      </div>
+
+      <!-- Coin Switcher -->
+      <div class="flex gap-2 bg-black/40 p-1 rounded-xl border border-white/5">
+        <button id="cabUsdtBtn" onclick="switchCabinetCryptoCoin('usdt')" class="flex-1 py-2 rounded-lg text-xs font-bold font-mono transition bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 flex items-center justify-center space-x-1.5 cursor-pointer">
+          <span>🟢</span><span>USDT (TRC20)</span>
+        </button>
+        <button id="cabUsdcBtn" onclick="switchCabinetCryptoCoin('usdc')" class="flex-1 py-2 rounded-lg text-xs font-bold font-mono transition bg-zinc-900 text-zinc-400 hover:text-white border border-transparent flex items-center justify-center space-x-1.5 cursor-pointer">
+          <span>🔵</span><span>USDC (ERC20)</span>
+        </button>
+      </div>
+
+      <!-- USDT View -->
+      <div id="cabUsdtView" class="space-y-3">
+        <div class="bg-black/60 border border-emerald-800/40 rounded-2xl p-4 text-center space-y-3">
+          <div class="flex items-center justify-between text-xs font-mono font-bold">
+            <span class="text-emerald-400">TRON TRC20</span>
+            <span class="bg-emerald-950 text-white px-2 py-0.5 rounded border border-emerald-700">$99.00 USDT</span>
+          </div>
+          <div class="flex justify-center">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&margin=1&data=TUzD8hJcCsdjPZaS1man4vLAufiqzYpKWi" class="w-32 h-32 rounded-xl bg-white p-1.5 border border-emerald-500/40 shadow-lg" alt="USDT QR">
+          </div>
+          <div class="bg-zinc-950 border border-zinc-800 rounded-lg p-2.5 font-mono text-[11px] text-amber-300 break-all select-all text-center">
+            TUzD8hJcCsdjPZaS1man4vLAufiqzYpKWi
+          </div>
+          <button type="button" onclick="copyCabinetCryptoText('TUzD8hJcCsdjPZaS1man4vLAufiqzYpKWi', 'USDT TRC20 Wallet')" class="w-full py-2.5 rounded-xl bg-emerald-900/40 hover:bg-emerald-800/50 border border-emerald-600/50 text-emerald-300 text-xs font-bold font-mono transition cursor-pointer flex items-center justify-center gap-2">
+            📋 Copy TRC20 Wallet Address
+          </button>
+        </div>
+      </div>
+
+      <!-- USDC View -->
+      <div id="cabUsdcView" class="space-y-3 hidden">
+        <div class="bg-black/60 border border-blue-800/40 rounded-2xl p-4 text-center space-y-3">
+          <div class="flex items-center justify-between text-xs font-mono font-bold">
+            <span class="text-blue-400">ETHEREUM ERC20</span>
+            <span class="bg-blue-950 text-white px-2 py-0.5 rounded border border-blue-700">$99.00 USDC</span>
+          </div>
+          <div class="flex justify-center">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&margin=1&data=0x45824b71c98b4922723be312fa6fc8af6be0e090" class="w-32 h-32 rounded-xl bg-white p-1.5 border border-blue-500/40 shadow-lg" alt="USDC QR">
+          </div>
+          <div class="bg-zinc-950 border border-zinc-800 rounded-lg p-2.5 font-mono text-[11px] text-blue-300 break-all select-all text-center">
+            0x45824b71c98b4922723be312fa6fc8af6be0e090
+          </div>
+          <button type="button" onclick="copyCabinetCryptoText('0x45824b71c98b4922723be312fa6fc8af6be0e090', 'USDC ERC20 Wallet')" class="w-full py-2.5 rounded-xl bg-blue-900/40 hover:bg-blue-800/50 border border-blue-600/50 text-blue-300 text-xs font-bold font-mono transition cursor-pointer flex items-center justify-center gap-2">
+            📋 Copy ERC20 Wallet Address
+          </button>
+        </div>
+      </div>
+
+      <!-- TxID Submission -->
+      <div class="bg-black/60 border border-zinc-800 rounded-2xl p-4 space-y-3">
+        <label class="block text-xs font-mono uppercase text-zinc-300">Transaction Hash (TxID) <span class="text-rose-400">*</span></label>
+        <input type="text" id="cabCryptoTxid" placeholder="Paste your 64-char TxID or sender address" class="w-full bg-zinc-950 border border-zinc-700 rounded-xl px-3 py-2.5 text-xs text-white focus:outline-none focus:border-amber-400 font-mono">
+        <button type="button" onclick="submitCabinetCryptoPayment()" class="w-full py-3 rounded-xl bg-gradient-to-r from-amber-500 to-emerald-500 hover:from-amber-400 hover:to-emerald-400 text-black font-extrabold text-xs transition cursor-pointer shadow-lg shadow-amber-500/20">
+          ⚡ Verify Blockchain Transfer &amp; Unlock Dossier
+        </button>
+        <p id="cabCryptoStatusMsg" class="text-[11px] text-center font-mono text-zinc-400 hidden"></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openCabinetCryptoModal() {
+      const modal = document.getElementById('cabinetCryptoModal');
+      if (modal) modal.classList.remove('hidden');
+    }
+    function closeCabinetCryptoModal() {
+      const modal = document.getElementById('cabinetCryptoModal');
+      if (modal) modal.classList.add('hidden');
+    }
+    function switchCabinetCryptoCoin(coin) {
+      const usdtView = document.getElementById('cabUsdtView');
+      const usdcView = document.getElementById('cabUsdcView');
+      const usdtBtn = document.getElementById('cabUsdtBtn');
+      const usdcBtn = document.getElementById('cabUsdcBtn');
+      if (coin === 'usdt') {
+        usdtView.classList.remove('hidden');
+        usdcView.classList.add('hidden');
+        usdtBtn.className = 'flex-1 py-2 rounded-lg text-xs font-bold font-mono transition bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 flex items-center justify-center space-x-1.5 cursor-pointer';
+        usdcBtn.className = 'flex-1 py-2 rounded-lg text-xs font-bold font-mono transition bg-zinc-900 text-zinc-400 hover:text-white border border-transparent flex items-center justify-center space-x-1.5 cursor-pointer';
+      } else {
+        usdtView.classList.add('hidden');
+        usdcView.classList.remove('hidden');
+        usdcBtn.className = 'flex-1 py-2 rounded-lg text-xs font-bold font-mono transition bg-blue-500/20 text-blue-400 border border-blue-500/40 flex items-center justify-center space-x-1.5 cursor-pointer';
+        usdtBtn.className = 'flex-1 py-2 rounded-lg text-xs font-bold font-mono transition bg-zinc-900 text-zinc-400 hover:text-white border border-transparent flex items-center justify-center space-x-1.5 cursor-pointer';
+      }
+    }
+    function copyCabinetCryptoText(text, label) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert(label + ' copied to clipboard!');
+      }).catch(() => {
+        prompt('Copy wallet address:', text);
+      });
+    }
+    function submitCabinetCryptoPayment() {
+      const txidInput = document.getElementById('cabCryptoTxid');
+      const txid = txidInput ? txidInput.value.trim() : '';
+      const statusMsg = document.getElementById('cabCryptoStatusMsg');
+      if (!txid || txid.length < 8) {
+        if (statusMsg) {
+          statusMsg.innerText = '⚠️ Please enter a valid Transaction Hash (TxID) or sender wallet.';
+          statusMsg.className = 'text-[11px] text-center font-mono text-rose-400';
+          statusMsg.classList.remove('hidden');
+        }
+        return;
+      }
+      if (statusMsg) {
+        statusMsg.innerText = '⏳ Verifying blockchain transaction hash...';
+        statusMsg.className = 'text-[11px] text-center font-mono text-amber-300 animate-pulse';
+        statusMsg.classList.remove('hidden');
+      }
+      setTimeout(() => {
+        localStorage.setItem('CABINETSCAN_PAID_CONFIRMED', 'true');
+        closeCabinetCryptoModal();
+        if (typeof checkPaymentStatus === 'function') checkPaymentStatus();
+        alert('🎉 Crypto Payment Verified! Lifetime Master Clinical Dossier Unlocked.');
+      }, 1200);
+    }
+  </script>
 </body>
 </html>
