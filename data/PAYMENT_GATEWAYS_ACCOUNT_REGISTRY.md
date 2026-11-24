@@ -9,11 +9,14 @@
 ## 1. Creem.io (Merchant of Record - Birincil Entegrasyon)
 - **Portal:** [https://creem.io/](https://creem.io/)
 - **Kullanıcı Hesabı:** `karakoc.i@gmail.com`
-- **Mağaza Adı (Önerilen):** `CabinetScan AI` (URL: `creem.io/cabinetscan`)
+- **Mağaza Adı:** `CabinetScan A`
 - **İkamet Ülkesi:** Turkey (Onaylı)
-- **Ürün:** Master Clinical Dossier ($99, One-time)
+- **Ürün:** CabinetScan AI — Master Clinical Dossier ($99, One-time)
+- **Product ID:** `prod_75U0KNi7IDlRffo4MBN9R1`
+- **Canlı Ödeme Bağlantısı (Live Payment Link):** [https://www.creem.io/payment/prod_75U0KNi7IDlRffo4MBN9R1](https://www.creem.io/payment/prod_75U0KNi7IDlRffo4MBN9R1)
 - **Desteklenen Ödeme Tipleri:** Apple Pay, Google Pay, Global Kredi Kartları (Visa, Mastercard, Amex), USDC / Kripto
 - **Payout Yöntemi:** Wise, USDC veya Banka Havalesi
+- **Satış Başına Net Kazanç:** ~$94.74 / $99
 - **Entegrasyon Dosyaları:**
   - `api/creem/initialize.js` (Checkout oturumu başlatıcı)
   - `api/creem/webhook.js` (Ödeme onay webhook dinleyicisi)
@@ -21,10 +24,10 @@
 
 ### Çevre Değişkenleri (.env)
 ```env
+CREEM_PRODUCT_ID=prod_75U0KNi7IDlRffo4MBN9R1
+CREEM_PAYMENT_LINK=https://www.creem.io/payment/prod_75U0KNi7IDlRffo4MBN9R1
 CREEM_API_KEY=creem_live_... (veya creem_test_...)
-CREEM_PRODUCT_ID=prod_...
 CREEM_MODE=live
-CREEM_PAYMENT_LINK=https://creem.io/pay/cabinetscan-99
 ```
 
 ---

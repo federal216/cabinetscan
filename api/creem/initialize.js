@@ -21,7 +21,7 @@ module.exports = async function creemInitializeHandler(req, res) {
     const params = req.method === 'POST' ? req.body : req.query;
     const {
       email = 'patient@cabinetscan.ai',
-      productId = process.env.CREEM_PRODUCT_ID || 'prod_cabinetscan_99',
+      productId = process.env.CREEM_PRODUCT_ID || 'prod_75U0KNi7IDlRffo4MBN9R1',
       customerName = 'CabinetScan Client',
       successUrl,
       cancelUrl,
@@ -87,10 +87,10 @@ module.exports = async function creemInitializeHandler(req, res) {
       }
     }
 
-    // Graceful Fallback Mode: Provides direct link or mock session for instant seamless testing
+    // Live Product Direct Link Fallback:
     const fallbackCheckoutUrl = (process.env.CREEM_PAYMENT_LINK)
       ? process.env.CREEM_PAYMENT_LINK
-      : `${finalSuccessUrl.replace('{CHECKOUT_SESSION_ID}', 'crm_test_simulated_' + Date.now())}&demo_mode=true`;
+      : 'https://www.creem.io/payment/prod_75U0KNi7IDlRffo4MBN9R1';
 
     return res.status(200).json({
       success: true,

@@ -1182,12 +1182,19 @@ Respond ONLY with this raw JSON structure (no markdown fences):
     }
 
     async function startCreemCheckout() {
+      const liveCreemUrl = 'https://www.creem.io/payment/prod_75U0KNi7IDlRffo4MBN9R1';
       const btn = document.getElementById('btn-creem-checkout');
       const originalText = btn ? btn.innerHTML : '';
       if (btn) {
         btn.disabled = true;
         btn.innerHTML = `<span class="flex items-center gap-2"><i data-lucide="loader" class="w-4 h-4 animate-spin"></i><span>Connecting to Creem MoR...</span></span>`;
         if (window.lucide) lucide.createIcons();
+      }
+
+      // If running on static host (GitHub Pages), open live Creem checkout immediately
+      if (window.location.hostname.includes('github.io')) {
+        window.location.href = liveCreemUrl;
+        return;
       }
 
       try {
@@ -1197,6 +1204,7 @@ Respond ONLY with this raw JSON structure (no markdown fences):
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             email: 'patient@cabinetscan.ai',
+            productId: 'prod_75U0KNi7IDlRffo4MBN9R1',
             successUrl: returnUrl,
             cancelUrl: window.location.origin + window.location.pathname + '?payment_cancelled=true'
           })
@@ -1208,11 +1216,10 @@ Respond ONLY with this raw JSON structure (no markdown fences):
           return;
         }
 
-        // Fallback to Whop if Creem returns without link
-        window.open('https://whop.com/checkout/plan_ikEY1bP1Pk7di', '_blank');
+        window.location.href = liveCreemUrl;
       } catch (err) {
-        console.error('Creem checkout error:', err);
-        window.open('https://whop.com/checkout/plan_ikEY1bP1Pk7di', '_blank');
+        console.warn('Creem checkout fallback to live link:', err);
+        window.location.href = liveCreemUrl;
       } finally {
         if (btn) {
           btn.disabled = false;
