@@ -2,7 +2,7 @@
 
 [![Rating](https://img.shields.io/badge/Rating-4.94%20%2F%205.0%20(142%2B%20Clinical%20Audits)-gold?style=for-the-badge&logo=shield)](https://whop.com/checkout/plan_ikEY1bP1Pk7di)
 [![Instant Unlock](https://img.shields.io/badge/Instant%20Unlock-$99.00%20USD%20(Whop%20Verified)-emerald?style=for-the-badge&logo=applepay)](https://whop.com/checkout/plan_ikEY1bP1Pk7di)
-[![Sample Clinical Report](https://img.shields.io/badge/Clinical%20Dossier-Download%20Sample%20PDF-blue?style=for-the-badge&logo=adobeacrobatreader)](sample_cabinetscan_dossier.pdf)
+[![Sample Clinical Report](https://img.shields.io/badge/Clinical%20Dossier-Download%20Sample%20PDF-blue?style=for-the-badge&logo=adobeacrobatreader)](https://hseenglish.app/sample_cabinetscan_dossier.pdf)
 [![Vision AI](https://img.shields.io/badge/Vision%20Engine-Gemini%201.5%20Pro%20Clinical-cyan?style=for-the-badge&logo=google)](https://whop.com/checkout/plan_ikEY1bP1Pk7di)
 
 > **Zero typing. Snap 1 photo of your medicine cabinet or supplement shelf. Detect molecular clashes, dangerous contraindications, organ overload, and wasted spend in 10 seconds.**
@@ -12,7 +12,7 @@
 ## ⚡ Direct Checkout & Access Links
 
 - 💳 **[Instant Lifetime Unlock ($99.00 USD on Whop)](https://whop.com/checkout/plan_ikEY1bP1Pk7di)** *(Apple Pay, Google Pay, Global Credit Cards, 256-bit encrypted checkout)*
-- 📄 **[Download Official Sample Clinical Dossier (PDF)](sample_cabinetscan_dossier.pdf)** *(View real clinical audit sample)*
+- 📄 **[Download Official Sample Clinical Dossier (PDF)](https://hseenglish.app/sample_cabinetscan_dossier.pdf)** *(View real clinical audit sample)*
 - 🪙 **Cryptocurrency Checkout (USDT TRC-20 / USDC ERC-20):** Direct on-chain automated unlock available in the web interface.
 
 ---
