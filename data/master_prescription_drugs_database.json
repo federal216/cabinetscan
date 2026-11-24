@@ -1,0 +1,109 @@
+{
+  "version": "2026.1-CLINICAL",
+  "updated_at": "2026-11-24",
+  "total_classes": 12,
+  "classes": {
+    "ssri_snri_antidepressants": {
+      "class_name": "SSRIs / SNRIs (Serotonin-Norepinephrine Reuptake Inhibitors)",
+      "benchmark_drugs": [
+        "Sertraline (Zoloft, Lustral)",
+        "Escitalopram (Lexapro, Cipralex)",
+        "Fluoxetine (Prozac)",
+        "Venlafaxine (Effexor)",
+        "Duloxetine (Cymbalta)"
+      ],
+      "critical_traps": [
+        "Strict contraindication with St. John's Wort (Hypericum perforatum) and 5-HTP due to fatal Serotonin Syndrome.",
+        "Increased bleeding risk when combined with high-dose Omega-3 (>3g/day), Ginkgo Biloba, or NSAIDs."
+      ]
+    },
+    "cardiovascular_statins": {
+      "class_name": "HMG-CoA Reductase Inhibitors (Statins)",
+      "benchmark_drugs": [
+        "Atorvastatin (Lipitor)",
+        "Rosuvastatin (Crestor)",
+        "Simvastatin (Zocor)"
+      ],
+      "critical_traps": [
+        "Grapefruit juice inhibits intestinal CYP3A4, causing 300-1400% surge in statin blood levels and severe rhabdomyolysis.",
+        "Statins deplete endogenous Coenzyme Q10 synthesis; co-administration of 100-200mg Ubiquinol required to mitigate myalgia."
+      ]
+    },
+    "anticoagulants_and_blood_thinners": {
+      "class_name": "Anticoagulants & Antiplatelets (DOACs / Warfarin)",
+      "benchmark_drugs": [
+        "Warfarin (Coumadin)",
+        "Apixaban (Eliquis)",
+        "Rivaroxaban (Xarelto)",
+        "Clopidogrel (Plavix)",
+        "Aspirin"
+      ],
+      "critical_traps": [
+        "High-dose Vitamin E (>400 IU), Garlic extract, Ginkgo Biloba, and High-Dose Curcumin augment hemorrhage risk.",
+        "Variable dietary Vitamin K (spinach, kale) drastically alters Warfarin INR values."
+      ]
+    },
+    "antihypertensives_ace_arb": {
+      "class_name": "ACE Inhibitors & Angiotensin Receptor Blockers (ARBs)",
+      "benchmark_drugs": [
+        "Lisinopril (Zestril)",
+        "Losartan (Cozaar)",
+        "Valsartan (Diovan)",
+        "Ramipril"
+      ],
+      "critical_traps": [
+        "Potassium supplements or salt substitutes (Potassium chloride) cause life-threatening hyperkalemia.",
+        "NSAIDs (Ibuprofen, Naproxen) blunt antihypertensive efficacy and trigger acute kidney injury (triple whammy effect)."
+      ]
+    },
+    "glp1_metabolic_diabetes": {
+      "class_name": "GLP-1 Receptor Agonists & SGLT2 Inhibitors",
+      "benchmark_drugs": [
+        "Semaglutide (Ozempic, Wegovy, Rybelsus)",
+        "Tirzepatide (Mounjaro, Zepbound)",
+        "Empagliflozin (Jardiance)",
+        "Metformin (Glucophage)"
+      ],
+      "critical_traps": [
+        "Severe gastroparesis delays absorption of all oral medications; oral contraceptives and critical narrow-therapeutic drugs must be timed carefully.",
+        "Metformin chronically impairs ileal Vitamin B12 absorption; annual serum B12 and methylmalonic acid testing mandatory."
+      ]
+    },
+    "thyroid_hormones": {
+      "class_name": "Thyroid Hormone Replacements",
+      "benchmark_drugs": [
+        "Levothyroxine (Synthroid, Euthyrox)",
+        "Liothyronine (Cytomel)"
+      ],
+      "critical_traps": [
+        "Calcium carbonate, Iron supplements, and Soy protein bind levothyroxine in gut lumen; space ingestion by at least 4 hours.",
+        "Biotin (Vitamin B7 >5mg) causes falsely normal/elevated T4 and suppressed TSH in immunoassays without altering actual thyroid status."
+      ]
+    },
+    "nsaid_analgesics": {
+      "class_name": "Non-Steroidal Anti-Inflammatory Drugs (NSAIDs)",
+      "benchmark_drugs": [
+        "Ibuprofen (Advil, Nurofen)",
+        "Naproxen (Aleve, Apranax)",
+        "Celecoxib (Celebrex)",
+        "Diclofenac (Voltaren)"
+      ],
+      "critical_traps": [
+        "Combining NSAIDs with SSRIs increases gastrointestinal bleeding risk by 700%.",
+        "Chronic concurrent use of Acetaminophen + Alcohol increases risk of acute toxic hepatocyte necrosis."
+      ]
+    },
+    "proton_pump_inhibitors": {
+      "class_name": "Proton Pump Inhibitors (Acid Suppressants)",
+      "benchmark_drugs": [
+        "Omeprazole (Prilosec)",
+        "Pantoprazole (Protonix)",
+        "Esomeprazole (Nexium)"
+      ],
+      "critical_traps": [
+        "Long-term hypochlorhydria causes malabsorption of Magnesium, Calcium, Iron, and Vitamin B12, accelerating osteopenia and hypomagnesemia.",
+        "Space oral iron supplements or switch to bisglycinate/effervescent vitamin C."
+      ]
+    }
+  }
+}

@@ -1,0 +1,241 @@
+{
+  "version": "2026.1-CLINICAL",
+  "updated_at": "2026-11-24",
+  "total_devices": 10,
+  "devices": {
+    "continuous_glucose_monitors": {
+      "name": "Continuous Glucose Monitors (CGM)",
+      "benchmark_brands": [
+        "Dexcom G7",
+        "Dexcom G6",
+        "Abbott FreeStyle Libre 3",
+        "Medtronic Guardian 4",
+        "Senseonics Eversense E3"
+      ],
+      "category": "Endocrine & Metabolic Wearable Diagnostic",
+      "contraindicated_compounds_and_interferences": [
+        {
+          "compound": "High-Dose Ascorbic Acid (Vitamin C >500mg)",
+          "severity": "HIGH",
+          "mechanism": "Ascorbic acid diffuses into sensor hydrogel and oxidizes at the platinum electrode, creating false electrochemical current that artificially spikes sensor glucose readings by up to 60-100 mg/dL.",
+          "clinical_action": "Avoid megadose IV or oral Vitamin C (>500mg/day) or verify via capillary fingerstick before administering insulin."
+        },
+        {
+          "compound": "Acetaminophen / Paracetamol (Tylenol, Parol)",
+          "severity": "MODERATE_TO_HIGH",
+          "mechanism": "Acetaminophen metabolites oxidize at glucose oxidase (GOx) sensing wires, creating false positive hyperglycemia alerts on older generation sensors (Dexcom G6 / FreeStyle Libre 1-2).",
+          "clinical_action": "Do not dose bolus insulin based on sensor readings within 6 hours of taking >1,000mg acetaminophen; Dexcom G7 has improved selective membranes but still requires caution."
+        },
+        {
+          "compound": "Hydroxyurea (Hydrea)",
+          "severity": "CRITICAL",
+          "mechanism": "Produces severe electrochemical oxidation causing dangerously false high glucose values, risking fatal insulin overdose if corrected automatically.",
+          "clinical_action": "Strict fingerstick monitoring required. Disable automated insulin delivery (AID) closed loops."
+        }
+      ]
+    },
+    "cardiac_pacemakers_and_icds": {
+      "name": "Implantable Cardiac Pacemakers & ICDs",
+      "benchmark_brands": [
+        "Medtronic Azure / Cobalt",
+        "Boston Scientific Emblem",
+        "Abbott Gallant / Assurity",
+        "Biotronik Rivacor"
+      ],
+      "category": "Electrophysiology & Life-Sustaining Cardiac Implants",
+      "contraindicated_compounds_and_interferences": [
+        {
+          "compound": "TENS / EMS Electrical Nerve & Muscle Stimulators",
+          "severity": "CRITICAL",
+          "mechanism": "Transthoracic or upper torso electrical stimulation pulses are oversensed by bipolar pacemaker leads as ventricular fibrillation, triggering inappropriate ICD shock therapy or pacemaker pacing inhibition (asystole).",
+          "clinical_action": "Absolute contraindication across upper torso, neck, and shoulders. Use only peripheral lower limbs with physician consent."
+        },
+        {
+          "compound": "Bioimpedance Body Fat Analyzer Scales",
+          "severity": "HIGH",
+          "mechanism": "Micro-ampere alternating currents passing through footpads can interfere with cardiac lead sensing circuits.",
+          "clinical_action": "Disable body fat impedance measurement; use standard weight mode only."
+        },
+        {
+          "compound": "Pulsed Electromagnetic Field (PEMF) Mats & Devices",
+          "severity": "HIGH",
+          "mechanism": "High electromagnetic induction induces currents in pacemaker circuitry causing reset into asynchronous backup mode (VOO/DOO).",
+          "clinical_action": "Maintain minimum 12-inch (30cm) separation from high-magnetic wellness gadgets."
+        }
+      ]
+    },
+    "cpap_and_bipap_sleep_apnea_devices": {
+      "name": "CPAP & BiPAP Positive Airway Pressure Systems",
+      "benchmark_brands": [
+        "ResMed AirSense 11",
+        "Philips Respironics DreamStation 2",
+        "Fisher & Paykel SleepStyle",
+        "BMC Medical G3"
+      ],
+      "category": "Pulmonary & Respiratory Therapy",
+      "contraindicated_compounds_and_interferences": [
+        {
+          "compound": "Essential Oils & Diffuser Aromatherapy Liquids in Water Chamber",
+          "severity": "CRITICAL",
+          "mechanism": "Aerosolized terpene hydrocarbons and lipophilic oils pumped under positive pressure directly into alveoli cause chemical lipoid pneumonia, lung fibrosis, and polycarbonate water chamber degradation.",
+          "clinical_action": "Strictly forbid adding any essential oils, eucalyptus, or perfumes to the humidifier tub. Use 100% sterile distilled water only."
+        },
+        {
+          "compound": "Tap Water / Well Water Minerals",
+          "severity": "MODERATE",
+          "mechanism": "Aerosolized calcium/magnesium scaling and bacterial pathogens (Acanthamoeba, Legionella) directly inhaled during sleep.",
+          "clinical_action": "Daily chamber rinse with distilled water."
+        }
+      ]
+    },
+    "automated_blood_pressure_monitors": {
+      "name": "Automated Oscillometric Blood Pressure Monitors",
+      "benchmark_brands": [
+        "Omron Platinum / Complete",
+        "Withings BPM Connect",
+        "A&D Medical",
+        "Beurer BM Series"
+      ],
+      "category": "Cardiovascular Home Monitoring",
+      "contraindicated_compounds_and_interferences": [
+        {
+          "compound": "High-Caffeine & Pre-Workout Stimulants (Yohimbine, Synephrine, Caffeine >200mg)",
+          "severity": "HIGH",
+          "mechanism": "Alpha-adrenergic peripheral vasoconstriction creates artificial acute spikes (+15-25 mmHg systolic), leading to inappropriate self-escalation of antihypertensive prescriptions.",
+          "clinical_action": "Rest 30 minutes post-caffeine ingestion before taking diagnostic readings; record baseline morning readings before morning stimulants."
+        },
+        {
+          "compound": "Undersized Cuff Bladder on Hypertrophic Muscular Arms",
+          "severity": "MODERATE",
+          "mechanism": "Bladder unable to fully compress brachial artery; generates false positive Stage 2 hypertension readings (+10-18 mmHg).",
+          "clinical_action": "Measure mid-arm circumference; use extra-large conical cuff for arms >32cm."
+        }
+      ]
+    },
+    "pulse_oximeters": {
+      "name": "Pulse Oximeters (SpO2 & Perfusion Index)",
+      "benchmark_brands": [
+        "Masimo MightySat Rx",
+        "Nonin Onyx Vantage",
+        "Contec Medical",
+        "Wellue O2Ring"
+      ],
+      "category": "Respiratory & Arterial Oxygen Saturation",
+      "contraindicated_compounds_and_interferences": [
+        {
+          "compound": "Methylene Blue (Biohacking / Cognitive Enhancer)",
+          "severity": "HIGH",
+          "mechanism": "Methylene blue has high optical absorbance at 660nm (the exact red wavelength used by pulse oximeters to measure deoxygenated hemoglobin), producing artificial plunge in SpO2 readings to 82-85% despite normal arterial pO2.",
+          "clinical_action": "Do not treat artifactual desaturation if patient is alert; use co-oximetry or arterial blood gas (ABG) for true oxygenation."
+        },
+        {
+          "compound": "Synthetic Dark Nail Polish & Cold-Induced Raynaud Vasoconstriction",
+          "severity": "MODERATE",
+          "mechanism": "Blocks infrared transmission or severely drops Perfusion Index (PI < 0.2), causing unreadable or erratic saturation metrics.",
+          "clinical_action": "Warm hands or attach sensor to earlobe or remove nail lacquer."
+        }
+      ]
+    },
+    "insulin_pumps_and_automated_delivery": {
+      "name": "Continuous Subcutaneous Insulin Infusion (CSII) Pumps",
+      "benchmark_brands": [
+        "Insulet Omnipod 5",
+        "Tandem t:slim X2",
+        "Medtronic MiniMed 780G",
+        "Ypsomed mylife YpsoPump"
+      ],
+      "category": "Endocrine Automated Insulin Delivery",
+      "contraindicated_compounds_and_interferences": [
+        {
+          "compound": "Thermal Exposure: Saunas, Hot Tubs, Direct Sunlight (>30°C)",
+          "severity": "CRITICAL",
+          "mechanism": "Recombinant human insulin peptides denature into inactive fibrillar polymers under heat, causing sudden unexplained diabetic ketoacidosis (DKA).",
+          "clinical_action": "Detach insulin pump or protect pod during thermal spa/sauna sessions; discard cartridge if exposed to ambient temps >30°C."
+        },
+        {
+          "compound": "Infusion Site Lipohypertrophy from Repeated Needle Piercing",
+          "severity": "HIGH",
+          "mechanism": "Scarred adipose tissue delays insulin absorption by up to 180 minutes followed by unpredictable late dumping, causing severe delayed nocturnal hypoglycemia.",
+          "clinical_action": "Strict 14-day site rotation protocol across abdominal quadrants."
+        }
+      ]
+    },
+    "tens_and_ems_electrical_stimulators": {
+      "name": "Transcutaneous Electrical Nerve Stimulators (TENS / EMS)",
+      "benchmark_brands": [
+        "Compex SP 8.0",
+        "Beurer EM49",
+        "iReliev TENS",
+        "Omron Max Power Relief"
+      ],
+      "category": "Neuromuscular Pain Management",
+      "contraindicated_compounds_and_interferences": [
+        {
+          "compound": "Implanted Metallic Orthopedic Hardware (Spinal Cages / Screws)",
+          "severity": "MODERATE",
+          "mechanism": "High-density electrical current concentration around metal interfaces causes localized tissue heating and nerve irritation.",
+          "clinical_action": "Do not cross electrical field vectors directly over fresh surgical orthopedic metal implants."
+        }
+      ]
+    },
+    "peritoneal_dialysis_and_hemodialysis_cyclers": {
+      "name": "Peritoneal Home Dialysis Cyclers & Hemodialysis Units",
+      "benchmark_brands": [
+        "Baxter HomeChoice Claria",
+        "Fresenius Medical Care 5008S",
+        "NxStage System One"
+      ],
+      "category": "Nephrology & Renal Replacement Therapy",
+      "contraindicated_compounds_and_interferences": [
+        {
+          "compound": "High-Potassium Herbal Extracts (Dandelion Root, Nettle Leaf, Licorice, Horsetail)",
+          "severity": "CRITICAL",
+          "mechanism": "Renal failure patients cannot filter exogenous potassium; massive potassium release triggers fatal cardiac arrest / ventricular fibrillation.",
+          "clinical_action": "Strict prohibition of high-potassium herbal diuretics."
+        },
+        {
+          "compound": "Phosphate Binders (Sevelamer, Calcium Acetate) Timing Violation",
+          "severity": "HIGH",
+          "mechanism": "Taking phosphate binders on an empty stomach renders them 100% ineffective; binders must physically bind dietary phosphate in gut during meals.",
+          "clinical_action": "Must ingest binder with the very first bite of every protein-containing meal."
+        }
+      ]
+    },
+    "inhalers_and_nebulizer_compressors": {
+      "name": "Jet & Mesh Ultrasonic Nebulizers & Inhalers",
+      "benchmark_brands": [
+        "Omron MicroAir U100",
+        "PARI Trek S",
+        "Philips Respironics InnoSpire Elegance",
+        "Beurer IH55"
+      ],
+      "category": "Pulmonary Aerosol Medication Delivery",
+      "contraindicated_compounds_and_interferences": [
+        {
+          "compound": "Inhaled Corticosteroid (Budesonide, Fluticasone) Mouth Rinse Neglect",
+          "severity": "HIGH",
+          "mechanism": "Steroid deposit on oropharyngeal mucosa causes localized immunosuppression, leading to oral candidiasis (thrush) and vocal cord dysphonia.",
+          "clinical_action": "Vigorous water gargle and spit immediately following every steroid inhalation."
+        }
+      ]
+    },
+    "smartwatch_ecg_and_ppg_sensors": {
+      "name": "Smartwatch Single-Lead ECG & Optical PPG Sensors",
+      "benchmark_brands": [
+        "Apple Watch Series 10 / Ultra 2",
+        "Samsung Galaxy Watch 7",
+        "Garmin Venu 3",
+        "Fitbit Sense 2"
+      ],
+      "category": "Ambulatory Arrhythmia & Vital Tracking",
+      "contraindicated_compounds_and_interferences": [
+        {
+          "compound": "Heavy Shivering, Tremors, or Active Muscular Contraction",
+          "severity": "MODERATE",
+          "mechanism": "Somatic muscle electrical activity (EMG noise) creates pseudo-atrial fibrillation or baseline wander on single Lead-I ECG.",
+          "clinical_action": "Sit quietly with forearm supported on flat table when recording ECG."
+        }
+      ]
+    }
+  }
+}
