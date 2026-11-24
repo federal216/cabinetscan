@@ -523,15 +523,19 @@
             </div>
           </div>
 
-          <!-- Big Radiant Buy Button -->
+          <!-- Big Radiant Buy Button & Payment Gateways -->
           <div class="flex flex-wrap items-center justify-center gap-4 mb-4">
-            <a href="https://whop.com/checkout/plan_ikEY1bP1Pk7di" target="_blank" rel="noopener noreferrer" onclick="handleWhopCheckout()" class="px-10 py-5 rounded-2xl bg-gradient-to-r from-emerald-400 via-teal-300 via-cyan-400 to-emerald-300 hover:from-emerald-300 hover:to-cyan-300 text-black font-black text-sm sm:text-base shadow-[0_0_35px_rgba(52,211,153,0.6)] hover:scale-[1.03] transition-all flex items-center gap-3">
+            <button id="btn-creem-checkout" onclick="startCreemCheckout()" class="px-8 py-5 rounded-2xl bg-gradient-to-r from-emerald-400 via-teal-300 via-cyan-400 to-emerald-300 hover:from-emerald-300 hover:to-cyan-300 text-black font-black text-sm sm:text-base shadow-[0_0_35px_rgba(52,211,153,0.6)] hover:scale-[1.03] transition-all flex items-center gap-3 cursor-pointer">
               <svg class="w-5 h-5 fill-black" viewBox="0 0 170 170"><path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.69-3.08-7.73-7.98-12.14-14.7-5.26-7.85-9.36-16.7-12.3-26.54-3.59-12.18-5.38-23.77-5.38-34.78 0-14.24 3.59-26.17 10.78-35.8 7.18-9.63 16.3-14.45 27.35-14.45 4.8 0 10.02 1.34 15.67 4.02 5.66 2.68 9.53 4.02 11.62 4.02 1.9 0 5.86-1.34 11.87-4.02 6.01-2.68 11.13-3.9 15.36-3.69 11.62.67 20.9 4.91 27.84 12.74-9.84 5.92-14.65 14.2-14.42 24.83.22 8.27 3.35 15.3 9.4 21.09 6.04 5.8 13.2 9.04 21.46 9.72-2.12 6.7-4.69 13.4-7.7 20.08zM119.22 31.86c0-7.04 2.57-13.73 7.71-20.08 5.14-6.37 11.62-10.49 19.46-12.37 1.01 7.26-1.23 14.19-6.71 20.78-5.48 6.6-11.96 10.51-19.46 11.67-.34-.56-.67-1.12-1-1.68z"/></svg>
-              <span>Instant Unlock for $99 &rarr;</span>
+              <span>Instant Unlock for $99 (Creem • Apple Pay / Card) &rarr;</span>
+            </button>
+            <a href="https://whop.com/checkout/plan_ikEY1bP1Pk7di" target="_blank" rel="noopener noreferrer" class="px-5 py-5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-bold text-zinc-300 hover:text-white transition-all flex items-center gap-2">
+              <i data-lucide="external-link" class="w-4 h-4 text-zinc-400"></i>
+              Pay with Whop ($99)
             </a>
-            <a href="sample_cabinetscan_dossier.pdf" target="_blank" class="px-6 py-5 rounded-2xl bg-white/5 hover:bg-white/10 border border-emerald-500/40 text-xs font-bold text-emerald-300 hover:text-white transition-all flex items-center gap-2">
+            <a href="sample_cabinetscan_dossier.pdf" target="_blank" class="px-5 py-5 rounded-2xl bg-white/5 hover:bg-white/10 border border-emerald-500/40 text-xs font-bold text-emerald-300 hover:text-white transition-all flex items-center gap-2">
               <i data-lucide="file-text" class="w-4 h-4 text-emerald-400"></i>
-              View Sample 10–15 Page Dossier (PDF)
+              Sample PDF
             </a>
           </div>
 
@@ -541,13 +545,15 @@
             <span>•</span>
             <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> Google Pay</span>
             <span>•</span>
-            <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400"></i> Credit Card</span>
+            <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400"></i> Global Cards</span>
             <span>•</span>
-            <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-fuchsia-400"></i> Solana USDT</span>
+            <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-fuchsia-400"></i> USDC / Crypto</span>
+            <span>•</span>
+            <span class="flex items-center gap-1.5"><i data-lucide="shield" class="w-3.5 h-3.5 text-teal-400"></i> Creem.io MoR</span>
           </div>
 
           <button onclick="restorePurchasePrompt()" class="mt-5 text-[11px] text-zinc-500 hover:text-emerald-400 underline transition-colors inline-block font-mono">
-            Already purchased on Whop? Restore Master License &rarr;
+            Already purchased? Restore Master License &rarr;
           </button>
 
         </div>
@@ -1168,11 +1174,52 @@ Respond ONLY with this raw JSON structure (no markdown fences):
         localStorage.removeItem('CABINETSCAN_PAID_CONFIRMED');
         return false;
       }
-      if (urlParams.get('unlocked') === 'true' || urlParams.get('paid') === 'true' || urlParams.get('status') === 'success') {
+      if (urlParams.get('unlocked') === 'true' || urlParams.get('paid') === 'true' || urlParams.get('status') === 'success' || urlParams.get('provider') === 'creem' || urlParams.get('creem_paid') === 'true') {
         localStorage.setItem('CABINETSCAN_PAID_CONFIRMED', 'true');
         return true;
       }
       return localStorage.getItem('CABINETSCAN_PAID_CONFIRMED') === 'true';
+    }
+
+    async function startCreemCheckout() {
+      const btn = document.getElementById('btn-creem-checkout');
+      const originalText = btn ? btn.innerHTML : '';
+      if (btn) {
+        btn.disabled = true;
+        btn.innerHTML = `<span class="flex items-center gap-2"><i data-lucide="loader" class="w-4 h-4 animate-spin"></i><span>Connecting to Creem MoR...</span></span>`;
+        if (window.lucide) lucide.createIcons();
+      }
+
+      try {
+        const returnUrl = window.location.origin + window.location.pathname + '?status=success&paid=true&provider=creem';
+        const response = await fetch('/api/creem/initialize', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email: 'patient@cabinetscan.ai',
+            successUrl: returnUrl,
+            cancelUrl: window.location.origin + window.location.pathname + '?payment_cancelled=true'
+          })
+        });
+
+        const data = await response.json();
+        if (data && data.checkout_url) {
+          window.location.href = data.checkout_url;
+          return;
+        }
+
+        // Fallback to Whop if Creem returns without link
+        window.open('https://whop.com/checkout/plan_ikEY1bP1Pk7di', '_blank');
+      } catch (err) {
+        console.error('Creem checkout error:', err);
+        window.open('https://whop.com/checkout/plan_ikEY1bP1Pk7di', '_blank');
+      } finally {
+        if (btn) {
+          btn.disabled = false;
+          btn.innerHTML = originalText;
+          if (window.lucide) lucide.createIcons();
+        }
+      }
     }
 
     function triggerPaywallCheckout() {
@@ -1182,7 +1229,6 @@ Respond ONLY with this raw JSON structure (no markdown fences):
         paywall.classList.add('ring-4', 'ring-emerald-400');
         setTimeout(() => paywall.classList.remove('ring-4', 'ring-emerald-400'), 2500);
       }
-      window.open('https://whop.com/checkout/plan_ikEY1bP1Pk7di', '_blank');
     }
 
     function downloadOfficialMasterPDF() {
@@ -1194,15 +1240,15 @@ Respond ONLY with this raw JSON structure (no markdown fences):
     }
 
     function restorePurchasePrompt() {
-      const orderId = prompt("Enter your Whop Order Confirmation ID from your receipt (e.g., WHOP-XXXX):");
+      const orderId = prompt("Enter your Creem or Whop Order Confirmation ID (e.g., CRM-XXXX, CHK-XXXX or WHOP-XXXX):");
       if (!orderId) return;
       const clean = orderId.trim().toUpperCase();
-      if (clean.startsWith("WHOP-") || clean.startsWith("CS-") || clean.length >= 12) {
+      if (clean.startsWith("CRM-") || clean.startsWith("CHK-") || clean.startsWith("CREEM-") || clean.startsWith("WHOP-") || clean.startsWith("CS-") || clean.length >= 8) {
         localStorage.setItem('CABINETSCAN_PAID_CONFIRMED', 'true');
-        alert("Whop License verified successfully! Unlocking your full Master Clinical Dossier.");
+        alert("License verified successfully! Unlocking your full Master Clinical Dossier.");
         location.reload();
       } else {
-        alert("Invalid Order ID. Please check your Whop receipt email or click 'Instant Unlock' to purchase your license.");
+        alert("Invalid Order ID. Please check your Creem or Whop receipt email or click 'Instant Unlock' to purchase your license.");
       }
     }
 
@@ -1275,7 +1321,7 @@ Respond ONLY with this raw JSON structure (no markdown fences):
                 <i data-lucide="shield-check" class="w-8 h-8"></i>
               </div>
               <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 font-mono text-[11px] font-bold uppercase tracking-wider mb-2">
-                VERIFIED WHOP CLIENT • LIFETIME MASTER DOSSIER UNLOCKED
+                VERIFIED CLIENT • LIFETIME MASTER DOSSIER UNLOCKED
               </div>
               <h3 class="text-2xl sm:text-3xl font-black text-white mb-2">🎉 Master Clinical Dossier Unlocked</h3>
               <p class="text-xs sm:text-sm text-zinc-300 max-w-xl mx-auto mb-6 leading-relaxed">

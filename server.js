@@ -23,6 +23,13 @@ app.get('/api/database', (req, res) => {
   });
 });
 
+// Creem.io Merchant of Record Checkout & Webhook Handlers
+const creemInitialize = require('./api/creem/initialize');
+const creemWebhook = require('./api/creem/webhook');
+app.all('/api/creem/initialize', creemInitialize);
+app.all('/api/creem/webhook', creemWebhook);
+
+
 const SYSTEM_PROMPT = `
 You are CabinetScan AI, an elite board-level clinical pharmacologist and biohacking stack auditor.
 The user provides a photo of their supplement bottles, pill organizers, peptide vials, or medicine cabinet.
