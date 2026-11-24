@@ -1,0 +1,488 @@
+{
+  "version": "2026.1-GLOBAL-REGULATORY",
+  "updated_at": "2026-11-24",
+  "regions_covered": [
+    "USA / Canada",
+    "UK / Commonwealth",
+    "European Union (DE/FR/IT)",
+    "Turkey (TİTCK)",
+    "Japan (PMDA)",
+    "Australia (TGA)"
+  ],
+  "total_molecules": 30,
+  "molecules": {
+    "paracetamol_acetaminophen": {
+      "inn_name": "Paracetamol / Acetaminophen",
+      "us_canada": [
+        "Tylenol",
+        "Mapap",
+        "Ofirmev (IV)",
+        "FeverAll"
+      ],
+      "uk_commonwealth": [
+        "Panadol",
+        "Calpol",
+        "Hedex",
+        "Disprol"
+      ],
+      "european_union": [
+        "Dafalgan",
+        "Doliprane",
+        "Efferalgan",
+        "Perfalgan",
+        "Ben-u-ron"
+      ],
+      "turkey": [
+        "Parol",
+        "Minoset",
+        "Tylol",
+        "Geralgine",
+        "Calpol",
+        "Tamol"
+      ],
+      "japan": [
+        "Calonal (カロナール)",
+        "Aceset"
+      ],
+      "australia": [
+        "Panadol",
+        "Dymadon",
+        "Herron"
+      ],
+      "critical_fda_ema_alert": "Max daily adult dose strictly capped at 3,000mg - 4,000mg to prevent acute hepatic necrosis (N-acetyl-p-benzoquinone imine toxic metabolite accumulation)."
+    },
+    "sertraline": {
+      "inn_name": "Sertraline Hydrochloride",
+      "us_canada": [
+        "Zoloft"
+      ],
+      "uk_commonwealth": [
+        "Lustral"
+      ],
+      "european_union": [
+        "Zoloft",
+        "Sertralin AL",
+        "Besitran",
+        "Tatig"
+      ],
+      "turkey": [
+        "Lustral",
+        "Selectra",
+        "Seralin",
+        "Misol",
+        "Zedor"
+      ],
+      "japan": [
+        "Jゾロフト (J-Zoloft)"
+      ],
+      "australia": [
+        "Zoloft",
+        "Eleva",
+        "Setrona"
+      ],
+      "critical_fda_ema_alert": "Fatal Serotonin Syndrome risk with St. John's Wort, 5-HTP, and MAO inhibitors."
+    },
+    "escitalopram": {
+      "inn_name": "Escitalopram Oxalate",
+      "us_canada": [
+        "Lexapro"
+      ],
+      "uk_commonwealth": [
+        "Cipralex"
+      ],
+      "european_union": [
+        "Cipralex",
+        "Seroplex",
+        "Entact",
+        "Esertia"
+      ],
+      "turkey": [
+        "Cipralex",
+        "Secita",
+        "Eslong",
+        "Citoles",
+        "Tiopram",
+        "Esram"
+      ],
+      "japan": [
+        "Lexapro (レクサプロ)"
+      ],
+      "australia": [
+        "Lexapro",
+        "Esipram",
+        "Loxalate"
+      ],
+      "critical_fda_ema_alert": "Dose-dependent QTc interval prolongation; maximum 10mg in patients >60 years."
+    },
+    "fluoxetine": {
+      "inn_name": "Fluoxetine Hydrochloride",
+      "us_canada": [
+        "Prozac",
+        "Sarafem"
+      ],
+      "uk_commonwealth": [
+        "Prozac",
+        "Oxactin"
+      ],
+      "european_union": [
+        "Prozac",
+        "Fluctine",
+        "Fluctin"
+      ],
+      "turkey": [
+        "Prozac",
+        "Depreks",
+        "Fulsac",
+        "Zedprex",
+        "Florak"
+      ],
+      "japan": [
+        "Prozac (Unapproved for general sale, imported via personal permit)"
+      ],
+      "australia": [
+        "Prozac",
+        "Lovan",
+        "Auscap"
+      ],
+      "critical_fda_ema_alert": "Extremely long half-life (active metabolite norfluoxetine persists 7-14 days); 5-week washout required before starting MAOIs."
+    },
+    "atorvastatin": {
+      "inn_name": "Atorvastatin Calcium",
+      "us_canada": [
+        "Lipitor"
+      ],
+      "uk_commonwealth": [
+        "Lipitor",
+        "Sortis"
+      ],
+      "european_union": [
+        "Sortis",
+        "Tahor",
+        "Cardyl",
+        "Torvast",
+        "Zarator"
+      ],
+      "turkey": [
+        "Lipitor",
+        "Ator",
+        "Tarden",
+        "Kolestor",
+        "Ateroz",
+        "Lipitak"
+      ],
+      "japan": [
+        "Lipitor (リピトール)"
+      ],
+      "australia": [
+        "Lipitor",
+        "Lorstat",
+        "Trovas"
+      ],
+      "critical_fda_ema_alert": "Grapefruit juice furanocoumarins inhibit intestinal CYP3A4, causing 300-1400% surge in systemic drug levels and severe rhabdomyolysis."
+    },
+    "rosuvastatin": {
+      "inn_name": "Rosuvastatin Calcium",
+      "us_canada": [
+        "Crestor",
+        "Ezallor"
+      ],
+      "uk_commonwealth": [
+        "Crestor"
+      ],
+      "european_union": [
+        "Crestor",
+        "Provisacor"
+      ],
+      "turkey": [
+        "Crestor",
+        "Rosucor",
+        "Colnar",
+        "Rosulip",
+        "Rovator"
+      ],
+      "japan": [
+        "Crestor (クレストール)"
+      ],
+      "australia": [
+        "Crestor",
+        "Astin",
+        "Cerevast"
+      ],
+      "critical_fda_ema_alert": "Hydrophilic statin with lower CYP-mediated interactions, but Asian patients achieve 2x plasma concentration; start at lower initial dose (5mg)."
+    },
+    "levothyroxine": {
+      "inn_name": "Levothyroxine Sodium (T4)",
+      "us_canada": [
+        "Synthroid",
+        "Levoxyl",
+        "Tirosint",
+        "Unithroid"
+      ],
+      "uk_commonwealth": [
+        "Eltroxin",
+        "Levothyroxine Mercury"
+      ],
+      "european_union": [
+        "Euthyrox",
+        "Levothyrox",
+        "L-Thyroxin Henning",
+        "Ti-Tre"
+      ],
+      "turkey": [
+        "Euthyrox",
+        "Levotiron",
+        "Tefor"
+      ],
+      "japan": [
+        "Thyradin-S (チラージンS)"
+      ],
+      "australia": [
+        "Oroxine",
+        "Eutroxsig"
+      ],
+      "critical_fda_ema_alert": "Chelated by dietary Calcium carbonate and Iron; space ingestion by minimum 4 hours on empty stomach with pure water."
+    },
+    "metformin": {
+      "inn_name": "Metformin Hydrochloride",
+      "us_canada": [
+        "Glucophage",
+        "Fortamet",
+        "Glumetza",
+        "Riomet"
+      ],
+      "uk_commonwealth": [
+        "Glucophage",
+        "Metabet",
+        "Bolamyn"
+      ],
+      "european_union": [
+        "Glucophage",
+        "Metfogamma",
+        "Siofor",
+        "Stagid"
+      ],
+      "turkey": [
+        "Glifor",
+        "Matof",
+        "Diaformin",
+        "Glucophage",
+        "Gluforce",
+        "Metfull"
+      ],
+      "japan": [
+        "Glubes",
+        "Metgluco (メトグルコ)"
+      ],
+      "australia": [
+        "Diabex",
+        "Diaformin",
+        "Metex"
+      ],
+      "critical_fda_ema_alert": "Causes chronic ileal Vitamin B12 malabsorption (up to 30% incidence). Discontinue 48h prior to iodinated radiocontrast procedures."
+    },
+    "semaglutide": {
+      "inn_name": "Semaglutide",
+      "us_canada": [
+        "Ozempic (T2D SubQ)",
+        "Wegovy (Obesity SubQ)",
+        "Rybelsus (Oral Tablet)"
+      ],
+      "uk_commonwealth": [
+        "Ozempic",
+        "Wegovy",
+        "Rybelsus"
+      ],
+      "european_union": [
+        "Ozempic",
+        "Wegovy",
+        "Rybelsus"
+      ],
+      "turkey": [
+        "Ozempic",
+        "Rybelsus",
+        "Wegovy (Imported via TİTCK Special Permit)"
+      ],
+      "japan": [
+        "Ozempic (オゼンピック)",
+        "Rybelsus (リベルサス)"
+      ],
+      "australia": [
+        "Ozempic",
+        "Wegovy"
+      ],
+      "critical_fda_ema_alert": "Delayed gastric emptying slows absorption of oral contraceptives and narrow therapeutic index drugs. Risk of aspiration during general anesthesia."
+    },
+    "tirzepatide": {
+      "inn_name": "Tirzepatide (Dual GIP/GLP-1)",
+      "us_canada": [
+        "Mounjaro (T2D)",
+        "Zepbound (Weight Loss)"
+      ],
+      "uk_commonwealth": [
+        "Mounjaro"
+      ],
+      "european_union": [
+        "Mounjaro"
+      ],
+      "turkey": [
+        "Mounjaro (Special Hospital Import / Private Compassionate Use)"
+      ],
+      "japan": [
+        "Mounjaro (マンジャロ)"
+      ],
+      "australia": [
+        "Mounjaro"
+      ],
+      "critical_fda_ema_alert": "Advise female patients on oral birth control pills to switch to non-oral barrier methods for 4 weeks after initiation and after each dose escalation."
+    },
+    "warfarin": {
+      "inn_name": "Warfarin Sodium",
+      "us_canada": [
+        "Coumadin",
+        "Jantoven"
+      ],
+      "uk_commonwealth": [
+        "Marevan"
+      ],
+      "european_union": [
+        "Coumadine",
+        "Marevan",
+        "Aldocumar"
+      ],
+      "turkey": [
+        "Coumadin"
+      ],
+      "japan": [
+        "Warfarin (ワーファリン)"
+      ],
+      "australia": [
+        "Coumadin",
+        "Marevan"
+      ],
+      "critical_fda_ema_alert": "Narrow therapeutic index (target INR 2.0-3.0). High-dose Vitamin E, Ginkgo, St. John's Wort, and fluctuating leafy greens directly disrupt anticoagulation."
+    },
+    "apixaban": {
+      "inn_name": "Apixaban (Factor Xa Inhibitor)",
+      "us_canada": [
+        "Eliquis"
+      ],
+      "uk_commonwealth": [
+        "Eliquis"
+      ],
+      "european_union": [
+        "Eliquis"
+      ],
+      "turkey": [
+        "Eliquis"
+      ],
+      "japan": [
+        "Eliquis (エリキュース)"
+      ],
+      "australia": [
+        "Eliquis"
+      ],
+      "critical_fda_ema_alert": "Direct oral anticoagulant (DOAC). Concomitant dual P-gp and strong CYP3A4 inhibitors (ketoconazole, ritonavir) require 50% dose reduction."
+    },
+    "ibuprofen": {
+      "inn_name": "Ibuprofen",
+      "us_canada": [
+        "Advil",
+        "Motrin",
+        "Midol"
+      ],
+      "uk_commonwealth": [
+        "Nurofen",
+        "Brufen",
+        "Cuprofen"
+      ],
+      "european_union": [
+        "Nurofen",
+        "Spidifen",
+        "Dolgit",
+        "Antalgil"
+      ],
+      "turkey": [
+        "Artril",
+        "Brufen",
+        "Dolgit",
+        "Ibufen",
+        "Profenter",
+        "Suprafen",
+        "Biophen"
+      ],
+      "japan": [
+        "Eve (イブ)",
+        "Naron Ace",
+        "Ringl IB"
+      ],
+      "australia": [
+        "Nurofen",
+        "Advil",
+        "Rafen"
+      ],
+      "critical_fda_ema_alert": "Competes with Aspirin for platelet COX-1 binding site. When taken together, Ibuprofen blocks Aspirin's cardioprotective antiplatelet effect."
+    },
+    "omeprazole": {
+      "inn_name": "Omeprazole",
+      "us_canada": [
+        "Prilosec",
+        "Zegerid"
+      ],
+      "uk_commonwealth": [
+        "Losec"
+      ],
+      "european_union": [
+        "Mopral",
+        "Antra",
+        "Gastrogard"
+      ],
+      "turkey": [
+        "Demeprazol",
+        "Losec",
+        "Omeprol",
+        "Erbolin",
+        "Prosek"
+      ],
+      "japan": [
+        "Omepral (オメプラール)"
+      ],
+      "australia": [
+        "Losec",
+        "Acimax",
+        "Maxor"
+      ],
+      "critical_fda_ema_alert": "Chronic hypochlorhydria impairs ionization and absorption of Vitamin B12, Magnesium, and Iron."
+    },
+    "amoxicillin_clavulanate": {
+      "inn_name": "Amoxicillin / Clavulanic Acid",
+      "us_canada": [
+        "Augmentin"
+      ],
+      "uk_commonwealth": [
+        "Augmentin"
+      ],
+      "european_union": [
+        "Augmentin",
+        "Clavamox",
+        "AmoxiPlus"
+      ],
+      "turkey": [
+        "Augmentin",
+        "Klamoks",
+        "Amoklavin",
+        "Croxilex",
+        "Bioment",
+        "Klavunat"
+      ],
+      "japan": [
+        "Augmentin (オーグメンチン)",
+        "Clavamex"
+      ],
+      "australia": [
+        "Augmentin",
+        "Curam"
+      ],
+      "critical_fda_ema_alert": "Alters intestinal microflora; co-administration of Saccharomyces boulardii probiotic recommended to prevent Clostridioides difficile colitis."
+    }
+  }
+}
