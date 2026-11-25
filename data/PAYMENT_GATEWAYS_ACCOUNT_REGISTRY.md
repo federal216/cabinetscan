@@ -6,23 +6,44 @@
 
 ---
 
-## 1. Whop (Merchant of Record - Birincil Aktif Ödeme Altyapısı)
+## 1. Dodo Payments (Merchant of Record - Aktif Entegrasyon)
+- **Portal:** [https://dodopayments.com/](https://dodopayments.com/)
+- **Kullanıcı Hesabı:** `karakoc.i@gmail.com`
+- **Business ID:** `bus_0NsdOsgyw5JvaPeKIIn2R`
+- **Live Product ID:** `pdt_0NsdaQ7P6h6NjAauG3k4P` ($99.00 USD)
+- **Desteklenen Ödeme Tipleri:** Apple Pay, Google Pay, Global Kredi/Banka Kartları (Visa, Mastercard, Amex)
+- **Entegrasyon Dosyaları:**
+  - `api/dodo/initialize.js` (Checkout oturumu başlatıcı)
+  - `server.js` (`/api/dodo/initialize` endpoint'i)
+  - `index.html` (Modal içi 1-tık checkout)
+- **Durum:** ✅ Sitede ve Kodda Aktif
+
+---
+
+## 2. Whop (Merchant of Record - Aktif Ödeme Altyapısı)
 - **Portal:** [https://whop.com/](https://whop.com/)
 - **Ödeme Planı:** `plan_ikEY1bP1Pk7di` ($99 Master Dossier)
 - **Checkout URL:** [https://whop.com/checkout/plan_ikEY1bP1Pk7di](https://whop.com/checkout/plan_ikEY1bP1Pk7di)
-- **Desteklenen Ödeme Tipleri:** Apple Pay, Google Pay, Global Kredi Kartları (Visa, Mastercard, Amex)
+- **Desteklenen Ödeme Tipleri:** Apple Pay, Google Pay, Global Kredi Kartları
 - **Lisans Doğrulama Ön Eki:** `WHOP-...`
 - **Durum:** ✅ Sitede ve Kodda Aktif
 
 ---
 
-## 2. Creem.io (İPTAL EDİLDİ - Kaldırıldı)
+## 3. Web3 Kripto Ödemeleri
+- **Ağlar:** USDT (TRC-20) / USDC (ERC-20)
+- **Tutar:** $99.00
+- **Durum:** ✅ Kodda aktif ve hazır
+
+---
+
+## 4. Creem.io (İPTAL EDİLDİ - Kaldırıldı)
 - **Durum:** ❌ Kullanımdan kaldırıldı ve koddan/sunucudan temizlendi.
 
 ---
 
-## 3. Payout Banka Bilgileri (Payoneer Citibank US)
-Whop veya Dodo payout alanlarına girilecek global hesap bilgileri:
+## 5. Payout Banka Bilgileri (Payoneer Citibank US)
+Dodo Payments ve Whop payout alanlarına girilecek global hesap bilgileri:
 - **Banka Adı:** Citibank, N.A.
 - **Banka Adresi:** 111 Wall Street, New York, NY 10043, USA
 - **Routing / ABA (EFT):** `031100209`

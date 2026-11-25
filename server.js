@@ -25,8 +25,12 @@ app.get('/api/database', (req, res) => {
 
 // Health check
 app.get('/api/status', (req, res) => {
-  res.json({ status: 'online', service: 'CabinetScan AI' });
+  res.json({ status: 'online', service: 'CabinetScan AI', gateways: { dodo: true, whop: true } });
 });
+
+// Dodo Payments Gateway Endpoint
+const dodoInitialize = require('./api/dodo/initialize');
+app.all('/api/dodo/initialize', dodoInitialize);
 
 
 const SYSTEM_PROMPT = `
