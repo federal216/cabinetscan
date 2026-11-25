@@ -1173,59 +1173,11 @@ Respond ONLY with this raw JSON structure (no markdown fences):
         localStorage.removeItem('CABINETSCAN_PAID_CONFIRMED');
         return false;
       }
-      if (urlParams.get('unlocked') === 'true' || urlParams.get('paid') === 'true' || urlParams.get('status') === 'success' || urlParams.get('provider') === 'creem' || urlParams.get('creem_paid') === 'true') {
+      if (urlParams.get('unlocked') === 'true' || urlParams.get('paid') === 'true' || urlParams.get('status') === 'success' || urlParams.get('whop_paid') === 'true') {
         localStorage.setItem('CABINETSCAN_PAID_CONFIRMED', 'true');
         return true;
       }
       return localStorage.getItem('CABINETSCAN_PAID_CONFIRMED') === 'true';
-    }
-
-    async function startCreemCheckout() {
-      const liveCreemUrl = 'https://www.creem.io/payment/prod_75U0KNi7IDlRffo4MBN9R1';
-      const btn = document.getElementById('btn-creem-checkout');
-      const originalText = btn ? btn.innerHTML : '';
-      if (btn) {
-        btn.disabled = true;
-        btn.innerHTML = `<span class="flex items-center gap-2"><i data-lucide="loader" class="w-4 h-4 animate-spin"></i><span>Connecting to Creem MoR...</span></span>`;
-        if (window.lucide) lucide.createIcons();
-      }
-
-      // If running on static host (GitHub Pages), open live Creem checkout immediately
-      if (window.location.hostname.includes('github.io')) {
-        window.location.href = liveCreemUrl;
-        return;
-      }
-
-      try {
-        const returnUrl = window.location.origin + window.location.pathname + '?status=success&paid=true&provider=creem';
-        const response = await fetch('/api/creem/initialize', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            email: 'patient@cabinetscan.ai',
-            productId: 'prod_75U0KNi7IDlRffo4MBN9R1',
-            successUrl: returnUrl,
-            cancelUrl: window.location.origin + window.location.pathname + '?payment_cancelled=true'
-          })
-        });
-
-        const data = await response.json();
-        if (data && data.checkout_url) {
-          window.location.href = data.checkout_url;
-          return;
-        }
-
-        window.location.href = liveCreemUrl;
-      } catch (err) {
-        console.warn('Creem checkout fallback to live link:', err);
-        window.location.href = liveCreemUrl;
-      } finally {
-        if (btn) {
-          btn.disabled = false;
-          btn.innerHTML = originalText;
-          if (window.lucide) lucide.createIcons();
-        }
-      }
     }
 
     function triggerPaywallCheckout() {
@@ -1243,15 +1195,15 @@ Respond ONLY with this raw JSON structure (no markdown fences):
     }
 
     function restorePurchasePrompt() {
-      const orderId = prompt("Enter your Creem or Whop Order Confirmation ID (e.g., CRM-XXXX, CHK-XXXX or WHOP-XXXX):");
+      const orderId = prompt("Enter your Whop Order Confirmation ID (e.g., WHOP-XXXX):");
       if (!orderId) return;
       const clean = orderId.trim().toUpperCase();
-      if (clean.startsWith("CRM-") || clean.startsWith("CHK-") || clean.startsWith("CREEM-") || clean.startsWith("WHOP-") || clean.startsWith("CS-") || clean.length >= 8) {
+      if (clean.startsWith("WHOP-") || clean.startsWith("CS-") || clean.length >= 8) {
         localStorage.setItem('CABINETSCAN_PAID_CONFIRMED', 'true');
         alert("License verified successfully! Unlocking your full Master Clinical Dossier.");
         location.reload();
       } else {
-        alert("Invalid Order ID. Please check your Creem or Whop receipt email or click 'Instant Unlock' to purchase your license.");
+        alert("Invalid Order ID. Please check your Whop receipt email or click 'Instant Unlock' to purchase your license.");
       }
     }
 

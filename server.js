@@ -23,11 +23,10 @@ app.get('/api/database', (req, res) => {
   });
 });
 
-// Creem.io Merchant of Record Checkout & Webhook Handlers
-const creemInitialize = require('./api/creem/initialize');
-const creemWebhook = require('./api/creem/webhook');
-app.all('/api/creem/initialize', creemInitialize);
-app.all('/api/creem/webhook', creemWebhook);
+// Health check
+app.get('/api/status', (req, res) => {
+  res.json({ status: 'online', service: 'CabinetScan AI' });
+});
 
 
 const SYSTEM_PROMPT = `
