@@ -219,12 +219,12 @@ def make_header(page_num, total=10, subtitle="CLINICAL PHARMACOLOGY AUDIT"):
 def make_footer(page_num, total=10):
     return f"""
     <div class="footer">
-      <div class="footer-doc">
+      <div class="footer-brand">
         <div class="footer-avatar">CS</div>
         <span style="font-weight:600; color:#0f172a;">CabinetScan AI &bull; Autonomous Pharmacokinetic Intelligence Engine</span>
       </div>
       <div style="text-align:right;">
-        <div style="font-size:7.5px; color:#64748b; font-weight:500;">INDEPENDENT AI PHARMACOKINETIC RESEARCH &bull; NOT A MEDICAL DIAGNOSIS &bull; DOES NOT REPLACE IN-PERSON CLINICAL EXAMINATION</div>
+        <div style="font-size:7.5px; color:#64748b; font-weight:500;">INDEPENDENT AI PHARMACOKINETIC RESEARCH &bull; NOT A CLINICAL DIAGNOSIS &bull; DOES NOT REPLACE LICENSED HEALTHCARE CONSULTATIONS</div>
         <div>CONFIDENTIAL CLINICAL AUDIT &bull; PAGE {page_num} OF {total}</div>
       </div>
     </div>
@@ -741,7 +741,7 @@ PAGES.append(f"""
       <p style="font-size:10.5px; line-height:1.6; color:#334155;">
         &bull; <strong>Apple / Google Calendar Sync (.ics):</strong> Alarms pre-programmed for 07:30, 12:30, and 22:15.<br>
         &bull; <strong>WhatsApp Instant Assistant Share:</strong> 1-Click summary formatted to paste directly into your assistant's chat.<br>
-        &bull; <strong>Official High-Res PDF Export:</strong> Printable 10-page clinical dossier for your primary care physician.
+        &bull; <strong>Official High-Res PDF Export:</strong> Printable 10-page clinical dossier for your private wellness archive or licensed practitioner consultations.
       </p>
     </div>
 
@@ -764,7 +764,7 @@ PAGES.append(f"""
       </div>
       <div style="font-size:8.5px; color:#334155; line-height:1.4;">
         Synthesized autonomously from global pharmacological literature and clinical datasets scanned by Artificial Intelligence. 
-        This protocol is intended for informational and educational auditing purposes only and does not constitute a clinical diagnosis or replace actual in-person medical examination, formal clinical diagnosis, or personalized prescription advice. Always consult your certified physician.
+        This protocol is intended for informational and educational auditing purposes only and does not constitute a clinical diagnosis or replace licensed clinical consultations, professional health evaluations, or personalized therapy plans. Always consult a certified healthcare practitioner.
       </div>
     </div>
 
