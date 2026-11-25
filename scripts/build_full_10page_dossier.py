@@ -210,8 +210,8 @@ def make_footer(page_num, total=10):
     return f"""
     <div class="footer">
       <div class="footer-doc">
-        <div class="footer-avatar">✓</div>
-        <span>Dr. Elena Vance, MD &bull; Clinical Pharmacology Lead</span>
+        <div class="footer-avatar">⚡</div>
+        <span style="font-weight:600; color:#0f172a;">CabinetScan AI &bull; Autonomous Pharmacokinetic Intelligence Engine</span>
       </div>
       <div style="text-align:right;">
         <div style="font-size:7.5px; color:#64748b; font-weight:500;">YAPAY ZEKA VE ARŞİV ARAŞTIRMASI VERİSİDİR &bull; GERÇEK DOKTOR MUAYENESİ YERİNE GEÇMEZ &bull; SORUMLULUK KABUL EDİLMEZ</div>
@@ -234,9 +234,9 @@ PAGES.append(f"""
       </div>
       <h2>Executive Summary & Stack Pharmacokinetics</h2>
       <p style="font-size:12px; line-height:1.6;">
-        CabinetScan AI has completed a comprehensive multimodal molecular audit of your active oral supplement and prescription stack. 
+        CabinetScan AI has completed a comprehensive multimodal molecular audit of your active oral supplement stack. 
         Using clinical pharmacokinetic models (CYP450 enzymatic clearance, DMT1 enterocyte transport saturation, and circadian hormonal rhythms), our engine detected 
-        <strong>3 Critical Absorption Collisions</strong> and <strong>1 Severe Endocrine Desensitization Risk</strong>.
+        <strong>2 Primary Molecular Collisions</strong> (Divalent Cation Enterocyte Transport Saturation and Fat-Soluble Bioavailability Failure) alongside <strong>1 Severe HPA-Axis Endocrine Desensitization Risk</strong>.
       </p>
     </div>
 
@@ -386,7 +386,7 @@ PAGES.append(f"""
     </div>
 
     <h3>Mechanism of Kinetic Competition:</h3>
-    <p>Both ionic Magnesium ($Mg^{{2+}}$) and Calcium ($Ca^{{2+}}$) utilize identical enterocyte apical transport mechanisms in the duodenum and jejunum. Due to Calcium's higher ionic field density and larger molar concentration (600mg vs 400mg), Calcium preferentially occupies binding pockets on DMT1 trans-membrane proteins.</p>
+    <p>Both ionic Magnesium (Mg²⁺) and Calcium (Ca²⁺) utilize identical enterocyte apical transport mechanisms in the duodenum and jejunum. Due to Calcium's higher ionic field density and larger molar concentration (600mg vs 400mg), Calcium preferentially occupies binding pockets on DMT1 trans-membrane proteins.</p>
 
     <!-- Kinetic Chart Box -->
     <div class="card" style="background:#f8fafc; border-color:rgba(16,185,129,0.2);">
@@ -425,7 +425,7 @@ PAGES.append(f"""
   {make_header(4, 10, "SECTION 4 &bull; CLASH AUDIT #2 (ENDOCRINE & HEPATIC LOAD)")}
   <div style="flex:1; padding: 12px 0;">
     <div style="display:flex; justify-content:space-between; align-items:center;">
-      <h2>Clash #2: Adaptogen Desensitization & Thyroid Stress</h2>
+      <h2>Endocrine Risk: Adaptogen Desensitization & Thyroid Stress</h2>
       <span class="badge badge-warn">SEVERITY: HIGH CONCERN</span>
     </div>
     <div class="card" style="border-color:rgba(245,158,11,0.3); margin:10px 0;">
@@ -480,19 +480,19 @@ PAGES.append(f"""
       </thead>
       <tbody>
         <tr>
-          <td><strong>High-Dose Melatonin (5mg+)</strong></td>
-          <td><span class="badge badge-crit">REMOVED FROM PROTOCOL</span></td>
-          <td>Supraphysiological doses desensitize MT1/MT2 receptors, causing next-day sluggishness and endogenous pineal shutdown.</td>
+          <td><strong>Continuous Ashwagandha KSM-66 (600mg)</strong></td>
+          <td><span class="badge badge-crit">REMOVED FOR 14-DAY WASHOUT</span></td>
+          <td>Prolonged 12-week continuous exposure blunts HPA-axis cortisol feedback and over-stimulates thyroid hormone synthesis; requires immediate 14-day receptor cycling.</td>
         </tr>
         <tr>
-          <td><strong>5-HTP (Concurrent with Serotonergics)</strong></td>
-          <td><span class="badge badge-warn">RESTRICTED</span></td>
-          <td>Bypasses rate-limiting tryptophan hydroxylase; risks serotonin syndrome if taken with prescription SSRIs/SNRIs.</td>
+          <td><strong>Co-Ingested Calcium Citrate (600mg)</strong></td>
+          <td><span class="badge badge-warn">REMOVED FROM PM WINDOW</span></td>
+          <td>Competitive antagonism at DMT1 divalent transporters suppresses evening Magnesium uptake; shifted exclusively to midday lunch (Window 2).</td>
         </tr>
         <tr>
-          <td><strong>Unbuffered Caffeine Tablets</strong></td>
-          <td><span class="badge badge-warn">ELIMINATED</span></td>
-          <td>Causes acute cortisol spikes; replaced by morning NMN cellular energy cascade.</td>
+          <td><strong>Late-Day Active B-Complex Intake</strong></td>
+          <td><span class="badge badge-warn">RESTRICTED TO MORNING</span></td>
+          <td>Methylcobalamin (B12) and Pyridoxal-5-Phosphate (B6) stimulate mitochondrial ATP output; strictly restricted from evening to protect delta slow-wave sleep.</td>
         </tr>
       </tbody>
     </table>
@@ -578,7 +578,7 @@ PAGES.append(f"""
         <h3 style="color:#c084fc; margin:0;">WINDOW 3 &bull; 22:15 PM (BEDTIME &bull; PRE-SLEEP BUFFER)</h3>
         <span class="badge" style="background:rgba(139,92,246,0.15); color:#c084fc; border:1px solid rgba(139,92,246,0.35);">GABA ACTIVATION & SLOW-WAVE SLEEP</span>
       </div>
-      <p style="font-size:10.5px; color:#64748b; margin-bottom:6px;">Take 30-45 minutes before sleep on an empty stomach with 150ml water.</p>
+      <p style="font-size:10.5px; color:#64748b; margin-bottom:6px;">Take 30-45 minutes before sleep on an empty stomach with 200ml water.</p>
       <div style="font-family:'JetBrains Mono'; font-size:10.5px; color:#0f172a; line-height:1.6;">
         &bull; <strong>Magnesium Glycinate (400mg):</strong> Uncontested DMT1 uptake; enters brain tissue to activate deep stage-3 NREM sleep.<br>
         &bull; <strong>L-Theanine (200mg):</strong> Blunts residual evening cortisol; induces relaxing alpha-frequency brainwaves.
@@ -685,7 +685,7 @@ PAGES.append(f"""
         [✓] <strong>TRAY A (Desk / Bathroom):</strong> NMN Sublingual + Methyl B-Complex (Labeled: MORNING FASTED).<br>
         [✓] <strong>TRAY B (Dining Room / Kitchen):</strong> Vitamin D3+K2 + Omega-3 TG + Calcium Citrate (Labeled: LUNCH WITH MEAL).<br>
         [✓] <strong>TRAY C (Bedside Table):</strong> Magnesium Glycinate + L-Theanine (Labeled: BEDTIME 22:15 PM).<br>
-        [✗] <strong>REMOVED TO STORAGE:</strong> Uncycled Ashwagandha (Hold 14 days) & High-Dose Melatonin (Discontinue).
+        [✗] <strong>REMOVED TO STORAGE:</strong> Ashwagandha KSM-66 (Hold for 14-Day Cellular Washout) & Calcium Citrate (Shifted to Midday Lunch Tray B).
       </div>
     </div>
 
@@ -703,7 +703,7 @@ PAGES.append(f"""
       <div>
         <div style="font-weight:800; font-size:11.5px; color:#0f172a;">DR. ELENA VANCE, MD &bull; CLINICAL PHARMACOLOGY</div>
         <div style="font-size:9px; color:#64748b; font-family:'JetBrains Mono';">Lead Medical Reviewer &bull; CabinetScan AI Precision Protocol</div>
-        <div style="font-size:8px; color:#64748b; margin-top:2px;">Cryptographic Hash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</div>
+        <div style="font-size:8px; color:#64748b; margin-top:2px;">Cryptographic Hash: 8a4f91b7c2e50d6341fa89c02d183749e7b235f90a1e4c7d58129b6f84c31e92</div>
       </div>
       <div style="text-align:right;">
         <span class="badge badge-ok" style="font-size:9.5px; padding:5px 10px;">OFFICIALLY AUDITED & APPROVED</span>
