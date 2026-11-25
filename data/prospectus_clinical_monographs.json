@@ -1,0 +1,20 @@
+[
+  {
+    "compound": "Iron Bisglycinate vs Calcium Citrate",
+    "mechanism": "DMT1 transporter competitive cation exclusion",
+    "clinical_risk": "87% loss of iron bioavailability; chronic hypochromic microcytic anemia persistence",
+    "required_washout_interval_hours": 4
+  },
+  {
+    "compound": "Zinc Picolinate (>40mg) unopposed by Copper",
+    "mechanism": "Intestinal enterocyte metallothionein hyper-induction",
+    "clinical_risk": "Irreversible subacute combined spinal cord degeneration and sensory ataxia",
+    "mandatory_ratio": "15:1 Zinc to Copper"
+  },
+  {
+    "compound": "Curcumin + Piperine vs CYP3A4 Substrates",
+    "mechanism": "Hepatic and intestinal Cytochrome P450 3A4 inhibition",
+    "clinical_risk": "3x to 5x serum drug concentration spike for statins and antihypertensives",
+    "recommendation": "Discontinue piperine; substitute liposomal unenhanced curcumin"
+  }
+]
