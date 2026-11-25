@@ -21,8 +21,8 @@
 body {
   margin: 0;
   padding: 0;
-  background: #07090E;
-  color: #e2e8f0;
+  background: #ffffff;
+  color: #0f172a;
   font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
   font-size: 11.5px;
   line-height: 1.45;
@@ -34,35 +34,16 @@ body {
   padding: 14mm 16mm;
   position: relative;
   page-break-after: always;
-  background: #07090E;
+  background: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
 }
 
-/* Ambient glow */
-.glow-emerald {
-  position: absolute;
-  top: -80px;
-  left: -80px;
-  width: 320px;
-  height: 320px;
-  border-radius: 50%;
-  background: rgba(16, 185, 129, 0.12);
-  filter: blur(80px);
-  pointer-events: none;
-}
-.glow-cyan {
-  position: absolute;
-  bottom: -80px;
-  right: -80px;
-  width: 320px;
-  height: 320px;
-  border-radius: 50%;
-  background: rgba(6, 182, 212, 0.10);
-  filter: blur(80px);
-  pointer-events: none;
+/* Ambient glow disabled for crisp white document */
+.glow-emerald, .glow-cyan {
+  display: none !important;
 }
 
 /* Header */
@@ -71,7 +52,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding-bottom: 10px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 2px solid #e2e8f0;
   position: relative;
   z-index: 10;
 }
@@ -84,32 +65,32 @@ body {
   width: 32px;
   height: 32px;
   border-radius: 8px;
-  background: linear-gradient(135deg, #10b981, #06b6d4);
+  background: linear-gradient(135deg, #059669, #0284c7);
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 900;
-  color: #000;
+  color: #0f172afff;
   font-size: 15px;
 }
 .brand-title {
   font-size: 14px;
   font-weight: 800;
-  color: #ffffff;
+  color: #0f172a;
   letter-spacing: -0.02em;
 }
 .brand-subtitle {
   font-size: 9px;
-  color: #10b981;
+  color: #059669;
   font-family: 'JetBrains Mono', monospace;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.04em;
 }
 .header-meta {
   text-align: right;
   font-family: 'JetBrains Mono', monospace;
   font-size: 9px;
-  color: #94a3b8;
+  color: #64748b;
 }
 
 /* Footer */
@@ -118,8 +99,8 @@ body {
   justify-content: space-between;
   align-items: center;
   padding-top: 8px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  font-size: 9px;
+  border-top: 1px solid #e2e8f0;
+  font-size: 8.5px;
   color: #64748b;
   font-family: 'JetBrains Mono', monospace;
   position: relative;
@@ -134,12 +115,12 @@ body {
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background: rgba(16, 185, 129, 0.2);
-  border: 1px solid #10b981;
+  background: #ecfdf5;
+  border: 1px solid #059669;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #10b981;
+  color: #059669;
   font-size: 11px;
 }
 
@@ -153,25 +134,28 @@ body {
   font-weight: 700;
   text-transform: uppercase;
 }
-.badge-crit { background: rgba(244, 63, 94, 0.15); color: #fb7185; border: 1px solid rgba(244, 63, 94, 0.35); }
-.badge-warn { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.35); }
-.badge-ok { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.35); }
-.badge-cyan { background: rgba(6, 182, 212, 0.15); color: #38bdf8; border: 1px solid rgba(6, 182, 212, 0.35); }
+.badge-crit { background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; }
+.badge-warn { background: #fffbeb; color: #d97706; border: 1px solid #fde68a; }
+.badge-ok { background: #ecfdf5; color: #059669; border: 1px solid #a7f3d0; }
+.badge-cyan { background: #f0fdfa; color: #0284c7; border: 1px solid #bae6fd; }
 
 .card {
-  background: rgba(15, 23, 42, 0.65);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
   border-radius: 10px;
   padding: 12px 14px;
   margin-bottom: 10px;
+  color: #334155;
 }
 .card-crit {
-  background: rgba(244, 63, 94, 0.04);
-  border: 1px solid rgba(244, 63, 94, 0.25);
+  background: #fff5f5;
+  border: 1px solid #fecaca;
+  color: #334155;
 }
 .card-ok {
-  background: rgba(16, 185, 129, 0.04);
-  border: 1px solid rgba(16, 185, 129, 0.25);
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #334155;
 }
 
 .table-custom {
@@ -180,23 +164,24 @@ body {
   font-size: 10.5px;
 }
 .table-custom th {
-  background: rgba(255, 255, 255, 0.04);
-  color: #94a3b8;
+  background: #f1f5f9;
+  color: #475569;
   font-family: 'JetBrains Mono', monospace;
   font-weight: 600;
   text-align: left;
   padding: 7px 10px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 2px solid #e2e8f0;
 }
 .table-custom td {
   padding: 7px 10px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid #e2e8f0;
   vertical-align: middle;
+  color: #334155;
 }
 
-h2 { font-size: 17px; font-weight: 800; color: #fff; margin: 0 0 4px 0; letter-spacing: -0.01em; }
-h3 { font-size: 13px; font-weight: 700; color: #fff; margin: 0 0 6px 0; }
-p { margin: 0 0 6px 0; color: #cbd5e1; }
+h2 { font-size: 17px; font-weight: 800; color: #0f172a; margin: 0 0 4px 0; letter-spacing: -0.01em; }
+h3 { font-size: 13px; font-weight: 700; color: #0f172a; margin: 0 0 6px 0; }
+p { margin: 0 0 6px 0; color: #334155; }
 
 </style>
 </head>
@@ -221,10 +206,10 @@ p { margin: 0 0 6px 0; color: #cbd5e1; }
     
   <div style="flex:1; display:flex; flex-direction:column; justify-content:space-around; padding: 12px 0;">
     
-    <div style="background:rgba(16,185,129,0.08); border:1px solid rgba(16,185,129,0.3); border-radius:12px; padding:16px;">
+    <div style="background:#ecfdf5; border:1px solid #a7f3d0; border-radius:12px; padding:16px;">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
         <span class="badge badge-ok">HIPAA ZERO-KNOWLEDGE CERTIFIED</span>
-        <span style="font-family:'JetBrains Mono'; font-size:10px; color:#34d399;">PROTOCOL CONFIDENCE: 99.4%</span>
+        <span style="font-family:'JetBrains Mono'; font-size:10px; color:#059669;">PROTOCOL CONFIDENCE: 99.4%</span>
       </div>
       <h2>Executive Summary & Stack Pharmacokinetics</h2>
       <p style="font-size:12px; line-height:1.6;">
@@ -237,34 +222,34 @@ p { margin: 0 0 6px 0; color: #cbd5e1; }
     <!-- 4 Key Metrics -->
     <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap:10px;">
       <div class="card" style="text-align:center;">
-        <div style="font-size:9px; color:#94a3b8; font-family:'JetBrains Mono';">TOTAL COMPOUNDS</div>
-        <div style="font-size:24px; font-weight:900; color:#fff; margin:4px 0;">8</div>
-        <div style="font-size:9.5px; color:#38bdf8;">All Bottles Classified</div>
+        <div style="font-size:9px; color:#64748b; font-family:'JetBrains Mono';">TOTAL COMPOUNDS</div>
+        <div style="font-size:24px; font-weight:900; color:#0f172a; margin:4px 0;">8</div>
+        <div style="font-size:9.5px; color:#0284c7;">All Bottles Classified</div>
       </div>
       <div class="card card-crit" style="text-align:center;">
-        <div style="font-size:9px; color:#fb7185; font-family:'JetBrains Mono';">SEVERE CLASHES</div>
-        <div style="font-size:24px; font-weight:900; color:#fb7185; margin:4px 0;">3</div>
-        <div style="font-size:9.5px; color:#fb7185;">Immediate Fix Required</div>
+        <div style="font-size:9px; color:#dc2626; font-family:'JetBrains Mono';">SEVERE CLASHES</div>
+        <div style="font-size:24px; font-weight:900; color:#dc2626; margin:4px 0;">3</div>
+        <div style="font-size:9.5px; color:#dc2626;">Immediate Fix Required</div>
       </div>
       <div class="card" style="text-align:center;">
-        <div style="font-size:9px; color:#94a3b8; font-family:'JetBrains Mono';">WASTED EXPENDITURE</div>
-        <div style="font-size:24px; font-weight:900; color:#fbbf24; margin:4px 0;">$145<span style="font-size:12px;">/mo</span></div>
-        <div style="font-size:9.5px; color:#fbbf24;">$1,740 Annual Loss</div>
+        <div style="font-size:9px; color:#64748b; font-family:'JetBrains Mono';">WASTED EXPENDITURE</div>
+        <div style="font-size:24px; font-weight:900; color:#d97706; margin:4px 0;">$145<span style="font-size:12px;">/mo</span></div>
+        <div style="font-size:9.5px; color:#d97706;">$1,740 Annual Loss</div>
       </div>
       <div class="card card-ok" style="text-align:center;">
-        <div style="font-size:9px; color:#34d399; font-family:'JetBrains Mono';">OPTIMIZED ABSORPTION</div>
-        <div style="font-size:24px; font-weight:900; color:#34d399; margin:4px 0;">+88%</div>
-        <div style="font-size:9.5px; color:#34d399;">Post-Circadian Phasing</div>
+        <div style="font-size:9px; color:#059669; font-family:'JetBrains Mono';">OPTIMIZED ABSORPTION</div>
+        <div style="font-size:24px; font-weight:900; color:#059669; margin:4px 0;">+88%</div>
+        <div style="font-size:9.5px; color:#059669;">Post-Circadian Phasing</div>
       </div>
     </div>
 
     <!-- Core Takeaway Card -->
     <div class="card">
       <h3>Priority Action Directive for Client</h3>
-      <ul style="margin:0; padding-left:16px; color:#cbd5e1; font-size:11px; line-height:1.7;">
-        <li><strong style="color:#fb7185;">Halt concurrent intake of Magnesium and Calcium:</strong> DMT1 transporters are saturated, blocking 82% of magnesium into fecal excretion.</li>
-        <li><strong style="color:#fbbf24;">Washout Adaptogen Exposure:</strong> Continuous 12-week Ashwagandha KSM-66 risks thyroid T3/T4 deiodinase downregulation; 14-day reset mandated.</li>
-        <li><strong style="color:#38bdf8;">Split Lipophilic & Hydrophilic Fractions:</strong> Vitamin D3+K2 and Omega-3 must move to lunch with dietary fats for 3.4x micelle formation.</li>
+      <ul style="margin:0; padding-left:16px; color:#334155; font-size:11px; line-height:1.7;">
+        <li><strong style="color:#dc2626;">Halt concurrent intake of Magnesium and Calcium:</strong> DMT1 transporters are saturated, blocking 82% of magnesium into fecal excretion.</li>
+        <li><strong style="color:#d97706;">Washout Adaptogen Exposure:</strong> Continuous 12-week Ashwagandha KSM-66 risks thyroid T3/T4 deiodinase downregulation; 14-day reset mandated.</li>
+        <li><strong style="color:#0284c7;">Split Lipophilic & Hydrophilic Fractions:</strong> Vitamin D3+K2 and Omega-3 must move to lunch with dietary fats for 3.4x micelle formation.</li>
       </ul>
     </div>
 
@@ -281,8 +266,8 @@ p { margin: 0 0 6px 0; color: #cbd5e1; }
         <span>Dr. Elena Vance, MD &bull; Clinical Pharmacology Lead</span>
       </div>
       <div style="text-align:right;">
-        <div style="font-size:8px; color:#94a3b8;">Synthesized from global biomedical datasets by AI &bull; Does not replace actual medical examination</div>
-        <div>CONFIDENTIAL AUDIT &bull; PAGE 1 OF 10</div>
+        <div style="font-size:7.5px; color:#64748b; font-weight:500;">YAPAY ZEKA VE ARŞİV ARAŞTIRMASI VERİSİDİR &bull; GERÇEK DOKTOR MUAYENESİ YERİNE GEÇMEZ &bull; SORUMLULUK KABUL EDİLMEZ</div>
+        <div>CONFIDENTIAL CLINICAL AUDIT &bull; PAGE 1 OF 10</div>
       </div>
     </div>
     
@@ -390,8 +375,8 @@ p { margin: 0 0 6px 0; color: #cbd5e1; }
         <span>Dr. Elena Vance, MD &bull; Clinical Pharmacology Lead</span>
       </div>
       <div style="text-align:right;">
-        <div style="font-size:8px; color:#94a3b8;">Synthesized from global biomedical datasets by AI &bull; Does not replace actual medical examination</div>
-        <div>CONFIDENTIAL AUDIT &bull; PAGE 2 OF 10</div>
+        <div style="font-size:7.5px; color:#64748b; font-weight:500;">YAPAY ZEKA VE ARŞİV ARAŞTIRMASI VERİSİDİR &bull; GERÇEK DOKTOR MUAYENESİ YERİNE GEÇMEZ &bull; SORUMLULUK KABUL EDİLMEZ</div>
+        <div>CONFIDENTIAL CLINICAL AUDIT &bull; PAGE 2 OF 10</div>
       </div>
     </div>
     
@@ -419,7 +404,7 @@ p { margin: 0 0 6px 0; color: #cbd5e1; }
       <span class="badge badge-crit">SEVERITY: CRITICAL</span>
     </div>
     <div class="card card-crit" style="margin:10px 0;">
-      <h3 style="color:#fb7185;">Magnesium Glycinate (400mg) VS Calcium Citrate (600mg)</h3>
+      <h3 style="color:#dc2626;">Magnesium Glycinate (400mg) VS Calcium Citrate (600mg)</h3>
       <p style="font-size:11px;"><strong>Molecular Pathway:</strong> Divalent Metal Transporter 1 (DMT1) & Paracellular Intestinal Influx.</p>
     </div>
 
@@ -427,25 +412,25 @@ p { margin: 0 0 6px 0; color: #cbd5e1; }
     <p>Both ionic Magnesium ($Mg^{2+}$) and Calcium ($Ca^{2+}$) utilize identical enterocyte apical transport mechanisms in the duodenum and jejunum. Due to Calcium's higher ionic field density and larger molar concentration (600mg vs 400mg), Calcium preferentially occupies binding pockets on DMT1 trans-membrane proteins.</p>
 
     <!-- Kinetic Chart Box -->
-    <div class="card" style="background:#04060A; border-color:rgba(16,185,129,0.2);">
+    <div class="card" style="background:#f8fafc; border-color:rgba(16,185,129,0.2);">
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; font-family:'JetBrains Mono'; font-size:10px;">
         <div style="border-right:1px solid rgba(255,255,255,0.08); padding-right:10px;">
-          <div style="color:#fb7185; font-weight:700;">CONCURRENT ADMINISTRATION:</div>
-          <div style="margin-top:6px; color:#cbd5e1;">&bull; Calcium Absorption: ~74% Normal</div>
-          <div style="color:#fb7185; font-weight:700;">&bull; Magnesium Absorption: ~18% (82% LOST)</div>
-          <div style="color:#94a3b8; margin-top:6px;">Result: 328mg of elemental Magnesium passes unabsorbed into the colon, causing potential osmotic loose stool and zero slow-wave sleep enhancement.</div>
+          <div style="color:#dc2626; font-weight:700;">CONCURRENT ADMINISTRATION:</div>
+          <div style="margin-top:6px; color:#334155;">&bull; Calcium Absorption: ~74% Normal</div>
+          <div style="color:#dc2626; font-weight:700;">&bull; Magnesium Absorption: ~18% (82% LOST)</div>
+          <div style="color:#64748b; margin-top:6px;">Result: 328mg of elemental Magnesium passes unabsorbed into the colon, causing potential osmotic loose stool and zero slow-wave sleep enhancement.</div>
         </div>
         <div>
-          <div style="color:#34d399; font-weight:700;">CHRONO-SEPARATED (4+ HOURS):</div>
-          <div style="margin-top:6px; color:#cbd5e1;">&bull; Calcium Absorption: 91% (Midday with food)</div>
-          <div style="color:#34d399; font-weight:700;">&bull; Magnesium Absorption: 94% (Bedtime fasted)</div>
-          <div style="color:#94a3b8; margin-top:6px;">Result: Full restorative slow-wave sleep induction, optimal muscle relaxation, and zero GI osmotic waste.</div>
+          <div style="color:#059669; font-weight:700;">CHRONO-SEPARATED (4+ HOURS):</div>
+          <div style="margin-top:6px; color:#334155;">&bull; Calcium Absorption: 91% (Midday with food)</div>
+          <div style="color:#059669; font-weight:700;">&bull; Magnesium Absorption: 94% (Bedtime fasted)</div>
+          <div style="color:#64748b; margin-top:6px;">Result: Full restorative slow-wave sleep induction, optimal muscle relaxation, and zero GI osmotic waste.</div>
         </div>
       </div>
     </div>
 
     <div class="card card-ok" style="margin-top:14px;">
-      <h3 style="color:#34d399;">Mandatory Protocol Resolution</h3>
+      <h3 style="color:#059669;">Mandatory Protocol Resolution</h3>
       <p style="font-size:11px; line-height:1.6;">
         <strong>Step 1:</strong> Shift <strong>Calcium Citrate (600mg)</strong> strictly to the <strong>12:30 PM Midday Meal</strong>.<br>
         <strong>Step 2:</strong> Shift <strong>Magnesium Glycinate (400mg)</strong> strictly to <strong>22:15 PM Bedtime</strong> (empty stomach with 200ml room-temperature water).<br>
@@ -460,8 +445,8 @@ p { margin: 0 0 6px 0; color: #cbd5e1; }
         <span>Dr. Elena Vance, MD &bull; Clinical Pharmacology Lead</span>
       </div>
       <div style="text-align:right;">
-        <div style="font-size:8px; color:#94a3b8;">Synthesized from global biomedical datasets by AI &bull; Does not replace actual medical examination</div>
-        <div>CONFIDENTIAL AUDIT &bull; PAGE 3 OF 10</div>
+        <div style="font-size:7.5px; color:#64748b; font-weight:500;">YAPAY ZEKA VE ARŞİV ARAŞTIRMASI VERİSİDİR &bull; GERÇEK DOKTOR MUAYENESİ YERİNE GEÇMEZ &bull; SORUMLULUK KABUL EDİLMEZ</div>
+        <div>CONFIDENTIAL CLINICAL AUDIT &bull; PAGE 3 OF 10</div>
       </div>
     </div>
     
@@ -489,19 +474,19 @@ p { margin: 0 0 6px 0; color: #cbd5e1; }
       <span class="badge badge-warn">SEVERITY: HIGH CONCERN</span>
     </div>
     <div class="card" style="border-color:rgba(245,158,11,0.3); margin:10px 0;">
-      <h3 style="color:#fbbf24;">Continuous 12-Week Ashwagandha (KSM-66 600mg Daily)</h3>
+      <h3 style="color:#d97706;">Continuous 12-Week Ashwagandha (KSM-66 600mg Daily)</h3>
       <p style="font-size:11px;"><strong>Biological Target:</strong> Hypothalamic-Pituitary-Adrenal (HPA) Axis & Thyroid Hormone Deiodinase Conversion.</p>
     </div>
 
     <h3>Clinical Endocrinology Impact:</h3>
     <p>While Withaferin A and Withanolide glycosides are potent cortisol attenuators acutely, uncycled administration exceeding 8 consecutive weeks produces documented receptor down-regulation in peripheral glucocorticoid tissues.</p>
-    <ul style="padding-left:16px; font-size:11px; line-height:1.6; color:#cbd5e1;">
+    <ul style="padding-left:16px; font-size:11px; line-height:1.6; color:#334155;">
       <li><strong>Thyroid Over-Stimulation:</strong> High-concentration withanolides stimulate hepatic 5'-deiodinase activity, artificially driving Free T4 to Free T3 conversion. Prolonged exposure can trigger subclinical hyperthyroidism or rebound sluggishness upon cessation.</li>
       <li><strong>Idiosyncratic Hepatic Strain:</strong> Clinical case registries (PubMed/NIH LiverTox) document transient elevations in serum alanine aminotransferase (ALT) and aspartate aminotransferase (AST) following unmonitored adaptogen stacks.</li>
     </ul>
 
     <div class="card card-ok" style="margin-top:14px;">
-      <h3 style="color:#34d399;">Washout & Phasing Protocol</h3>
+      <h3 style="color:#059669;">Washout & Phasing Protocol</h3>
       <p style="font-size:11px; line-height:1.6;">
         <strong>Phase A (Immediate 14-Day Washout):</strong> Completely cease Ashwagandha intake for 14 days to reset GABA-A and glucocorticoid sensitivity.<br>
         <strong>Phase B (L-Theanine Substitution):</strong> During the 14-day washout, rely on L-Theanine (200mg) for daytime calm without hepatic transaminase load.<br>
@@ -516,8 +501,8 @@ p { margin: 0 0 6px 0; color: #cbd5e1; }
         <span>Dr. Elena Vance, MD &bull; Clinical Pharmacology Lead</span>
       </div>
       <div style="text-align:right;">
-        <div style="font-size:8px; color:#94a3b8;">Synthesized from global biomedical datasets by AI &bull; Does not replace actual medical examination</div>
-        <div>CONFIDENTIAL AUDIT &bull; PAGE 4 OF 10</div>
+        <div style="font-size:7.5px; color:#64748b; font-weight:500;">YAPAY ZEKA VE ARŞİV ARAŞTIRMASI VERİSİDİR &bull; GERÇEK DOKTOR MUAYENESİ YERİNE GEÇMEZ &bull; SORUMLULUK KABUL EDİLMEZ</div>
+        <div>CONFIDENTIAL CLINICAL AUDIT &bull; PAGE 4 OF 10</div>
       </div>
     </div>
     
@@ -544,7 +529,7 @@ p { margin: 0 0 6px 0; color: #cbd5e1; }
     <p>Analyzing central nervous system balance, alpha wave induction, and monoaminergic receptor signaling:</p>
 
     <div class="card" style="margin:12px 0;">
-      <h3 style="color:#38bdf8;">L-Theanine (200mg) + Magnesium Glycinate Synergy</h3>
+      <h3 style="color:#0284c7;">L-Theanine (200mg) + Magnesium Glycinate Synergy</h3>
       <p style="font-size:11px; line-height:1.6;">
         L-Theanine easily crosses the blood-brain barrier via the leucine-preferring transport system. It acts as an antagonist at AMPA and kainate receptors while boosting levels of GABA, dopamine, and glycine. 
         When paired with Magnesium Glycinate at bedtime, it produces synergistic stabilization of the NMDA receptor complex, accelerating sleep onset latency by up to 28 minutes without morning grogginess.
@@ -586,8 +571,8 @@ p { margin: 0 0 6px 0; color: #cbd5e1; }
         <span>Dr. Elena Vance, MD &bull; Clinical Pharmacology Lead</span>
       </div>
       <div style="text-align:right;">
-        <div style="font-size:8px; color:#94a3b8;">Synthesized from global biomedical datasets by AI &bull; Does not replace actual medical examination</div>
-        <div>CONFIDENTIAL AUDIT &bull; PAGE 5 OF 10</div>
+        <div style="font-size:7.5px; color:#64748b; font-weight:500;">YAPAY ZEKA VE ARŞİV ARAŞTIRMASI VERİSİDİR &bull; GERÇEK DOKTOR MUAYENESİ YERİNE GEÇMEZ &bull; SORUMLULUK KABUL EDİLMEZ</div>
+        <div>CONFIDENTIAL CLINICAL AUDIT &bull; PAGE 5 OF 10</div>
       </div>
     </div>
     
@@ -615,15 +600,15 @@ p { margin: 0 0 6px 0; color: #cbd5e1; }
 
     <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:12px 0;">
       <div class="card">
-        <h3 style="color:#38bdf8;">Hepatic CYP3A4 Pathway</h3>
-        <p style="font-size:10.5px; color:#cbd5e1; line-height:1.5;">
+        <h3 style="color:#0284c7;">Hepatic CYP3A4 Pathway</h3>
+        <p style="font-size:10.5px; color:#334155; line-height:1.5;">
           Fat-soluble vitamins (D3, K2) and active polyphenols are processed via CYP3A4 and glucuronidation. 
           Current stack burden: <strong>LOW-MODERATE</strong>. No competitive enzyme bottlenecks detected once Ashwagandha is cycled.
         </p>
       </div>
       <div class="card">
-        <h3 style="color:#34d399;">Renal Osmotic Excretion</h3>
-        <p style="font-size:10.5px; color:#cbd5e1; line-height:1.5;">
+        <h3 style="color:#059669;">Renal Osmotic Excretion</h3>
+        <p style="font-size:10.5px; color:#334155; line-height:1.5;">
           Excess water-soluble B-vitamins and unbound mineral fractions clear through glomerular filtration. 
           Client hydration target: <strong>2.8 to 3.2 Liters daily</strong> to maintain optimal tubular fluid dynamics and eliminate micro-crystallization.
         </p>
@@ -644,8 +629,8 @@ p { margin: 0 0 6px 0; color: #cbd5e1; }
         <span>Dr. Elena Vance, MD &bull; Clinical Pharmacology Lead</span>
       </div>
       <div style="text-align:right;">
-        <div style="font-size:8px; color:#94a3b8;">Synthesized from global biomedical datasets by AI &bull; Does not replace actual medical examination</div>
-        <div>CONFIDENTIAL AUDIT &bull; PAGE 6 OF 10</div>
+        <div style="font-size:7.5px; color:#64748b; font-weight:500;">YAPAY ZEKA VE ARŞİV ARAŞTIRMASI VERİSİDİR &bull; GERÇEK DOKTOR MUAYENESİ YERİNE GEÇMEZ &bull; SORUMLULUK KABUL EDİLMEZ</div>
+        <div>CONFIDENTIAL CLINICAL AUDIT &bull; PAGE 6 OF 10</div>
       </div>
     </div>
     
@@ -674,11 +659,11 @@ p { margin: 0 0 6px 0; color: #cbd5e1; }
     <!-- Window 1: Morning -->
     <div class="card" style="border-left:4px solid #10b981;">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
-        <h3 style="color:#34d399; margin:0;">WINDOW 1 &bull; 07:30 AM (MORNING &bull; FASTED)</h3>
+        <h3 style="color:#059669; margin:0;">WINDOW 1 &bull; 07:30 AM (MORNING &bull; FASTED)</h3>
         <span class="badge badge-ok">CELLULAR ENERGY & METHYLATION</span>
       </div>
-      <p style="font-size:10.5px; color:#94a3b8; margin-bottom:6px;">Take with 400ml room-temperature water on waking. Gastric acidity is optimal for active transport.</p>
-      <div style="font-family:'JetBrains Mono'; font-size:10.5px; color:#fff; line-height:1.6;">
+      <p style="font-size:10.5px; color:#64748b; margin-bottom:6px;">Take with 400ml room-temperature water on waking. Gastric acidity is optimal for active transport.</p>
+      <div style="font-family:'JetBrains Mono'; font-size:10.5px; color:#0f172a; line-height:1.6;">
         &bull; <strong>NMN Sublingual (500mg):</strong> Hold under tongue 90 seconds for direct mucosal capillary uptake (SIRT1 activation).<br>
         &bull; <strong>Active Methylated B-Complex (1 capsule):</strong> Co-factor replenishment for methylation and homocysteine regulation.
       </div>
@@ -687,11 +672,11 @@ p { margin: 0 0 6px 0; color: #cbd5e1; }
     <!-- Window 2: Midday -->
     <div class="card" style="border-left:4px solid #06b6d4;">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
-        <h3 style="color:#38bdf8; margin:0;">WINDOW 2 &bull; 12:30 PM (MIDDAY &bull; WITH LUNCH MEAL)</h3>
+        <h3 style="color:#0284c7; margin:0;">WINDOW 2 &bull; 12:30 PM (MIDDAY &bull; WITH LUNCH MEAL)</h3>
         <span class="badge badge-cyan">LIPOPHILIC ABSORPTION & BONE MATRIX</span>
       </div>
-      <p style="font-size:10.5px; color:#94a3b8; margin-bottom:6px;">Must take with meal containing healthy dietary fats (olive oil, avocado, or wild fish) for micelle formation.</p>
-      <div style="font-family:'JetBrains Mono'; font-size:10.5px; color:#fff; line-height:1.6;">
+      <p style="font-size:10.5px; color:#64748b; margin-bottom:6px;">Must take with meal containing healthy dietary fats (olive oil, avocado, or wild fish) for micelle formation.</p>
+      <div style="font-family:'JetBrains Mono'; font-size:10.5px; color:#0f172a; line-height:1.6;">
         &bull; <strong>Vitamin D3 + K2 (5,000 IU / 100mcg MK-7):</strong> Dietary lipids elevate D3 absorption by 340%.<br>
         &bull; <strong>Omega-3 TG (2,000mg):</strong> Emulsifies seamlessly with meal; eliminates fish oil lipid reflux.<br>
         &bull; <strong>Calcium Citrate (600mg):</strong> Absorbed with gastric acid stimulation; completely separated from evening magnesium.
@@ -704,8 +689,8 @@ p { margin: 0 0 6px 0; color: #cbd5e1; }
         <h3 style="color:#c084fc; margin:0;">WINDOW 3 &bull; 22:15 PM (BEDTIME &bull; PRE-SLEEP BUFFER)</h3>
         <span class="badge" style="background:rgba(139,92,246,0.15); color:#c084fc; border:1px solid rgba(139,92,246,0.35);">GABA ACTIVATION & SLOW-WAVE SLEEP</span>
       </div>
-      <p style="font-size:10.5px; color:#94a3b8; margin-bottom:6px;">Take 30-45 minutes before sleep on an empty stomach with 150ml water.</p>
-      <div style="font-family:'JetBrains Mono'; font-size:10.5px; color:#fff; line-height:1.6;">
+      <p style="font-size:10.5px; color:#64748b; margin-bottom:6px;">Take 30-45 minutes before sleep on an empty stomach with 150ml water.</p>
+      <div style="font-family:'JetBrains Mono'; font-size:10.5px; color:#0f172a; line-height:1.6;">
         &bull; <strong>Magnesium Glycinate (400mg):</strong> Uncontested DMT1 uptake; enters brain tissue to activate deep stage-3 NREM sleep.<br>
         &bull; <strong>L-Theanine (200mg):</strong> Blunts residual evening cortisol; induces relaxing alpha-frequency brainwaves.
       </div>
@@ -718,8 +703,8 @@ p { margin: 0 0 6px 0; color: #cbd5e1; }
         <span>Dr. Elena Vance, MD &bull; Clinical Pharmacology Lead</span>
       </div>
       <div style="text-align:right;">
-        <div style="font-size:8px; color:#94a3b8;">Synthesized from global biomedical datasets by AI &bull; Does not replace actual medical examination</div>
-        <div>CONFIDENTIAL AUDIT &bull; PAGE 7 OF 10</div>
+        <div style="font-size:7.5px; color:#64748b; font-weight:500;">YAPAY ZEKA VE ARŞİV ARAŞTIRMASI VERİSİDİR &bull; GERÇEK DOKTOR MUAYENESİ YERİNE GEÇMEZ &bull; SORUMLULUK KABUL EDİLMEZ</div>
+        <div>CONFIDENTIAL CLINICAL AUDIT &bull; PAGE 7 OF 10</div>
       </div>
     </div>
     
@@ -789,8 +774,8 @@ p { margin: 0 0 6px 0; color: #cbd5e1; }
         <span>Dr. Elena Vance, MD &bull; Clinical Pharmacology Lead</span>
       </div>
       <div style="text-align:right;">
-        <div style="font-size:8px; color:#94a3b8;">Synthesized from global biomedical datasets by AI &bull; Does not replace actual medical examination</div>
-        <div>CONFIDENTIAL AUDIT &bull; PAGE 8 OF 10</div>
+        <div style="font-size:7.5px; color:#64748b; font-weight:500;">YAPAY ZEKA VE ARŞİV ARAŞTIRMASI VERİSİDİR &bull; GERÇEK DOKTOR MUAYENESİ YERİNE GEÇMEZ &bull; SORUMLULUK KABUL EDİLMEZ</div>
+        <div>CONFIDENTIAL CLINICAL AUDIT &bull; PAGE 8 OF 10</div>
       </div>
     </div>
     
@@ -817,7 +802,7 @@ p { margin: 0 0 6px 0; color: #cbd5e1; }
     <p>Execute this phased reset calendar to re-sensitize biological receptors and ensure lifetime supplement efficacy:</p>
 
     <div class="card" style="margin:12px 0;">
-      <h3 style="color:#fbbf24;">Days 1 to 14: Cellular Washout Window</h3>
+      <h3 style="color:#d97706;">Days 1 to 14: Cellular Washout Window</h3>
       <p style="font-size:11px; line-height:1.6;">
         &bull; <strong>Cease:</strong> Ashwagandha, unneeded herbal extracts, high-dose melatonin.<br>
         &bull; <strong>Continue:</strong> Fasted NMN & B-Complex (Morning), D3+K2, Omega-3, Calcium (Midday), Magnesium & Theanine (Night).<br>
@@ -826,7 +811,7 @@ p { margin: 0 0 6px 0; color: #cbd5e1; }
     </div>
 
     <div class="card card-ok">
-      <h3 style="color:#34d399;">Days 15+: Sustained Longevity Cycling Rule</h3>
+      <h3 style="color:#059669;">Days 15+: Sustained Longevity Cycling Rule</h3>
       <p style="font-size:11px; line-height:1.6;">
         &bull; <strong>5-Days-ON / 2-Days-OFF:</strong> Take adaptogens Monday through Friday; take Saturday and Sunday off completely.<br>
         &bull; <strong>Quarterly 1-Week Break:</strong> Every 12 weeks, execute a full 7-day supplement vacation (taking only magnesium at night).<br>
@@ -841,8 +826,8 @@ p { margin: 0 0 6px 0; color: #cbd5e1; }
         <span>Dr. Elena Vance, MD &bull; Clinical Pharmacology Lead</span>
       </div>
       <div style="text-align:right;">
-        <div style="font-size:8px; color:#94a3b8;">Synthesized from global biomedical datasets by AI &bull; Does not replace actual medical examination</div>
-        <div>CONFIDENTIAL AUDIT &bull; PAGE 9 OF 10</div>
+        <div style="font-size:7.5px; color:#64748b; font-weight:500;">YAPAY ZEKA VE ARŞİV ARAŞTIRMASI VERİSİDİR &bull; GERÇEK DOKTOR MUAYENESİ YERİNE GEÇMEZ &bull; SORUMLULUK KABUL EDİLMEZ</div>
+        <div>CONFIDENTIAL CLINICAL AUDIT &bull; PAGE 9 OF 10</div>
       </div>
     </div>
     
@@ -871,8 +856,8 @@ p { margin: 0 0 6px 0; color: #cbd5e1; }
       <p style="font-size:11.5px;">Ready-to-execute instructions for your executive assistant, private chef, or daily pill organizer:</p>
     </div>
 
-    <div class="card" style="background:#04060A; border-color:rgba(16,185,129,0.3);">
-      <h3 style="color:#34d399;">Cabinet Reorganization Checklist</h3>
+    <div class="card" style="background:#f8fafc; border-color:rgba(16,185,129,0.3);">
+      <h3 style="color:#059669;">Cabinet Reorganization Checklist</h3>
       <div style="font-family:'JetBrains Mono'; font-size:10.5px; line-height:1.7; color:#e2e8f0;">
         [✓] <strong>TRAY A (Desk / Bathroom):</strong> NMN Sublingual + Methyl B-Complex (Labeled: MORNING FASTED).<br>
         [✓] <strong>TRAY B (Dining Room / Kitchen):</strong> Vitamin D3+K2 + Omega-3 TG + Calcium Citrate (Labeled: LUNCH WITH MEAL).<br>
@@ -883,7 +868,7 @@ p { margin: 0 0 6px 0; color: #cbd5e1; }
 
     <div class="card">
       <h3>Automated Digital Integrations Included With License</h3>
-      <p style="font-size:10.5px; line-height:1.6; color:#cbd5e1;">
+      <p style="font-size:10.5px; line-height:1.6; color:#334155;">
         &bull; <strong>Apple / Google Calendar Sync (.ics):</strong> Alarms pre-programmed for 07:30, 12:30, and 22:15.<br>
         &bull; <strong>WhatsApp Instant Assistant Share:</strong> 1-Click summary formatted to paste directly into your assistant's chat.<br>
         &bull; <strong>Official High-Res PDF Export:</strong> Printable 10-page clinical dossier for your primary care physician.
@@ -893,8 +878,8 @@ p { margin: 0 0 6px 0; color: #cbd5e1; }
     <!-- Official Medical Sign-Off -->
     <div style="border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:10px; background:rgba(255,255,255,0.02); display:flex; justify-content:space-between; align-items:center;">
       <div>
-        <div style="font-weight:800; font-size:11.5px; color:#fff;">DR. ELENA VANCE, MD &bull; CLINICAL PHARMACOLOGY</div>
-        <div style="font-size:9px; color:#94a3b8; font-family:'JetBrains Mono';">Lead Medical Reviewer &bull; CabinetScan AI Precision Protocol</div>
+        <div style="font-weight:800; font-size:11.5px; color:#0f172a;">DR. ELENA VANCE, MD &bull; CLINICAL PHARMACOLOGY</div>
+        <div style="font-size:9px; color:#64748b; font-family:'JetBrains Mono';">Lead Medical Reviewer &bull; CabinetScan AI Precision Protocol</div>
         <div style="font-size:8px; color:#64748b; margin-top:2px;">Cryptographic Hash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</div>
       </div>
       <div style="text-align:right;">
@@ -903,11 +888,11 @@ p { margin: 0 0 6px 0; color: #cbd5e1; }
     </div>
 
     <!-- Mandatory Global Clinical & Regulatory Subtitle Warning -->
-    <div style="padding:8px 12px; background:rgba(244,63,94,0.06); border:1px solid rgba(244,63,94,0.3); border-radius:8px; text-align:center;">
-      <div style="font-weight:700; color:#fb7185; font-size:9.5px; font-family:'JetBrains Mono'; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:2px;">
+    <div style="padding:8px 12px; background:rgba(244,63,94,0.06); border:1px solid #fecaca; border-radius:8px; text-align:center;">
+      <div style="font-weight:700; color:#dc2626; font-size:9.5px; font-family:'JetBrains Mono'; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:2px;">
         ⚠️ CLINICAL REGULATORY NOTICE & DISCLAIMER
       </div>
-      <div style="font-size:8.5px; color:#cbd5e1; line-height:1.4;">
+      <div style="font-size:8.5px; color:#334155; line-height:1.4;">
         Synthesized autonomously from global pharmacological literature and clinical datasets scanned by Artificial Intelligence. 
         This protocol is intended for informational and educational auditing purposes only and does not constitute or replace actual in-person medical examination, formal clinical diagnosis, or personalized prescription advice. Always consult your certified physician.
       </div>
@@ -921,8 +906,8 @@ p { margin: 0 0 6px 0; color: #cbd5e1; }
         <span>Dr. Elena Vance, MD &bull; Clinical Pharmacology Lead</span>
       </div>
       <div style="text-align:right;">
-        <div style="font-size:8px; color:#94a3b8;">Synthesized from global biomedical datasets by AI &bull; Does not replace actual medical examination</div>
-        <div>CONFIDENTIAL AUDIT &bull; PAGE 10 OF 10</div>
+        <div style="font-size:7.5px; color:#64748b; font-weight:500;">YAPAY ZEKA VE ARŞİV ARAŞTIRMASI VERİSİDİR &bull; GERÇEK DOKTOR MUAYENESİ YERİNE GEÇMEZ &bull; SORUMLULUK KABUL EDİLMEZ</div>
+        <div>CONFIDENTIAL CLINICAL AUDIT &bull; PAGE 10 OF 10</div>
       </div>
     </div>
     
