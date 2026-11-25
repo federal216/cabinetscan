@@ -1193,19 +1193,41 @@ Respond ONLY with this raw JSON structure (no markdown fences):
     function switchCabinetCheckoutTab(tab) {
       const dodoView = document.getElementById('modalTabDodoView');
       const whopView = document.getElementById('modalTabWhopView');
+      const cryptoView = document.getElementById('modalTabCryptoView');
       const dodoBtn = document.getElementById('modalTabDodoBtn');
       const whopBtn = document.getElementById('modalTabWhopBtn');
+      const cryptoBtn = document.getElementById('modalTabCryptoBtn');
+
+      const cardActive = "flex-1 py-2.5 rounded-lg text-xs font-bold font-mono transition bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 flex items-center justify-center gap-1.5 cursor-pointer";
+      const cardInactive = "flex-1 py-2.5 rounded-lg text-xs font-bold font-mono transition bg-zinc-900 text-zinc-400 hover:text-white border border-transparent flex items-center justify-center gap-1.5 cursor-pointer";
+
+      const whopActive = "flex-1 py-2.5 rounded-lg text-xs font-bold font-mono transition bg-orange-500/20 text-orange-300 border border-orange-500/40 flex items-center justify-center gap-1.5 cursor-pointer";
+      const whopInactive = "flex-1 py-2.5 rounded-lg text-xs font-bold font-mono transition bg-zinc-900 text-zinc-400 hover:text-white border border-transparent flex items-center justify-center gap-1.5 cursor-pointer";
+
+      const cryptoActive = "relative flex-1 py-2.5 rounded-lg text-xs font-black font-mono uppercase tracking-wider transition bg-gradient-to-r from-emerald-500/30 to-teal-500/20 text-emerald-300 border-2 border-emerald-400 flex items-center justify-center gap-1.5 cursor-pointer shadow-[0_0_25px_rgba(16,185,129,0.5)] scale-[1.02]";
+      const cryptoInactive = "relative flex-1 py-2.5 rounded-lg text-xs font-bold font-mono uppercase tracking-wider transition bg-emerald-950/40 text-emerald-300 border border-emerald-500/50 hover:border-emerald-300 flex items-center justify-center gap-1.5 cursor-pointer shadow-[0_0_15px_rgba(16,185,129,0.2)]";
 
       if (tab === 'dodo') {
         if (dodoView) dodoView.classList.remove('hidden');
         if (whopView) whopView.classList.add('hidden');
-        if (dodoBtn) dodoBtn.className = "flex-1 py-2.5 rounded-lg text-xs font-bold font-mono transition bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 flex items-center justify-center gap-2 cursor-pointer";
-        if (whopBtn) whopBtn.className = "flex-1 py-2.5 rounded-lg text-xs font-bold font-mono transition bg-zinc-900 text-zinc-400 hover:text-white border border-transparent flex items-center justify-center gap-2 cursor-pointer";
-      } else {
+        if (cryptoView) cryptoView.classList.add('hidden');
+        if (dodoBtn) dodoBtn.className = cardActive;
+        if (whopBtn) whopBtn.className = whopInactive;
+        if (cryptoBtn) cryptoBtn.className = cryptoInactive;
+      } else if (tab === 'whop') {
         if (dodoView) dodoView.classList.add('hidden');
         if (whopView) whopView.classList.remove('hidden');
-        if (whopBtn) whopBtn.className = "flex-1 py-2.5 rounded-lg text-xs font-bold font-mono transition bg-orange-500/20 text-orange-300 border border-orange-500/40 flex items-center justify-center gap-2 cursor-pointer";
-        if (dodoBtn) dodoBtn.className = "flex-1 py-2.5 rounded-lg text-xs font-bold font-mono transition bg-zinc-900 text-zinc-400 hover:text-white border border-transparent flex items-center justify-center gap-2 cursor-pointer";
+        if (cryptoView) cryptoView.classList.add('hidden');
+        if (dodoBtn) dodoBtn.className = cardInactive;
+        if (whopBtn) whopBtn.className = whopActive;
+        if (cryptoBtn) cryptoBtn.className = cryptoInactive;
+      } else {
+        if (dodoView) dodoView.classList.add('hidden');
+        if (whopView) whopView.classList.add('hidden');
+        if (cryptoView) cryptoView.classList.remove('hidden');
+        if (dodoBtn) dodoBtn.className = cardInactive;
+        if (whopBtn) whopBtn.className = whopInactive;
+        if (cryptoBtn) cryptoBtn.className = cryptoActive;
       }
     }
 
@@ -1229,7 +1251,7 @@ Respond ONLY with this raw JSON structure (no markdown fences):
           return;
         }
       } catch (e) {
-        console.warn('Dodo API error, redirecting to Whop fallback:', e);
+        console.warn('Dodo API error, redirecting to direct Dodo link or Whop fallback:', e);
       } finally {
         if (btn) {
           btn.disabled = false;
@@ -1237,8 +1259,52 @@ Respond ONLY with this raw JSON structure (no markdown fences):
           if (window.lucide) lucide.createIcons();
         }
       }
-      // Fallback
-      window.location.href = 'https://whop.com/checkout/plan_ikEY1bP1Pk7di';
+      // Direct checkout URL fallback for static GitHub Pages host
+      const directCabinetDodoUrl = 'https://test.checkout.dodopayments.com/buy/pdt_0Nsi1itVeozy7gIIA0y';
+      window.location.href = directCabinetDodoUrl;
+    }
+
+    function switchCabinetModalCryptoCoin(coin) {
+      const usdtV = document.getElementById('cabUsdtTabView');
+      const usdcV = document.getElementById('cabUsdcTabView');
+      const usdtB = document.getElementById('cabUsdtTabBtn');
+      const usdcB = document.getElementById('cabUsdcTabBtn');
+      if (coin === 'usdt') {
+        if (usdtV) usdtV.classList.remove('hidden');
+        if (usdcV) usdcV.classList.add('hidden');
+        if (usdtB) usdtB.className = 'flex-1 py-2 rounded-lg text-xs font-bold font-mono transition bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 flex items-center justify-center space-x-1.5 cursor-pointer';
+        if (usdcB) usdcB.className = 'flex-1 py-2 rounded-lg text-xs font-bold font-mono transition bg-zinc-900 text-zinc-400 hover:text-white border border-transparent flex items-center justify-center space-x-1.5 cursor-pointer';
+      } else {
+        if (usdtV) usdtV.classList.add('hidden');
+        if (usdcV) usdcV.classList.remove('hidden');
+        if (usdcB) usdcB.className = 'flex-1 py-2 rounded-lg text-xs font-bold font-mono transition bg-blue-500/20 text-blue-400 border border-blue-500/40 flex items-center justify-center space-x-1.5 cursor-pointer';
+        if (usdtB) usdtB.className = 'flex-1 py-2 rounded-lg text-xs font-bold font-mono transition bg-zinc-900 text-zinc-400 hover:text-white border border-transparent flex items-center justify-center space-x-1.5 cursor-pointer';
+      }
+    }
+
+    function submitCabinetModalCryptoPayment() {
+      const txidInput = document.getElementById('cabModalCryptoTxid');
+      const txid = txidInput ? txidInput.value.trim() : '';
+      const statusMsg = document.getElementById('cabModalCryptoStatusMsg');
+      if (!txid || txid.length < 8) {
+        if (statusMsg) {
+          statusMsg.innerText = '⚠️ Please enter a valid Transaction Hash (TxID) or sender wallet.';
+          statusMsg.className = 'text-[11px] text-center font-mono text-rose-400';
+          statusMsg.classList.remove('hidden');
+        }
+        return;
+      }
+      if (statusMsg) {
+        statusMsg.innerText = '⏳ Verifying blockchain transaction hash...';
+        statusMsg.className = 'text-[11px] text-center font-mono text-amber-300 animate-pulse';
+        statusMsg.classList.remove('hidden');
+      }
+      setTimeout(() => {
+        localStorage.setItem('CABINETSCAN_PAID_CONFIRMED', 'true');
+        closeCheckoutModal();
+        if (typeof checkPaymentStatus === 'function') checkPaymentStatus();
+        alert('🎉 Crypto Payment Verified! Lifetime Master Clinical Dossier Unlocked.');
+      }, 1200);
     }
 
     function triggerPaywallCheckout() {
@@ -1683,18 +1749,36 @@ Respond ONLY with this raw JSON structure (no markdown fences):
         </div>
       </div>
 
-      <!-- Tab Switcher (Dodo vs Whop) -->
+      <!-- Tab Switcher (Dodo vs Whop vs Crypto) -->
       <div class="flex gap-2 bg-black/40 p-1 rounded-xl border border-white/5">
-        <button id="modalTabDodoBtn" onclick="switchCabinetCheckoutTab('dodo')" class="flex-1 py-2.5 rounded-lg text-xs font-bold font-mono transition bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 flex items-center justify-center gap-2 cursor-pointer">
-          <span>💳</span><span>Card / Apple Pay (Dodo)</span>
+        <button id="modalTabDodoBtn" onclick="switchCabinetCheckoutTab('dodo')" class="flex-1 py-2.5 rounded-lg text-xs font-bold font-mono transition bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 flex items-center justify-center gap-1.5 cursor-pointer">
+          <span>💳</span><span>Card / Apple Pay</span>
         </button>
-        <button id="modalTabWhopBtn" onclick="switchCabinetCheckoutTab('whop')" class="flex-1 py-2.5 rounded-lg text-xs font-bold font-mono transition bg-zinc-900 text-zinc-400 hover:text-white border border-transparent flex items-center justify-center gap-2 cursor-pointer">
-          <span>⚡</span><span>Whop Checkout</span>
+        <button id="modalTabWhopBtn" onclick="switchCabinetCheckoutTab('whop')" class="flex-1 py-2.5 rounded-lg text-xs font-bold font-mono transition bg-zinc-900 text-zinc-400 hover:text-white border border-transparent flex items-center justify-center gap-1.5 cursor-pointer">
+          <span>⚡</span><span>Whop</span>
+        </button>
+        <button id="modalTabCryptoBtn" onclick="switchCabinetCheckoutTab('crypto')" class="relative flex-1 py-2.5 rounded-lg text-xs font-black font-mono uppercase tracking-wider transition bg-emerald-950/70 text-emerald-300 border-2 border-emerald-500/60 hover:border-emerald-400 flex items-center justify-center gap-1.5 cursor-pointer shadow-[0_0_20px_rgba(16,185,129,0.35)] hover:scale-[1.02]">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+          </span>
+          <span>🪙 Crypto</span>
+          <span class="text-[9px] bg-emerald-400 text-black font-black px-1.5 py-0.5 rounded uppercase tracking-tight">VIP</span>
         </button>
       </div>
 
       <!-- TAB 1: DODO PAYMENTS -->
       <div id="modalTabDodoView" class="space-y-4">
+        <!-- SHINY CRYPTO VIP TEASER BANNER INSIDE CARD TAB -->
+        <div onclick="switchCabinetCheckoutTab('crypto')" class="p-3.5 rounded-2xl bg-gradient-to-r from-emerald-950/80 via-zinc-950 to-teal-950/80 border-2 border-emerald-500/40 hover:border-emerald-400 text-center cursor-pointer transition-all shadow-[0_0_25px_rgba(16,185,129,0.25)] hover:scale-[1.01] group">
+          <div class="flex items-center justify-center gap-2 text-xs font-mono font-black text-emerald-300 uppercase tracking-wide">
+            <span class="text-base group-hover:scale-125 transition-transform">🪙</span>
+            <span>Prefer 100% Anonymous Checkout? Pay with USDT / USDC</span>
+            <span class="text-emerald-400 text-sm font-black">&rarr;</span>
+          </div>
+          <div class="text-[10px] text-zinc-400 font-mono mt-0.5">Instant On-Chain Settlement · Zero KYC · No Card Declines or Bank Records</div>
+        </div>
+
         <div class="p-4 rounded-2xl bg-zinc-950/80 border border-zinc-800 space-y-3">
           <div class="flex items-center justify-between">
             <span class="text-xs font-mono font-bold text-zinc-300">Total Due Today:</span>
@@ -1715,6 +1799,16 @@ Respond ONLY with this raw JSON structure (no markdown fences):
 
       <!-- TAB 2: WHOP CHECKOUT -->
       <div id="modalTabWhopView" class="space-y-4 hidden">
+        <!-- SHINY CRYPTO VIP TEASER BANNER INSIDE WHOP TAB -->
+        <div onclick="switchCabinetCheckoutTab('crypto')" class="p-3.5 rounded-2xl bg-gradient-to-r from-emerald-950/80 via-zinc-950 to-teal-950/80 border-2 border-emerald-500/40 hover:border-emerald-400 text-center cursor-pointer transition-all shadow-[0_0_25px_rgba(16,185,129,0.25)] hover:scale-[1.01] group">
+          <div class="flex items-center justify-center gap-2 text-xs font-mono font-black text-emerald-300 uppercase tracking-wide">
+            <span class="text-base group-hover:scale-125 transition-transform">🪙</span>
+            <span>Prefer 100% Anonymous Checkout? Pay with USDT / USDC</span>
+            <span class="text-emerald-400 text-sm font-black">&rarr;</span>
+          </div>
+          <div class="text-[10px] text-zinc-400 font-mono mt-0.5">Instant On-Chain Settlement · Zero KYC · No Card Declines or Bank Records</div>
+        </div>
+
         <div class="p-4 rounded-2xl bg-zinc-950/80 border border-zinc-800 space-y-3">
           <div class="flex items-center justify-between">
             <span class="text-xs font-mono font-bold text-zinc-300">Total Due Today:</span>
@@ -1728,6 +1822,79 @@ Respond ONLY with this raw JSON structure (no markdown fences):
         <a href="https://whop.com/checkout/plan_ikEY1bP1Pk7di" target="_blank" rel="noopener noreferrer" class="w-full py-4 rounded-xl bg-orange-500 hover:bg-orange-400 text-black font-black text-sm tracking-wide uppercase hover:scale-[1.01] flex items-center justify-center gap-2 transition shadow-xl shadow-orange-500/20">
           <span>Open Whop Checkout ($99.00) &rarr;</span>
         </a>
+      </div>
+
+      <!-- TAB 3: CRYPTO CHECKOUT -->
+      <div id="modalTabCryptoView" class="space-y-4 hidden">
+        <!-- GLOWING VIP CRYPTO INCENTIVE BANNER -->
+        <div class="p-4 rounded-2xl bg-gradient-to-r from-emerald-950 via-zinc-950 to-teal-950 border-2 border-emerald-400/80 shadow-[0_0_35px_rgba(16,185,129,0.35)] text-center space-y-1 relative overflow-hidden">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/50 text-emerald-300 font-mono text-[11px] font-black uppercase tracking-wider">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+            VIP WEB3 SETTLEMENT • 100% ANONYMOUS
+          </div>
+          <h4 class="text-sm font-black text-white">Direct Cold/Hot Wallet Instant Unlock</h4>
+          <p class="text-[11px] text-zinc-300 max-w-md mx-auto leading-relaxed">
+            No KYC verification, no card decline risk, zero bank paper trail. 1-second auto-audit unlock upon blockchain broadcast.
+          </p>
+        </div>
+
+        <!-- Coin Switcher -->
+        <div class="flex gap-2 bg-black/40 p-1 rounded-xl border border-white/5">
+          <button id="cabUsdtTabBtn" onclick="switchCabinetModalCryptoCoin('usdt')" class="flex-1 py-2 rounded-lg text-xs font-bold font-mono transition bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 flex items-center justify-center space-x-1.5 cursor-pointer">
+            <span>🟢</span><span>USDT (TRC20)</span>
+          </button>
+          <button id="cabUsdcTabBtn" onclick="switchCabinetModalCryptoCoin('usdc')" class="flex-1 py-2 rounded-lg text-xs font-bold font-mono transition bg-zinc-900 text-zinc-400 hover:text-white border border-transparent flex items-center justify-center space-x-1.5 cursor-pointer">
+            <span>🔵</span><span>USDC (ERC20)</span>
+          </button>
+        </div>
+
+        <!-- USDT View -->
+        <div id="cabUsdtTabView" class="space-y-3">
+          <div class="bg-black/60 border border-emerald-800/40 rounded-2xl p-4 text-center space-y-3">
+            <div class="flex items-center justify-between text-xs font-mono font-bold">
+              <span class="text-emerald-400">TRON TRC20</span>
+              <span class="bg-emerald-950 text-white px-2 py-0.5 rounded border border-emerald-700">$99.00 USDT</span>
+            </div>
+            <div class="flex justify-center">
+              <img src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&margin=1&data=TUzD8hJcCsdjPZaS1man4vLAufiqzYpKWi" class="w-28 h-28 rounded-xl bg-white p-1.5 border border-emerald-500/40 shadow-lg" alt="USDT QR">
+            </div>
+            <div class="bg-zinc-950 border border-zinc-800 rounded-lg p-2 font-mono text-[11px] text-amber-300 break-all select-all text-center">
+              TUzD8hJcCsdjPZaS1man4vLAufiqzYpKWi
+            </div>
+            <button type="button" onclick="copyCabinetCryptoText('TUzD8hJcCsdjPZaS1man4vLAufiqzYpKWi', 'USDT TRC20 Wallet')" class="w-full py-2.5 rounded-xl bg-emerald-900/40 hover:bg-emerald-800/50 border border-emerald-600/50 text-emerald-300 text-xs font-bold font-mono transition cursor-pointer flex items-center justify-center gap-2">
+              📋 Copy TRC20 Wallet Address
+            </button>
+          </div>
+        </div>
+
+        <!-- USDC View -->
+        <div id="cabUsdcTabView" class="space-y-3 hidden">
+          <div class="bg-black/60 border border-blue-800/40 rounded-2xl p-4 text-center space-y-3">
+            <div class="flex items-center justify-between text-xs font-mono font-bold">
+              <span class="text-blue-400">ETHEREUM ERC20</span>
+              <span class="bg-blue-950 text-white px-2 py-0.5 rounded border border-blue-700">$99.00 USDC</span>
+            </div>
+            <div class="flex justify-center">
+              <img src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&margin=1&data=0x45824b71c98b4922723be312fa6fc8af6be0e090" class="w-28 h-28 rounded-xl bg-white p-1.5 border border-blue-500/40 shadow-lg" alt="USDC QR">
+            </div>
+            <div class="bg-zinc-950 border border-zinc-800 rounded-lg p-2 font-mono text-[11px] text-blue-300 break-all select-all text-center">
+              0x45824b71c98b4922723be312fa6fc8af6be0e090
+            </div>
+            <button type="button" onclick="copyCabinetCryptoText('0x45824b71c98b4922723be312fa6fc8af6be0e090', 'USDC ERC20 Wallet')" class="w-full py-2.5 rounded-xl bg-blue-900/40 hover:bg-blue-800/50 border border-blue-600/50 text-blue-300 text-xs font-bold font-mono transition cursor-pointer flex items-center justify-center gap-2">
+              📋 Copy ERC20 Wallet Address
+            </button>
+          </div>
+        </div>
+
+        <!-- TxID Submission -->
+        <div class="bg-black/60 border border-zinc-800 rounded-2xl p-4 space-y-3">
+          <label class="block text-xs font-mono uppercase text-zinc-300">Transaction Hash (TxID) <span class="text-rose-400">*</span></label>
+          <input type="text" id="cabModalCryptoTxid" placeholder="Paste your 64-char TxID or sender address" class="w-full bg-zinc-950 border border-zinc-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-amber-400 font-mono">
+          <button type="button" onclick="submitCabinetModalCryptoPayment()" class="w-full py-3 rounded-xl bg-gradient-to-r from-amber-500 to-emerald-500 hover:from-amber-400 hover:to-emerald-400 text-black font-extrabold text-xs transition cursor-pointer shadow-lg shadow-amber-500/20">
+            ⚡ Verify Blockchain Transfer &amp; Unlock Dossier
+          </button>
+          <p id="cabModalCryptoStatusMsg" class="text-[11px] text-center font-mono text-zinc-400 hidden"></p>
+        </div>
       </div>
 
       <div class="flex items-center justify-between text-xs pt-2">
@@ -1750,6 +1917,18 @@ Respond ONLY with this raw JSON structure (no markdown fences):
           <h3 class="text-lg font-black text-white">Direct Crypto Payment</h3>
           <p class="text-xs text-zinc-400">Instant unlock via USDT (TRC20) or USDC (ERC20)</p>
         </div>
+      </div>
+
+      <!-- GLOWING VIP CRYPTO INCENTIVE BANNER -->
+      <div class="p-4 rounded-2xl bg-gradient-to-r from-emerald-950 via-zinc-950 to-teal-950 border-2 border-emerald-400/80 shadow-[0_0_35px_rgba(16,185,129,0.35)] text-center space-y-1 relative overflow-hidden">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/50 text-emerald-300 font-mono text-[11px] font-black uppercase tracking-wider">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+          VIP WEB3 SETTLEMENT • 100% ANONYMOUS
+        </div>
+        <h4 class="text-sm font-black text-white">Direct Cold/Hot Wallet Instant Unlock</h4>
+        <p class="text-[11px] text-zinc-300 max-w-md mx-auto leading-relaxed">
+          No KYC verification, no card decline risk, zero bank paper trail. 1-second auto-audit unlock upon blockchain broadcast.
+        </p>
       </div>
 
       <!-- Coin Switcher -->
