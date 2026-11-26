@@ -14,3 +14,7 @@ scripts/check_*.py
 scripts/*did*.py
 scripts/poll_and_recompile.py
 
+
+.vercel
+.vercel
+.env*
