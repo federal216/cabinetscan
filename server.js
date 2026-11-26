@@ -12,7 +12,12 @@ const interactionsDb = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', '
 const compoundsDb = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'compounds_master.json'), 'utf8'));
 
 app.use(cors());
-app.use(express.json({ limit: '25mb' }));
+app.use(express.json({
+  limit: '25mb',
+  verify: (req, res, buf) => {
+    req.rawBody = buf.toString('utf8');
+  }
+}));
 app.use(express.static(path.join(__dirname)));
 
 // Endpoint to fetch offline pharmacological knowledge base
@@ -24,13 +29,20 @@ app.get('/api/database', (req, res) => {
 });
 
 // Health check
-app.get('/api/status', (req, res) => {
-  res.json({ status: 'online', service: 'CabinetScan AI', gateways: { dodo: true, whop: true } });
-});
+const statusHandler = require('./api/status');
+app.all('/api/status', statusHandler);
 
 // Dodo Payments Gateway Endpoint
 const dodoInitialize = require('./api/dodo/initialize');
 app.all('/api/dodo/initialize', dodoInitialize);
+
+// PDF Email Delivery & Payment Webhooks (Customer + karakoc.i@gmail.com)
+const deliverPdf = require('./api/deliver-pdf');
+const dodoWebhook = require('./api/webhooks/dodo');
+const whopWebhook = require('./api/webhooks/whop');
+app.all('/api/deliver-pdf', deliverPdf);
+app.all('/api/webhooks/dodo', dodoWebhook);
+app.all('/api/webhooks/whop', whopWebhook);
 
 
 const SYSTEM_PROMPT = `
@@ -174,6 +186,10 @@ app.post('/api/scan', async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`⚡ CabinetScan AI running at http://localhost:${PORT}`);
-});
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`⚡ CabinetScan AI running at http://localhost:${PORT}`);
+  });
+}
+
+module.exports = app;

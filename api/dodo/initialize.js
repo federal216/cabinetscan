@@ -1,4 +1,5 @@
 const https = require('https');
+const { isAllowedReturnUrl } = require('../../lib/handlers');
 
 const LIVE_API_KEY = process.env.DODO_PAYMENTS_LIVE_KEY || 'dodo_live_xNuMmrRTOkHMLZY7.pEQXFVs-wu2XLVkeKX7xvdvcH9v71jbN6FdtMEyTPzCJLR0j';
 const LIVE_PRODUCT_ID = process.env.DODO_LIVE_PRODUCT_ID || 'pdt_0NsdaQ7P6h6NjAauG3k4P';
@@ -12,7 +13,12 @@ function createCheckoutSession(host, apiKey, productId, email, buyerName, return
       product_cart: [{ product_id: productId, quantity: 1 }],
       customer: { email, name: buyerName },
       return_url: returnUrl,
-      metadata: { product: 'CabinetScan AI Master Clinical Dossier', timestamp: Date.now().toString() }
+      metadata: {
+        app: 'cabinetscan',
+        product: 'CabinetScan AI Master Clinical Dossier',
+        customer_email: email,
+        timestamp: Date.now().toString()
+      }
     });
 
     const options = {
@@ -57,11 +63,13 @@ module.exports = async (req, res) => {
   if (req.method !== 'POST') return res.status(405).json({ status: 'failed', reason: 'Method Not Allowed' });
 
   try {
-    const { email = 'patient@cabinetscan.ai', buyerName = 'Clinical Auditor' } = req.body || {};
+    const { email = 'patient@cabinetscan.ai', buyerName = 'Clinical Auditor', returnUrl: clientReturnUrl } = req.body || {};
 
     const host = req.headers['x-forwarded-host'] || req.headers.host || 'cabinetscan.ai';
     const protocol = req.headers['x-forwarded-proto'] || 'https';
-    const returnUrl = process.env.DODO_RETURN_URL || `${protocol}://${host}/?status=success&paid=true&dodo_paid=true`;
+    const returnUrl = isAllowedReturnUrl(clientReturnUrl)
+      ? clientReturnUrl
+      : (process.env.DODO_RETURN_URL || `${protocol}://${host}/?status=success&paid=true&dodo_paid=true`);
 
     // 1. First attempt: Live Mode API
     let liveResult = null;
